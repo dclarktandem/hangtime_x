@@ -186,7 +186,8 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
         }
         let myActivePlayerNumber = self.brain.setGamerList(connectedDevices: connectedDevices)
         myGlobalPlayerNum = myActivePlayerNumber
-        print("MyGlobalPlayerNumberIs: \(myGlobalPlayerNum)")
+        print("got to connecteDevicesChanged")
+        print("MyGlobalPlayerNumber is: \(myGlobalPlayerNum)")
     }
 
     
