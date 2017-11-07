@@ -21,6 +21,7 @@ class ColorSwitchViewController: UIViewController {
       //  self.sil_down_red.alpha = 0.0
        // self.sil_down_blue.alpha = 0.0
       //  self.sil_down_silver.alpha = 0.0
+        
         self.sil_up_white.alpha = 0.0
         self.sil_up_red.alpha = 0.0
         self.sil_up_blue.alpha = 0.0
