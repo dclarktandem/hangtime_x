@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32037B631FB14A1300E29A86 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32037B621FB14A1300E29A86 /* GameModel.swift */; };
 		BF6F13F81E4E58C90018D56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F13F71E4E58C90018D56E /* AppDelegate.swift */; };
 		BF6F13FA1E4E58C90018D56E /* ColorSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F13F91E4E58C90018D56E /* ColorSwitchViewController.swift */; };
 		BF6F13FD1E4E58C90018D56E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F13FB1E4E58C90018D56E /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32037B621FB14A1300E29A86 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		BF6F13F41E4E58C90018D56E /* Hangtime X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangtime X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F13F71E4E58C90018D56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F13F91E4E58C90018D56E /* ColorSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwitchViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				BF6F13F71E4E58C90018D56E /* AppDelegate.swift */,
 				BF6F13F91E4E58C90018D56E /* ColorSwitchViewController.swift */,
 				BF6F140B1E4E5B660018D56E /* ColorServiceManager.swift */,
+				32037B621FB14A1300E29A86 /* GameModel.swift */,
 				BF6F13FB1E4E58C90018D56E /* Main.storyboard */,
 				BF6F13FE1E4E58C90018D56E /* Assets.xcassets */,
 				BF6F14001E4E58C90018D56E /* LaunchScreen.storyboard */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6F13FA1E4E58C90018D56E /* ColorSwitchViewController.swift in Sources */,
+				32037B631FB14A1300E29A86 /* GameModel.swift in Sources */,
 				BF6F13F81E4E58C90018D56E /* AppDelegate.swift in Sources */,
 				BF6F140C1E4E5B660018D56E /* ColorServiceManager.swift in Sources */,
 			);
