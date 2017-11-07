@@ -36,7 +36,7 @@ class GameModel
         let systemName = UIDevice.current.name
         NSLog("Name\(systemName)")
         
-        let myNameCount = systemName.characters.count
+        let myNameCount = systemName.count
         
         NSLog("Count of systemName: \(myNameCount)")
         
