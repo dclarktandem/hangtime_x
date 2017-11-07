@@ -5,7 +5,8 @@ class ColorSwitchViewController: UIViewController {
     
     var openingSoundEffect: AVAudioPlayer!
     var hornSoundEffect: AVAudioPlayer!
-    
+    var brain = GameModel()
+    var myGlobalPlayerNum = Int()
     
 
     @IBOutlet weak var connectionsLabel: UILabel!
@@ -183,8 +184,12 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
         OperationQueue.main.addOperation {
             self.connectionsLabel.text = "Connections: \(connectedDevices)"
         }
+        let myActivePlayerNumber = self.brain.setGamerList(connectedDevices: connectedDevices)
+        myGlobalPlayerNum = myActivePlayerNumber
+        print("MyGlobalPlayerNumberIs: \(myGlobalPlayerNum)")
     }
 
+    
     func colorChanged(manager: ColorServiceManager, colorString: String) {
         OperationQueue.main.addOperation {
             switch colorString {
