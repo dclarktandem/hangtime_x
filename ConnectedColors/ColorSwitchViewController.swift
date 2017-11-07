@@ -110,6 +110,8 @@ class ColorSwitchViewController: UIViewController {
         self.sil_down_red.alpha = 1.0
         self.sil_down_blue.alpha = 1.0
         self.sil_down_silver.alpha = 1.0})
+        
+        // Hi Luke
     
     
     //self.sil_up_white.alpha = 0.0
@@ -157,7 +159,8 @@ class ColorSwitchViewController: UIViewController {
                             self.locker_image.alpha = 1.0})
                         UIView.animate(withDuration: 0.5, animations: {
                             self.playerDownStackView.alpha = 1.0})
-                
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.lockerBall.alpha = 1.0})
                         
      })
                         
