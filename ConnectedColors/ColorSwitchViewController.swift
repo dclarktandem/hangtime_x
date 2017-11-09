@@ -1,5 +1,7 @@
 import UIKit
 import AVFoundation
+//var myGlobalPlayerNum = Int()
+
 
 class ColorSwitchViewController: UIViewController {
     
@@ -76,6 +78,7 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var playerDownStackView: UIStackView!
     
     
+    @IBOutlet weak var PlayerNum_Label: UILabel!
     
     @IBOutlet weak var locker_image: UIImageView!
     
@@ -127,7 +130,9 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
-    
+    func updatePlayerNumDisplay(){
+        self.PlayerNum_Label.text = String(myGlobalPlayerNum)
+    }
    
     @IBOutlet weak var football: UIImageView!
     
@@ -174,20 +179,23 @@ class ColorSwitchViewController: UIViewController {
                  
     }
         
-        
+
     
 
 
 extension ColorSwitchViewController : ColorServiceManagerDelegate {
 
     func connectedDevicesChanged(manager: ColorServiceManager, connectedDevices: [String]) {
-        OperationQueue.main.addOperation {
-            self.connectionsLabel.text = "Connections: \(connectedDevices)"
-        }
+//        OperationQueue.main.addOperation {
+//            self.connectionsLabel.text = "Connections: \(connectedDevices)"
+//        }
         let myActivePlayerNumber = self.brain.setGamerList(connectedDevices: connectedDevices)
         myGlobalPlayerNum = myActivePlayerNumber
         print("got to connecteDevicesChanged")
         print("MyGlobalPlayerNumber is: \(myGlobalPlayerNum)")
+     OperationQueue.main.addOperation {
+           self.PlayerNum_Label.text = String(self.myGlobalPlayerNum)
+      }
     }
 
     

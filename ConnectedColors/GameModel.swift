@@ -60,6 +60,7 @@ class GameModel
         
         NSLog("myAssignedPlayerNum: \(myAssignedPlayerNum)")
         
+        
         return myAssignedPlayerNum
         
     }
@@ -126,7 +127,7 @@ class GameModel
         var totalVal = 0
         var ch: Character
         
-        for i in 1 ... (workingName.characters.count - 1) {
+        for i in 1 ... (workingName.count - 1) {
             
             let index = workingName.index(workingName.startIndex, offsetBy: i)
             
