@@ -9,10 +9,23 @@
 import Foundation
 import MultipeerConnectivity
 
+var playerTwo = "null"
+var playerThree = "null"
+var playerFour = "null"
+
+var startOne = false
+var startTwo = false
+var startThree = false
+var startFour = false
+var gameStatus = 0
+let myPlayerID = String(Int(arc4random_uniform(32766) + 1))
+var peerNameList: [String] = []
+
+
 protocol ColorServiceManagerDelegate {
 
-    func connectedDevicesChanged(manager : ColorServiceManager, connectedDevices: [String])
-    func colorChanged(manager : ColorServiceManager, colorString: String)
+    func connectedDevicesChanged(manager : ColorServiceManager, connectedDevices: [String], peerCount: Int)
+    func colorChanged(manager : ColorServiceManager, colorString: String, senderPeerID: String)
 
 }
 
@@ -103,17 +116,56 @@ extension ColorServiceManager : MCNearbyServiceBrowserDelegate {
 extension ColorServiceManager : MCSessionDelegate {
 
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        NSLog("%@", "peer \(peerID) didChangeState: \(state)")
-        self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
-            session.connectedPeers.map{$0.displayName})
+        //NSLog("%@", "peer \(peerID) didChangeState: \(state.stringValue())")
+        self.delegate?.connectedDevicesChanged(manager: self, connectedDevices: session.connectedPeers.map({$0.displayName}), peerCount: session.connectedPeers.count)
+        //   self.delegate?.connectedDevicesChanged(self, connectedDevices: session.connectedPeers.map({$0.displayName}), myPlayerID: session.myPlayerID.map({$0.myPlayerID}), peerCount: session.connectedPeers.count)
+        NSLog("%@", "peerList: \(session.connectedPeers)")
+        
+        if session.connectedPeers.count > 0 {
+            playerTwo = session.connectedPeers[0].displayName
+        }
+        if session.connectedPeers.count > 1 {
+            playerThree = session.connectedPeers[1].displayName
+        }
+        if session.connectedPeers.count > 2 {
+            playerFour = session.connectedPeers[2].displayName
+        }
     }
+    
+    
+//    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+//        NSLog("%@", "peer \(peerID) didChangeState: \(state)")
+//        self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
+//          //  session.connectedPeers.map{$0.displayName}), peerCount: session.connectedPeers.count)
+//        self.delegate?.connectedDevicesChanged(self, connectedDevices: session.connectedPeers.map({$0.displayName}), peerCount: session.connectedPeers.count)
+//    }
+
+//    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+//        NSLog("%@", "didReceiveData: \(data)")
+//        let str = String(data: data, encoding: .utf8)!
+//        self.delegate?.colorChanged(manager: self, colorString: str)
+//    }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        NSLog("%@", "didReceiveData: \(data)")
-        let str = String(data: data, encoding: .utf8)!
-        self.delegate?.colorChanged(manager: self, colorString: str)
+        NSLog("%@", "recievedFromPeer: \(peerID.displayName)")
+        NSLog("%@", "didReceiveData: \(data.count) bytes")
+        NSLog("%@", "connectedDevices: \(session.connectedPeers.count)")
+        NSLog("%@", "playerTwo-ifStatement: \(playerTwo)")
+        let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+        self.delegate?.colorChanged(manager: self, colorString: str, senderPeerID: peerID.displayName)
+        
+//        if gameStatus < 1 {
+//
+//            gameStatus = 1
+//            self.sendColor(myPlayerID)
+//            self.managePeerNameList(peerID.displayName)
+//            NSLog("%@", "gameStatus: \(gameStatus)")
+//
+//        }
     }
-
+    
+    
+    
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
         NSLog("%@", "didReceiveStream")
     }

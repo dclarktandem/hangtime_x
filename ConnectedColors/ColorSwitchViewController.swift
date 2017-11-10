@@ -185,7 +185,7 @@ class ColorSwitchViewController: UIViewController {
 
 extension ColorSwitchViewController : ColorServiceManagerDelegate {
 
-    func connectedDevicesChanged(manager: ColorServiceManager, connectedDevices: [String]) {
+    func connectedDevicesChanged(manager: ColorServiceManager, connectedDevices: [String], peerCount: Int) {
 //        OperationQueue.main.addOperation {
 //            self.connectionsLabel.text = "Connections: \(connectedDevices)"
 //        }
@@ -199,7 +199,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
     }
 
     
-    func colorChanged(manager: ColorServiceManager, colorString: String) {
+    func colorChanged(manager: ColorServiceManager, colorString: String, senderPeerID: String) {
         OperationQueue.main.addOperation {
             switch colorString {
             case "red":
