@@ -11,21 +11,18 @@ class ColorSwitchViewController: UIViewController {
     var myGlobalPlayerNum = Int()
     var numPlayers = 0
 
-    @IBOutlet weak var connectionsLabel: UILabel!
+    @IBOutlet weak var connectionsLabel: UILabel! // Displays connections
 
-    let colorService = ColorServiceManager()
+    let colorService = ColorServiceManager() // creates peer connection class
 
-    override func viewDidLoad() {
+    override func viewDidLoad() { // loads everyting prior to first display
         super.viewDidLoad()
         colorService.delegate = self
         
-        self.playerDownStackView.alpha = 0.0
-       // self.sil_down_white.alpha = 0.0
-      //  self.sil_down_red.alpha = 0.0
-       // self.sil_down_blue.alpha = 0.0
-      //  self.sil_down_silver.alpha = 0.0
+        self.playerDownStackView.alpha = 0.0 // L - What does this do
+
         
-        
+        // L - this block hides all players on the launch screen?
         self.turfScreen.alpha = 0.0
         self.sil_up_white.alpha = 0.0
         self.sil_up_red.alpha = 0.0
