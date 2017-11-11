@@ -121,6 +121,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRF-Ku-RyG">
                                 <rect key="frame" x="140.5" y="524" width="94" height="96"/>
                                 <connections>
+                                    <action selector="ballTap_released:" destination="BYZ-38-t0r" eventType="touchDown" id="XVC-kT-pDT"/>
                                     <action selector="ballTapped_heldDown:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="EEW-Ra-BVw"/>
                                     <action selector="lockerBall_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WVF-CJ-aFg"/>
                                 </connections>

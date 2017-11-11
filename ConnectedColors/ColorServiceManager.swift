@@ -74,6 +74,23 @@ class ColorServiceManager : NSObject {
         }
 
     }
+    
+    func sendColor(_ colorName : String) {
+        NSLog("%@", "sendColor: \(colorName)")
+        
+        if session.connectedPeers.count > 0 {
+            let error : NSError?
+            do {
+                try self.session.send(colorName.data(using: String.Encoding.utf8, allowLossyConversion: false)!, toPeers: session.connectedPeers, with: MCSessionSendDataMode.reliable)
+            } catch let error1 as NSError {
+                error = error1
+                NSLog("%@", "\(String(describing: error))")
+            }
+        }
+        
+    }
+    
+    
 
     deinit {
         self.serviceAdvertiser.stopAdvertisingPeer()
