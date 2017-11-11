@@ -166,8 +166,8 @@ extension ColorServiceManager : MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         NSLog("%@", "recievedFromPeer: \(peerID.displayName)")
         NSLog("%@", "didReceiveData: \(data.count) bytes")
-        NSLog("%@", "connectedDevices: \(session.connectedPeers.count)")
-        NSLog("%@", "playerTwo-ifStatement: \(playerTwo)")
+        NSLog("%@", "connectedDevices: \(session.connectedPeers.count + 1)")
+        NSLog("%@", "playerTwo Name: \(playerTwo)")
         let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
         self.delegate?.colorChanged(manager: self, colorString: str, senderPeerID: peerID.displayName)
         

@@ -25,9 +25,8 @@ class ColorSwitchViewController: UIViewController {
        // self.sil_down_blue.alpha = 0.0
       //  self.sil_down_silver.alpha = 0.0
         
-        // Hi Mr. Clark
-        // Hi Luke
         
+        self.turfScreen.alpha = 0.0
         self.sil_up_white.alpha = 0.0
         self.sil_up_red.alpha = 0.0
         self.sil_up_blue.alpha = 0.0
@@ -71,18 +70,20 @@ class ColorSwitchViewController: UIViewController {
     
     @IBOutlet weak var sil_up_blue: UIImageView!
     
-    
     @IBOutlet weak var sil_up_silver: UIImageView!
     
-    
     @IBOutlet weak var playerDownStackView: UIStackView!
-    
     
     @IBOutlet weak var PlayerNum_Label: UILabel!
     
     @IBOutlet weak var locker_image: UIImageView!
     
     @IBOutlet weak var lockerBall: UIImageView!
+    
+    @IBOutlet weak var turfScreen: UIImageView!
+    
+    
+    
     
     @IBAction func lockerBall_Button(_ sender: Any) {
         
@@ -140,39 +141,37 @@ class ColorSwitchViewController: UIViewController {
     
     @IBAction func ballTapped_heldDown(_ sender: Any) {
         
+        print("Got ballTapped_heldDown")
+        
         switch myGlobalPlayerNum {
             
         case 1:
-          //  brain.colorService.sendColor("white")
+         
             self.sil_down_white.alpha = 0.0
             self.sil_up_white.alpha = 1.0
             startOne = true
-          //  checkPlayerStart()
+            checkPlayerStart()
         case 2:
-          //  brain.colorService.sendColor("red")
+          
             self.sil_down_red.alpha = 0.0
             self.sil_up_red.alpha = 1.0
             startTwo = true
-           // checkPlayerStart()
+            checkPlayerStart()
         case 3:
-          //  brain.colorService.sendColor("blue")
+         
             self.sil_down_blue.alpha = 0.0
             self.sil_up_blue.alpha = 1.0
             startThree = true
-           // checkPlayerStart()
+            checkPlayerStart()
         case 4:
-          //  brain.colorService.sendColor("gray")
+          
             self.sil_down_silver.alpha = 0.0
             self.sil_up_silver.alpha = 1.0
             startFour = true
-           // checkPlayerStart()
+            checkPlayerStart()
         default:
             NSLog("%@", "******** Unknown Player Num: \(myGlobalPlayerNum)")
-          //  brain.colorService.sendColor("white")
-//            player1_down.isHidden = true
-//            player1_up.isHidden = false
-            startOne = true
-          //  checkPlayerStart()
+       
             
         }
         
@@ -295,21 +294,27 @@ class ColorSwitchViewController: UIViewController {
     
     func checkPlayerStart() {
         
+        
+        print("Got to checkPlayerStart")
+        NSLog("%@", "numPlayers: \(numPlayers)")
+        print("myGlobalPlayerNum: \(myGlobalPlayerNum)")
+        print("startOne: \(startOne)")
+        print("startTwo: \(startTwo)")
+        
+        
         if numPlayers == 2 && startOne == true && startTwo == true {
             
             switch myGlobalPlayerNum {
                 
             case 1:
-                NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_1_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_1_View") as! GameViewController
-//                self.navigationController?.pushViewController(Player_1_View, animated: true)
+                
+                self.turfScreen.alpha = 1.0
                 
                 
                 
             case 2:
-              NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_2_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_2_View") as! GameViewController_Two
-//                self.navigationController?.pushViewController(Player_2_View, animated: true)
+                
+                self.turfScreen.alpha = 1.0
                 
                 
                 
@@ -322,21 +327,18 @@ class ColorSwitchViewController: UIViewController {
             switch myGlobalPlayerNum {
                 
             case 1:
-              NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_1_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_1_View") as! GameViewController
-//                self.navigationController?.pushViewController(Player_1_View, animated: true)
+                
+                self.turfScreen.alpha = 1.0
                 
                 
             case 2:
-             NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_2_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_2_View") as! GameViewController_Two
-//                self.navigationController?.pushViewController(Player_2_View, animated: true)
+                
+                self.turfScreen.alpha = 1.0
                 
                 
             case 3:
-                NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_3_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_3_View") as! GameViewController_Three
-//                self.navigationController?.pushViewController(Player_3_View, animated: true)
+                
+                self.turfScreen.alpha = 1.0
                 
                 
                 
@@ -348,27 +350,27 @@ class ColorSwitchViewController: UIViewController {
             switch myGlobalPlayerNum {
                 
             case 1:
-          NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_1_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_1_View") as! GameViewController
-//                self.navigationController?.pushViewController(Player_1_View, animated: true)
+          
+
+                self.turfScreen.alpha = 1.0
                 
                 
             case 2:
-        NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_2_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_2_View") as! GameViewController_Two
-//                self.navigationController?.pushViewController(Player_2_View, animated: true)
+        
+
+                self.turfScreen.alpha = 1.0
                 
                 
             case 3:
-        NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_3_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_3_View") as! GameViewController_Three
-//                self.navigationController?.pushViewController(Player_3_View, animated: true)
+        
+        
+                self.turfScreen.alpha = 1.0
                 
                 
             case 4:
-                NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
-//                let Player_4_View = self.storyboard?.instantiateViewController(withIdentifier: "Player_4_View") as! GameViewController_Four
-//                self.navigationController?.pushViewController(Player_4_View, animated: true)
+                
+
+                self.turfScreen.alpha = 1.0
                 
                 
             default:
