@@ -79,6 +79,7 @@ class ColorSwitchViewController: UIViewController {
     
     @IBOutlet weak var turfScreen: UIImageView!
     
+    @IBOutlet weak var panelBkground_1_1: UIView!
     
     
     
@@ -90,18 +91,22 @@ class ColorSwitchViewController: UIViewController {
             colorService.sendColor("dark_white")
             self.sil_down_white.alpha = 1.0
             self.sil_up_white.alpha = 0.0
+            startOne = false
         case 2:
             colorService.sendColor("dark_red")
             self.sil_down_red.alpha = 1.0
             self.sil_up_red.alpha = 0.0
+            startTwo = false
         case 3:
             colorService.sendColor("dark_blue")
             self.sil_down_blue.alpha = 1.0
             self.sil_up_blue.alpha = 0.0
+            startThree = false
         case 4:
             colorService.sendColor("dark_silver")
             self.sil_down_silver.alpha = 1.0
             self.sil_up_silver.alpha = 0.0
+            startThree = false
         default:
             print("No value for myGlobalPlayerNum")
          }
@@ -112,21 +117,29 @@ class ColorSwitchViewController: UIViewController {
         switch myGlobalPlayerNum {
             
         case 1:
+            startOne = true
             colorService.sendColor("white")
             self.sil_down_white.alpha = 0.0
             self.sil_up_white.alpha = 1.0
+            checkPlayerStart()
         case 2:
+            startTwo = true
             colorService.sendColor("red")
             self.sil_down_red.alpha = 0.0
             self.sil_up_red.alpha = 1.0
+            checkPlayerStart()
         case 3:
+            startThree = true
             colorService.sendColor("blue")
             self.sil_down_blue.alpha = 0.0
             self.sil_up_blue.alpha = 1.0
+            checkPlayerStart()
         case 4:
+            startFour = true
             colorService.sendColor("silver")
             self.sil_down_silver.alpha = 0.0
             self.sil_up_silver.alpha = 1.0
+            checkPlayerStart()
         default:
             print("No value for myGlobalPlayerNum")
         }
@@ -304,14 +317,15 @@ class ColorSwitchViewController: UIViewController {
             switch myGlobalPlayerNum {
                 
             case 1:
-                
-                self.turfScreen.alpha = 1.0
-                
-                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
+             
+        
                 
             case 2:
                 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
                 
@@ -325,17 +339,20 @@ class ColorSwitchViewController: UIViewController {
                 
             case 1:
                 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             case 2:
                 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             case 3:
                 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
                 
@@ -349,25 +366,29 @@ class ColorSwitchViewController: UIViewController {
             case 1:
           
 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             case 2:
         
 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             case 3:
         
         
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             case 4:
                 
 
-                self.turfScreen.alpha = 1.0
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.turfScreen.alpha = 1.0})
                 
                 
             default:
@@ -376,6 +397,19 @@ class ColorSwitchViewController: UIViewController {
         }
         
     }
+    
+    func setUpGenericGameScreen(){
+        
+        
+        
+    }
+    
+    
+    
+    func setUpGameScreenOne (){
+        
+    }
+    
     
     
     
@@ -408,27 +442,42 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
         OperationQueue.main.addOperation {
             switch colorString {
             case "white":
+                startOne = true
                 self.sil_down_white.alpha = 0.0
                 self.sil_up_white.alpha = 1.0
+                self.checkPlayerStart()
             case "red":
+                startTwo = true
                 self.sil_down_red.alpha = 0.0
                 self.sil_up_red.alpha = 1.0
+                self.checkPlayerStart()
             case "blue":
+                startThree = true
                 self.sil_down_blue.alpha = 0.0
                 self.sil_up_blue.alpha = 1.0
+                self.checkPlayerStart()
             case "silver":
+                startFour = true
                 self.sil_down_silver.alpha = 0.0
                 self.sil_up_silver.alpha = 1.0
+                self.checkPlayerStart()
             case "dark_white":
+                startOne = false
                 self.sil_down_white.alpha = 1.0
                 self.sil_up_white.alpha = 0.0
+               
             case "dark_red":
+                startTwo = false
                 self.sil_down_red.alpha = 1.0
                 self.sil_up_red.alpha = 0.0
+                
             case "dark_blue":
+                startThree = false
                 self.sil_down_blue.alpha = 1.0
                 self.sil_up_blue.alpha = 0.0
+               
             case "dark_silver":
+                startFour = false
                 self.sil_down_silver.alpha = 1.0
                 self.sil_up_silver.alpha = 0.0
             default:
