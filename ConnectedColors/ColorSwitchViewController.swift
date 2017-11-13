@@ -86,7 +86,7 @@ class ColorSwitchViewController: UIViewController {
     @IBAction func lockerBall_Button(_ sender: Any) {
         
         switch myGlobalPlayerNum {
-        
+        //L - Do each of these colors represent players on the selection screen?
         case 1:
             colorService.sendColor("dark_white")
             self.sil_down_white.alpha = 1.0
@@ -113,7 +113,7 @@ class ColorSwitchViewController: UIViewController {
     }
  
     @IBAction func ballTap_released(_ sender: Any) {
-        
+        //L - What is IBAction?
         switch myGlobalPlayerNum {
             
         case 1:
@@ -275,7 +275,7 @@ class ColorSwitchViewController: UIViewController {
         
             
         } catch {
-            // couldn't load file :(
+            // couldn't load file D:
         }
         
 
@@ -482,6 +482,8 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 self.sil_up_silver.alpha = 0.0
             default:
                 NSLog("%@", "Unknown color value received: \(colorString)")
+                
+                //L - What are all the colors for?
             }
         }
     }
