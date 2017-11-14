@@ -9,6 +9,7 @@
 import Foundation
 import MultipeerConnectivity
 
+// L - Does null means nothing? Or Not?
 var playerTwo = "null"
 var playerThree = "null"
 var playerFour = "null"
@@ -42,6 +43,7 @@ class ColorServiceManager : NSObject {
 
     var delegate : ColorServiceManagerDelegate?
 
+    //L- What is MCSession?-
     lazy var session : MCSession = {
         let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .optional)
         session.delegate = self
