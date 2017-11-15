@@ -2,7 +2,7 @@
 //  GameModel.swift
 //  Hangtime X
 //
-//  Created by Luke Whited ;) on 11/6/17.
+//  Created by Luke Whited on 11/6/17.
 //  Copyright © 2017 Example. All rights reserved.
 //
 
