@@ -30,6 +30,10 @@ class ColorSwitchViewController: UIViewController {
         self.sil_up_silver.alpha = 0.0
         self.lockerBall.alpha = 0.0
         
+        panelBkground_1_1.layer.cornerRadius = 10
+        panelBkground_2.layer.cornerRadius = 10
+        panelBkground_3.layer.cornerRadius = 10
+        panelBkground_4.layer.cornerRadius = 10
         
     }
 
@@ -80,6 +84,19 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var turfScreen: UIImageView!
     
     @IBOutlet weak var panelBkground_1_1: UIView!
+    @IBOutlet weak var panelBkground_2: UIView!
+    @IBOutlet weak var panelBkground_3: UIView!
+    @IBOutlet weak var panelBkground_4: UIView!
+    @IBOutlet weak var panelBkground_5: UIView!
+    @IBOutlet weak var panelBkground_6: UIView!
+    
+    @IBOutlet weak var callText_1: UILabel!
+    @IBOutlet weak var callText_2: UILabel!
+    @IBOutlet weak var callText_3: UILabel!
+    @IBOutlet weak var callText_4: UILabel!
+    @IBOutlet weak var callText_5: UILabel!
+    @IBOutlet weak var callText_6: UILabel!
+    
     
     
     
@@ -319,7 +336,7 @@ class ColorSwitchViewController: UIViewController {
             case 1:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-             
+             setUpGameScreen_1_1()
         
                 
             case 2:
@@ -398,6 +415,9 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    
+    
+    
     func setUpGenericGameScreen(){
         
         
@@ -406,9 +426,17 @@ class ColorSwitchViewController: UIViewController {
     
     
     
-    func setUpGameScreenOne (){
+    func setUpGameScreen_1_1 (){
+       
+        self.callText_1.text = "Drag Route In"
+        self.callText_2.text = "Off Tackle Outside"
+        self.callText_3.text = "Pass Block Step Back"
+        self.callText_4.text = "Forward Pass"
+        self.callText_5.text = "Flea Flicker to Running Back"
+        self.callText_6.text = "Rushing Yards to 10"
         
-    }
+        
+        }
     
     
     

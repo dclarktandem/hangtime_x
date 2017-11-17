@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fyf-yz-sIU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fyf-yz-sIU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -142,29 +142,107 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Turf Screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="orN-fp-zBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-kP-cVP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-kP-cVP" userLabel="Panel Bkground 1">
                                 <rect key="frame" x="35" y="168.5" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swK-0u-Xln">
+                                        <rect key="frame" x="7" y="5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="swK-0u-Xln" firstAttribute="width" secondItem="XiD-kP-cVP" secondAttribute="width" multiplier="9:10" id="9Ul-kL-XUh"/>
+                                    <constraint firstItem="swK-0u-Xln" firstAttribute="centerY" secondItem="XiD-kP-cVP" secondAttribute="centerY" multiplier="2:6" id="Kgp-hW-RYC"/>
+                                    <constraint firstItem="swK-0u-Xln" firstAttribute="centerX" secondItem="XiD-kP-cVP" secondAttribute="centerX" id="lwq-WM-Fne"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-Ry-ZMR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-Ry-ZMR" userLabel="Panel Backgrond 2">
                                 <rect key="frame" x="202" y="168.5" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jq-ql-106" userLabel="Label 2">
+                                        <rect key="frame" x="7" y="5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5jq-ql-106" firstAttribute="centerY" secondItem="JyA-Ry-ZMR" secondAttribute="centerY" multiplier="2:6" id="Rd5-8D-6bd"/>
+                                    <constraint firstItem="5jq-ql-106" firstAttribute="width" secondItem="JyA-Ry-ZMR" secondAttribute="width" multiplier="9:10" id="jJh-JM-iWn"/>
+                                    <constraint firstItem="5jq-ql-106" firstAttribute="centerX" secondItem="JyA-Ry-ZMR" secondAttribute="centerX" id="upj-Td-Kx4"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klt-MT-vPz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klt-MT-vPz" userLabel="Panel Background 3">
                                 <rect key="frame" x="35" y="334" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeS-k6-az6" userLabel="Label 3">
+                                        <rect key="frame" x="6.5" y="5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="YeS-k6-az6" firstAttribute="centerY" secondItem="Klt-MT-vPz" secondAttribute="centerY" multiplier="2:6" id="Vk0-2u-2j1"/>
+                                    <constraint firstItem="YeS-k6-az6" firstAttribute="centerX" secondItem="Klt-MT-vPz" secondAttribute="centerX" id="fdk-3P-J8K"/>
+                                    <constraint firstItem="YeS-k6-az6" firstAttribute="width" secondItem="Klt-MT-vPz" secondAttribute="width" multiplier="9:10" id="u8p-nc-xHe"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-G9-tlJ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-G9-tlJ" userLabel="Panel Background 4">
                                 <rect key="frame" x="202" y="334" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP6-jD-bnM" userLabel="Label 4">
+                                        <rect key="frame" x="7" y="5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KP6-jD-bnM" firstAttribute="centerY" secondItem="dTX-G9-tlJ" secondAttribute="centerY" multiplier="2:6" id="Myd-f6-sqA"/>
+                                    <constraint firstItem="KP6-jD-bnM" firstAttribute="width" secondItem="dTX-G9-tlJ" secondAttribute="width" multiplier="9:10" id="OyA-gz-nnD"/>
+                                    <constraint firstItem="KP6-jD-bnM" firstAttribute="centerX" secondItem="dTX-G9-tlJ" secondAttribute="centerX" id="ddY-UP-OJi"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYg-tW-SNV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYg-tW-SNV" userLabel="Panel Background 5">
                                 <rect key="frame" x="35" y="500.5" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWE-Ah-50H" userLabel="Label 5">
+                                        <rect key="frame" x="7" y="5.5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZWE-Ah-50H" firstAttribute="width" secondItem="VYg-tW-SNV" secondAttribute="width" multiplier="9:10" id="XxY-k2-c9p"/>
+                                    <constraint firstItem="ZWE-Ah-50H" firstAttribute="centerY" secondItem="VYg-tW-SNV" secondAttribute="centerY" multiplier="2:6" id="nfY-8Q-Z8e"/>
+                                    <constraint firstItem="ZWE-Ah-50H" firstAttribute="centerX" secondItem="VYg-tW-SNV" secondAttribute="centerX" id="q0L-aK-SJy"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-lm-Jac">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-lm-Jac" userLabel="Panel Background 6">
                                 <rect key="frame" x="202" y="500.5" width="141" height="153"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flea flicker to running back" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-rW-SPa" userLabel="Label 6">
+                                        <rect key="frame" x="7" y="5" width="127" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="MLr-rW-SPa" firstAttribute="width" secondItem="JTs-lm-Jac" secondAttribute="width" multiplier="9:10" id="DIY-yQ-cHd"/>
+                                    <constraint firstItem="MLr-rW-SPa" firstAttribute="centerX" secondItem="JTs-lm-Jac" secondAttribute="centerX" id="Sjg-Sd-Yxz"/>
+                                    <constraint firstItem="MLr-rW-SPa" firstAttribute="centerY" secondItem="JTs-lm-Jac" secondAttribute="centerY" multiplier="2:6" id="pCB-ZK-xEN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,11 +326,21 @@
                     <navigationItem key="navigationItem" title="Colors" id="PKz-4Y-qQI"/>
                     <connections>
                         <outlet property="PlayerNum_Label" destination="D3s-Rd-8ox" id="Xfv-rr-dvt"/>
+                        <outlet property="callText_2" destination="5jq-ql-106" id="3xU-M8-ttK"/>
+                        <outlet property="callText_3" destination="YeS-k6-az6" id="Ewu-Bg-CR1"/>
+                        <outlet property="callText_4" destination="KP6-jD-bnM" id="OUn-IS-zRi"/>
+                        <outlet property="callText_5" destination="ZWE-Ah-50H" id="ovN-tT-iuD"/>
+                        <outlet property="callText_6" destination="MLr-rW-SPa" id="EWB-3W-eh9"/>
                         <outlet property="connectionsLabel" destination="vwt-mK-OVB" id="qhp-oq-0tF"/>
                         <outlet property="football" destination="rY4-yL-o9R" id="klS-oA-By6"/>
                         <outlet property="lockerBall" destination="Mqf-1t-QW9" id="NLa-44-cLB"/>
                         <outlet property="locker_image" destination="rTw-ez-Y7x" id="FC8-SP-Q7X"/>
                         <outlet property="panelBkground_1_1" destination="XiD-kP-cVP" id="xxT-aP-eGM"/>
+                        <outlet property="panelBkground_2" destination="JyA-Ry-ZMR" id="sp8-oA-wh8"/>
+                        <outlet property="panelBkground_3" destination="Klt-MT-vPz" id="hz4-qs-pyi"/>
+                        <outlet property="panelBkground_4" destination="dTX-G9-tlJ" id="Spd-Vr-7ex"/>
+                        <outlet property="panelBkground_5" destination="VYg-tW-SNV" id="SyO-9R-7fQ"/>
+                        <outlet property="panelBkground_6" destination="JTs-lm-Jac" id="iM7-Qp-YI1"/>
                         <outlet property="playerDownStackView" destination="oh0-Fs-d8z" id="hWP-ak-2I8"/>
                         <outlet property="sil_down_blue" destination="Fyl-Zp-JpU" id="8F4-lm-cw4"/>
                         <outlet property="sil_down_red" destination="0pt-Fa-NY1" id="Uc0-sQ-1K2"/>
