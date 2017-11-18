@@ -30,10 +30,26 @@ class ColorSwitchViewController: UIViewController {
         self.sil_up_silver.alpha = 0.0
         self.lockerBall.alpha = 0.0
         
+        panelBkground_1_1.alpha = 0.0
+        panelBkground_2.alpha = 0.0
+        panelBkground_3.alpha = 0.0
+        panelBkground_4.alpha = 0.0
+        panelBkground_5.alpha = 0.0
+        panelBkground_6.alpha = 0.0
+        
+        callText_1.alpha = 0.0
+        callText_2.alpha = 0.0
+        callText_3.alpha = 0.0
+        callText_4.alpha = 0.0
+        callText_5.alpha = 0.0
+        callText_6.alpha = 0.0
+        
         panelBkground_1_1.layer.cornerRadius = 10
         panelBkground_2.layer.cornerRadius = 10
         panelBkground_3.layer.cornerRadius = 10
         panelBkground_4.layer.cornerRadius = 10
+        panelBkground_5.layer.cornerRadius = 10
+        panelBkground_6.layer.cornerRadius = 10
         
     }
 
@@ -90,6 +106,7 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var panelBkground_5: UIView!
     @IBOutlet weak var panelBkground_6: UIView!
     
+   
     @IBOutlet weak var callText_1: UILabel!
     @IBOutlet weak var callText_2: UILabel!
     @IBOutlet weak var callText_3: UILabel!
@@ -343,7 +360,7 @@ class ColorSwitchViewController: UIViewController {
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_2_1()
                 
                 
             default:
@@ -428,15 +445,54 @@ class ColorSwitchViewController: UIViewController {
     
     func setUpGameScreen_1_1 (){
        
+        panelBkground_1_1.alpha = 1.0
+        panelBkground_2.alpha = 1.0
+        panelBkground_3.alpha = 1.0
+        panelBkground_4.alpha = 1.0
+        panelBkground_5.alpha = 1.0
+        panelBkground_6.alpha = 1.0
+        
+        callText_1.alpha = 1.0
+        callText_2.alpha = 1.0
+        callText_3.alpha = 1.0
+        callText_4.alpha = 1.0
+        callText_5.alpha = 1.0
+        callText_6.alpha = 1.0
+        
+        
         self.callText_1.text = "Drag Route In"
         self.callText_2.text = "Off Tackle Outside"
         self.callText_3.text = "Pass Block Step Back"
         self.callText_4.text = "Forward Pass"
         self.callText_5.text = "Flea Flicker to Running Back"
-        self.callText_6.text = "Rushing Yards to 10"
-        
+        self.callText_6.text = "Test - Rushing Yards to 10"
         
         }
+    
+    func setUpGameScreen_2_1 (){
+        
+        panelBkground_1_1.alpha = 1.0
+        panelBkground_2.alpha = 1.0
+        panelBkground_3.alpha = 1.0
+        panelBkground_4.alpha = 1.0
+        panelBkground_5.alpha = 1.0
+        panelBkground_6.alpha = 1.0
+        
+        callText_1.alpha = 1.0
+        callText_2.alpha = 1.0
+        callText_3.alpha = 1.0
+        callText_4.alpha = 1.0
+        callText_5.alpha = 1.0
+        callText_6.alpha = 1.0
+        
+        self.callText_1.text = "Offensive Gaurds Lineup"
+        self.callText_2.text = "Wide Receiver in Slot Position"
+        self.callText_3.text = "Set Crowd Noise to Insane"
+        self.callText_4.text = "Run Block"
+        self.callText_5.text = "Play Action Fake"
+        self.callText_6.text = "Hook and Ladder Hook"
+        
+    }
     
     
     
