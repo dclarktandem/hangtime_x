@@ -33,7 +33,8 @@ class ColorSwitchViewController: UIViewController {
         clockDisplay.fitFontForSize()
         clockDisplay.padding = UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 5)
         
-        
+        taskPanel.adjustsFontSizeToFitWidth = true
+        taskPanel.fitFontForSize()
         
         self.playerDownStackView.alpha = 0.0 // L - What does this do
 
@@ -54,6 +55,7 @@ class ColorSwitchViewController: UIViewController {
         panelBkground_6.alpha = 0.0
         
         clockDisplay.alpha = 0.0
+        roundCountView.alpha = 0.0
         
         callText_1.alpha = 0.0
         callText_2.alpha = 0.0
@@ -97,6 +99,14 @@ class ColorSwitchViewController: UIViewController {
         }
         
      }
+    
+    
+    
+    func playCountDown(){
+        roundCountView.loadGif(name: "round_timer_2")
+        
+    }
+    
     
 
     @IBAction func redTapped() {
@@ -163,7 +173,9 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var callText_5: UILabel!
     @IBOutlet weak var callText_6: UILabel!
     
+    @IBOutlet weak var taskPanel: UILabel!
     
+    @IBOutlet weak var roundCountView: UIImageView!
     
     
     @IBAction func lockerBall_Button(_ sender: Any) {
@@ -345,26 +357,26 @@ class ColorSwitchViewController: UIViewController {
     func changePrompt(whichPrompt: Int){
         
         
-//        switch whichPrompt {
-//        case 2:
-//            self.taskPanel.text = String("Screen Pass Behind Line")
-//            promptSwitch_1 = 2
-//        case 3:
-//            self.taskPanel.text = String("Call Audible: Hail Mary")
-//            promptSwitch_1 = 3
-//        case 4:
-//            self.taskPanel.text = String("Spike Ball in End Zone")
-//            promptSwitch_1 = 4
-//        case 5:
-//            self.taskPanel.text = String("Run Block to 3 Yards")
-//            promptSwitch_1 = 5
-//        case 6:
-//            self.taskPanel.text = String("Protect Pocket")
-//
-//
-//        default:
-//            self.taskPanel.text = String("Default Called")
-//        }
+        switch whichPrompt {
+        case 2:
+            self.taskPanel.text = String("Screen Pass Behind Line")
+            promptSwitch_1 = 2
+        case 3:
+            self.taskPanel.text = String("Call Audible: Hail Mary")
+            promptSwitch_1 = 3
+        case 4:
+            self.taskPanel.text = String("Spike Ball in End Zone")
+            promptSwitch_1 = 4
+        case 5:
+            self.taskPanel.text = String("Run Block to 3 Yards")
+            promptSwitch_1 = 5
+        case 6:
+            self.taskPanel.text = String("Protect Pocket")
+
+
+        default:
+            self.taskPanel.text = String("Default Called")
+        }
         
         
     }
@@ -532,6 +544,8 @@ class ColorSwitchViewController: UIViewController {
         
         currentCount = 40
         clockDisplay.alpha = 1.0
+        roundCountView.alpha = 1.0
+        playCountDown()
         
     }
     
@@ -541,6 +555,7 @@ class ColorSwitchViewController: UIViewController {
        
         setUpGameScreenElements()
         
+        taskPanel.text = "Set Crowd Noise to Insane"
         
         self.callText_1.text = "Drag Route In"
         self.callText_2.text = "Off Tackle Outside"
@@ -555,7 +570,7 @@ class ColorSwitchViewController: UIViewController {
         
         setUpGameScreenElements()
         
-
+        taskPanel.text = "Forward Pass 20 Yards"
         
         self.callText_1.text = "Offensive Gaurds Lineup"
         self.callText_2.text = "Wide Receiver in Slot Position"

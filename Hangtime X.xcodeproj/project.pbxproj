@@ -21,6 +21,7 @@
 		F57908461FC1283C00E697C2 /* Round_timer_two.mov in Resources */ = {isa = PBXBuildFile; fileRef = F57908441FC1283C00E697C2 /* Round_timer_two.mov */; };
 		F57908471FC1283C00E697C2 /* Ride the Fader.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F57908451FC1283C00E697C2 /* Ride the Fader.ttf */; };
 		F57908491FC135AE00E697C2 /* UILabel Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908481FC135AE00E697C2 /* UILabel Extension.swift */; };
+		F579084B1FC13ED700E697C2 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579084A1FC13ED700E697C2 /* Swift+Gif.swift */; };
 		F5BE471D1F9D2CE30064A284 /* sil_up_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BE47191F9D2CE30064A284 /* sil_up_blue.png */; };
 		F5BE471E1F9D2CE30064A284 /* sil_up_white.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BE471A1F9D2CE30064A284 /* sil_up_white.png */; };
 		F5BE471F1F9D2CE30064A284 /* sil_up_red.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BE471B1F9D2CE30064A284 /* sil_up_red.png */; };
@@ -53,6 +54,7 @@
 		F57908441FC1283C00E697C2 /* Round_timer_two.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Round_timer_two.mov; path = Resources/Round_timer_two.mov; sourceTree = SOURCE_ROOT; };
 		F57908451FC1283C00E697C2 /* Ride the Fader.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ride the Fader.ttf"; path = "Resources/Ride the Fader.ttf"; sourceTree = SOURCE_ROOT; };
 		F57908481FC135AE00E697C2 /* UILabel Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel Extension.swift"; sourceTree = "<group>"; };
+		F579084A1FC13ED700E697C2 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		F5BE47191F9D2CE30064A284 /* sil_up_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_up_blue.png; path = Images/sil_up_blue.png; sourceTree = SOURCE_ROOT; };
 		F5BE471A1F9D2CE30064A284 /* sil_up_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_up_white.png; path = Images/sil_up_white.png; sourceTree = SOURCE_ROOT; };
 		F5BE471B1F9D2CE30064A284 /* sil_up_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_up_red.png; path = Images/sil_up_red.png; sourceTree = SOURCE_ROOT; };
@@ -112,6 +114,7 @@
 				F57908371FC0FDAE00E697C2 /* LabelExtension.swift */,
 				F57908391FC0FE5500E697C2 /* hexColorExtension.swift */,
 				F57908481FC135AE00E697C2 /* UILabel Extension.swift */,
+				F579084A1FC13ED700E697C2 /* Swift+Gif.swift */,
 			);
 			path = ConnectedColors;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F579084B1FC13ED700E697C2 /* Swift+Gif.swift in Sources */,
 				BF6F13FA1E4E58C90018D56E /* ColorSwitchViewController.swift in Sources */,
 				F57908381FC0FDAE00E697C2 /* LabelExtension.swift in Sources */,
 				32037B631FB14A1300E29A86 /* GameModel.swift in Sources */,
