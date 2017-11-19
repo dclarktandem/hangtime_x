@@ -148,15 +148,7 @@ class GameModel
     
     
     
-    //    func advanceQuestion(deviceNum: Int, currentQNum: Int) -> String {
-    //
-    //    case deviceNum
-    
-    //  1:
-    //   case
-    
-    //
-    //   }
+
     
     
 }

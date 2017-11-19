@@ -2,6 +2,10 @@ import UIKit
 import AVFoundation
 //var myGlobalPlayerNum = Int()
 
+var passTrigger = 0
+var rushingTrigger = 0
+var promptSwitch_1 = 1
+
 
 class ColorSwitchViewController: UIViewController {
     
@@ -10,6 +14,10 @@ class ColorSwitchViewController: UIViewController {
     var brain = GameModel()
     var myGlobalPlayerNum = Int()
     var numPlayers = 0
+    
+    var currentCount = 40
+    var timeValue_1 = 0
+    var progressAmount = 0
 
     @IBOutlet weak var connectionsLabel: UILabel! // Displays connections
 
@@ -17,7 +25,15 @@ class ColorSwitchViewController: UIViewController {
 
     override func viewDidLoad() { // loads everyting prior to first display
         super.viewDidLoad()
+        //colorService.delegate = self as? ColorServiceManagerDelegate
         colorService.delegate = self
+        clockDisplay.layer.borderWidth = 3.0
+        clockDisplay.layer.borderColor = UIColor(hexString: "#00a334").cgColor
+        clockDisplay.adjustsFontSizeToFitWidth = true
+        clockDisplay.fitFontForSize()
+        clockDisplay.padding = UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 5)
+        
+        
         
         self.playerDownStackView.alpha = 0.0 // L - What does this do
 
@@ -50,8 +66,36 @@ class ColorSwitchViewController: UIViewController {
         panelBkground_4.layer.cornerRadius = 10
         panelBkground_5.layer.cornerRadius = 10
         panelBkground_6.layer.cornerRadius = 10
+       
+        Timer.scheduledTimer(timeInterval: 0.001,
+                             target: self,
+                             selector: #selector(self.updateTime),
+                             userInfo: nil,
+                             repeats: true)
+        
         
     }
+    
+    
+    func updateTime(){
+        
+        
+        timeValue_1 += 1
+        
+        if timeValue_1 % 700 == 0 {
+            
+            if currentCount == 34 && promptSwitch_1  == 1 {changePrompt(whichPrompt: 2)}
+            if currentCount == 28 && promptSwitch_1  == 2  {changePrompt(whichPrompt: 3)}
+            if currentCount == 22 && promptSwitch_1  == 3  {changePrompt(whichPrompt: 4)}
+            if currentCount == 14 && promptSwitch_1  == 4  {changePrompt(whichPrompt: 5)}
+            if currentCount == 7 && promptSwitch_1  == 5  {changePrompt(whichPrompt: 6)}
+            
+            currentCount -= 1
+            clockDisplay.text = String(currentCount)
+        }
+        
+     }
+    
 
     @IBAction func redTapped() {
         self.change(color: .red)
@@ -98,6 +142,9 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var lockerBall: UIImageView!
     
     @IBOutlet weak var turfScreen: UIImageView!
+    
+    @IBOutlet weak var clockDisplay: UILabel!
+    
     
     @IBOutlet weak var panelBkground_1_1: UIView!
     @IBOutlet weak var panelBkground_2: UIView!
@@ -291,6 +338,36 @@ class ColorSwitchViewController: UIViewController {
     func updatePlayerNumDisplay(){
         self.PlayerNum_Label.text = String(myGlobalPlayerNum)
     }
+    
+    
+    func changePrompt(whichPrompt: Int){
+        
+        
+//        switch whichPrompt {
+//        case 2:
+//            self.taskPanel.text = String("Screen Pass Behind Line")
+//            promptSwitch_1 = 2
+//        case 3:
+//            self.taskPanel.text = String("Call Audible: Hail Mary")
+//            promptSwitch_1 = 3
+//        case 4:
+//            self.taskPanel.text = String("Spike Ball in End Zone")
+//            promptSwitch_1 = 4
+//        case 5:
+//            self.taskPanel.text = String("Run Block to 3 Yards")
+//            promptSwitch_1 = 5
+//        case 6:
+//            self.taskPanel.text = String("Protect Pocket")
+//
+//
+//        default:
+//            self.taskPanel.text = String("Default Called")
+//        }
+        
+        
+    }
+    
+    
    
     @IBOutlet weak var football: UIImageView!
     
@@ -375,19 +452,19 @@ class ColorSwitchViewController: UIViewController {
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_1_1()
                 
             case 2:
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_2_1()
                 
             case 3:
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_3_1()
                 
                 
             default:
@@ -402,28 +479,28 @@ class ColorSwitchViewController: UIViewController {
 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_1_1()
                 
             case 2:
         
 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_2_1()
                 
             case 3:
         
         
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_3_1()
                 
             case 4:
                 
 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                
+                setUpGameScreen_4_1()
                 
             default:
                 NSLog("%@", "Unknown Player Num: \(myGlobalPlayerNum)")
@@ -494,8 +571,57 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    func setUpGameScreen_3_1 (){
+        
+        panelBkground_1_1.alpha = 1.0
+        panelBkground_2.alpha = 1.0
+        panelBkground_3.alpha = 1.0
+        panelBkground_4.alpha = 1.0
+        panelBkground_5.alpha = 1.0
+        panelBkground_6.alpha = 1.0
+        
+        callText_1.alpha = 1.0
+        callText_2.alpha = 1.0
+        callText_3.alpha = 1.0
+        callText_4.alpha = 1.0
+        callText_5.alpha = 1.0
+        callText_6.alpha = 1.0
+        
+        self.callText_1.text = "Upback"
+        self.callText_2.text = "Water Boy to Empty"
+        self.callText_3.text = "Protect Pocket"
+        self.callText_4.text = "Quarterback Sneak"
+        self.callText_5.text = "Screen Pass Behind Line"
+        self.callText_6.text = "Slam"
+        
+    }
     
+    func setUpGameScreen_4_1 (){
+        
+        panelBkground_1_1.alpha = 1.0
+        panelBkground_2.alpha = 1.0
+        panelBkground_3.alpha = 1.0
+        panelBkground_4.alpha = 1.0
+        panelBkground_5.alpha = 1.0
+        panelBkground_6.alpha = 1.0
+        
+        callText_1.alpha = 1.0
+        callText_2.alpha = 1.0
+        callText_3.alpha = 1.0
+        callText_4.alpha = 1.0
+        callText_5.alpha = 1.0
+        callText_6.alpha = 1.0
+        
+        self.callText_1.text = "Throw Red Challenge Flag"
+        self.callText_2.text = "Spike Ball in End Zone"
+        self.callText_3.text = "Call Audible: Hail Mary"
+        self.callText_4.text = "Cheerleaders Make Pyramid"
+        self.callText_5.text = "Gunner"
+        self.callText_6.text = "Punt Return"
+        
+    }
     
+   
     
     }
         

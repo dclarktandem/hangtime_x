@@ -10,6 +10,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ride the Fader.ttf">
+            <string>RidetheFader</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Colors-->
         <scene sceneID="tne-QT-ifu">
@@ -244,13 +249,22 @@
                                     <constraint firstItem="MLr-rW-SPa" firstAttribute="centerY" secondItem="JTs-lm-Jac" secondAttribute="centerY" multiplier="2:6" id="pCB-ZK-xEN"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohg-ub-Aau">
+                                <rect key="frame" x="13.5" y="84" width="70.5" height="52"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="RidetheFader" family="Ride the Fader" pointSize="42"/>
+                                <color key="textColor" red="0.97641217069999997" green="0.67573252839999998" blue="0.0065444859159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rY4-yL-o9R" firstAttribute="centerY" secondItem="2Hd-O3-crI" secondAttribute="centerY" id="0Ks-Tp-UMa"/>
                             <constraint firstItem="57D-ZF-Mc0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="1J5-Qg-TlP"/>
+                            <constraint firstItem="Ohg-ub-Aau" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="0.26" id="2Om-yZ-tpl"/>
                             <constraint firstItem="0ZH-Bd-vAm" firstAttribute="width" secondItem="rY4-yL-o9R" secondAttribute="width" id="2SJ-Nz-emG"/>
                             <constraint firstItem="dTX-G9-tlJ" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="16:11" id="3tf-ZV-jI3"/>
+                            <constraint firstItem="Ohg-ub-Aau" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="0.33" id="4rV-RA-ehS"/>
                             <constraint firstItem="0ZH-Bd-vAm" firstAttribute="centerY" secondItem="rY4-yL-o9R" secondAttribute="centerY" id="4sq-TA-Jtq"/>
                             <constraint firstItem="JyA-Ry-ZMR" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="5TC-TF-jrw"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="5Y7-N0-dwj"/>
@@ -282,6 +296,7 @@
                             <constraint firstItem="JTs-lm-Jac" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="PYi-Hz-cnX"/>
                             <constraint firstItem="bRF-Ku-RyG" firstAttribute="height" secondItem="Mqf-1t-QW9" secondAttribute="height" id="Px2-W2-eBm"/>
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="1:7" id="QxR-2a-To5"/>
+                            <constraint firstItem="Ohg-ub-Aau" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:48" id="SPc-Bw-5zP"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="UTP-8R-kxk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Hd-O3-crI" secondAttribute="bottom" id="W3x-er-j7u"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" id="WbR-eA-wXW"/>
@@ -314,6 +329,7 @@
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="pwy-9t-Tmg"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="64:52" id="qBH-an-idK"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="centerY" secondItem="rY4-yL-o9R" secondAttribute="centerY" id="qzO-BM-Qj2"/>
+                            <constraint firstItem="Ohg-ub-Aau" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="5:64" id="rPY-Ag-dc6"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="su5-hh-QSh"/>
                             <constraint firstItem="JTs-lm-Jac" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="uKh-7e-ll6"/>
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="centerX" secondItem="rTw-ez-Y7x" secondAttribute="centerX" id="uez-MH-AgC"/>
@@ -332,6 +348,7 @@
                         <outlet property="callText_4" destination="KP6-jD-bnM" id="OUn-IS-zRi"/>
                         <outlet property="callText_5" destination="ZWE-Ah-50H" id="ovN-tT-iuD"/>
                         <outlet property="callText_6" destination="MLr-rW-SPa" id="EWB-3W-eh9"/>
+                        <outlet property="clockDisplay" destination="Ohg-ub-Aau" id="YvD-XL-W12"/>
                         <outlet property="connectionsLabel" destination="vwt-mK-OVB" id="qhp-oq-0tF"/>
                         <outlet property="football" destination="rY4-yL-o9R" id="klS-oA-By6"/>
                         <outlet property="lockerBall" destination="Mqf-1t-QW9" id="NLa-44-cLB"/>
