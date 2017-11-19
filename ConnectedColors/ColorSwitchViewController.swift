@@ -53,6 +53,8 @@ class ColorSwitchViewController: UIViewController {
         panelBkground_5.alpha = 0.0
         panelBkground_6.alpha = 0.0
         
+        clockDisplay.alpha = 0.0
+        
         callText_1.alpha = 0.0
         callText_2.alpha = 0.0
         callText_3.alpha = 0.0
@@ -512,16 +514,8 @@ class ColorSwitchViewController: UIViewController {
     
     
     
-    func setUpGenericGameScreen(){
+    func setUpGameScreenElements(){
         
-        
-        
-    }
-    
-    
-    
-    func setUpGameScreen_1_1 (){
-       
         panelBkground_1_1.alpha = 1.0
         panelBkground_2.alpha = 1.0
         panelBkground_3.alpha = 1.0
@@ -535,6 +529,17 @@ class ColorSwitchViewController: UIViewController {
         callText_4.alpha = 1.0
         callText_5.alpha = 1.0
         callText_6.alpha = 1.0
+        
+        currentCount = 40
+        clockDisplay.alpha = 1.0
+        
+    }
+    
+    
+    
+    func setUpGameScreen_1_1 (){
+       
+        setUpGameScreenElements()
         
         
         self.callText_1.text = "Drag Route In"
@@ -548,19 +553,9 @@ class ColorSwitchViewController: UIViewController {
     
     func setUpGameScreen_2_1 (){
         
-        panelBkground_1_1.alpha = 1.0
-        panelBkground_2.alpha = 1.0
-        panelBkground_3.alpha = 1.0
-        panelBkground_4.alpha = 1.0
-        panelBkground_5.alpha = 1.0
-        panelBkground_6.alpha = 1.0
+        setUpGameScreenElements()
         
-        callText_1.alpha = 1.0
-        callText_2.alpha = 1.0
-        callText_3.alpha = 1.0
-        callText_4.alpha = 1.0
-        callText_5.alpha = 1.0
-        callText_6.alpha = 1.0
+
         
         self.callText_1.text = "Offensive Gaurds Lineup"
         self.callText_2.text = "Wide Receiver in Slot Position"
@@ -573,19 +568,9 @@ class ColorSwitchViewController: UIViewController {
     
     func setUpGameScreen_3_1 (){
         
-        panelBkground_1_1.alpha = 1.0
-        panelBkground_2.alpha = 1.0
-        panelBkground_3.alpha = 1.0
-        panelBkground_4.alpha = 1.0
-        panelBkground_5.alpha = 1.0
-        panelBkground_6.alpha = 1.0
+        setUpGameScreenElements()
         
-        callText_1.alpha = 1.0
-        callText_2.alpha = 1.0
-        callText_3.alpha = 1.0
-        callText_4.alpha = 1.0
-        callText_5.alpha = 1.0
-        callText_6.alpha = 1.0
+
         
         self.callText_1.text = "Upback"
         self.callText_2.text = "Water Boy to Empty"
@@ -598,26 +583,10 @@ class ColorSwitchViewController: UIViewController {
     
     func setUpGameScreen_4_1 (){
         
-        panelBkground_1_1.alpha = 1.0
-        panelBkground_2.alpha = 1.0
-        panelBkground_3.alpha = 1.0
-        panelBkground_4.alpha = 1.0
-        panelBkground_5.alpha = 1.0
-        panelBkground_6.alpha = 1.0
+        setUpGameScreenElements()
         
-        callText_1.alpha = 1.0
-        callText_2.alpha = 1.0
-        callText_3.alpha = 1.0
-        callText_4.alpha = 1.0
-        callText_5.alpha = 1.0
-        callText_6.alpha = 1.0
+
         
-        self.callText_1.text = "Throw Red Challenge Flag"
-        self.callText_2.text = "Spike Ball in End Zone"
-        self.callText_3.text = "Call Audible: Hail Mary"
-        self.callText_4.text = "Cheerleaders Make Pyramid"
-        self.callText_5.text = "Gunner"
-        self.callText_6.text = "Punt Return"
         
     }
     
