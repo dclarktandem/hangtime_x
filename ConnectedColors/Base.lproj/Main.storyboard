@@ -137,13 +137,6 @@
                                     <action selector="ball_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq3-Le-QrZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-Rd-8ox">
-                                <rect key="frame" x="16" y="20" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Turf Screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="orN-fp-zBS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -265,6 +258,13 @@
                                     <constraint firstItem="ZWE-Ah-50H" firstAttribute="centerX" secondItem="VYg-tW-SNV" secondAttribute="centerX" id="q0L-aK-SJy"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-Rd-8ox">
+                                <rect key="frame" x="16" y="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-lm-Jac" userLabel="Panel Background 6">
                                 <rect key="frame" x="202" y="500.5" width="141" height="153"/>
                                 <subviews>
@@ -323,6 +323,16 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="panel_5_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYF-at-Sjx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-Jf-Eg2">
+                                <rect key="frame" x="319" y="50" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="0.58781779700000003" blue="0.1986250517" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEk-8g-Wr3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -436,6 +446,12 @@
                         <outlet property="clockDisplay" destination="Ohg-ub-Aau" id="YvD-XL-W12"/>
                         <outlet property="connectionsLabel" destination="vwt-mK-OVB" id="qhp-oq-0tF"/>
                         <outlet property="football" destination="rY4-yL-o9R" id="klS-oA-By6"/>
+                        <outlet property="game_1_Button" destination="25D-ip-rfH" id="YAV-Fq-5YF"/>
+                        <outlet property="game_2_Button" destination="dJZ-rN-RKB" id="ZMi-aM-MTD"/>
+                        <outlet property="game_3_Button" destination="XQ2-GN-yCm" id="rja-cn-kjG"/>
+                        <outlet property="game_4_Button" destination="Vae-NU-wmd" id="oo9-sh-FHi"/>
+                        <outlet property="game_5_Button" destination="skC-vc-KGJ" id="ZZa-a3-fBf"/>
+                        <outlet property="game_6_Button" destination="nb9-5s-95U" id="H2W-Pw-pLL"/>
                         <outlet property="lockerBall" destination="Mqf-1t-QW9" id="NLa-44-cLB"/>
                         <outlet property="locker_image" destination="rTw-ez-Y7x" id="FC8-SP-Q7X"/>
                         <outlet property="panelBkground_1_1" destination="XiD-kP-cVP" id="xxT-aP-eGM"/>
