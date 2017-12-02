@@ -232,25 +232,98 @@ class ColorSwitchViewController: UIViewController {
         
         timeValue_1 += 1
         
-        if myGlobalPlayerNum == 1 {
             
             if timeValue_1 % 700 == 0 {
                 
-                if currentCount == 34 && promptSwitch_1  == 1 {changePrompt(whichPrompt: 2)}
-                if currentCount == 28 && promptSwitch_1  == 2  {changePrompt(whichPrompt: 3)}
-                if currentCount == 22 && promptSwitch_1  == 3  {changePrompt(whichPrompt: 4)}
-                if currentCount == 14 && promptSwitch_1  == 4  {changePrompt(whichPrompt: 5)}
-                if currentCount == 7 && promptSwitch_1  == 5  {changePrompt(whichPrompt: 6)}
+                if numPlayers == 2 {
+                    
+                    if myGlobalPlayerNum == 1 {
+                        if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
+                        if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
+                        if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
+                        if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
+                        if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
+                    }
+                    if myGlobalPlayerNum == 2 {
+                        if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
+                        if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
+                        if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
+                        if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
+                        if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
+                    }
+                    
+                    if numPlayers == 3 {
+                        
+                        if myGlobalPlayerNum == 1 {
+                            if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
+                        }
+                        if myGlobalPlayerNum == 2 {
+                            if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
+                        }
+                        if myGlobalPlayerNum == 3 {
+                            if currentCount == 34 && promptSwitch_3  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_3  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_3  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_3  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_3  == 5  {advancePrompt()}
+                        }
+                    
+                    }
+                    
+                    if numPlayers == 4 {
+                        
+                        if myGlobalPlayerNum == 1 {
+                            if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
+                        }
+                        if myGlobalPlayerNum == 2 {
+                            if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
+                        }
+                        if myGlobalPlayerNum == 3 {
+                            if currentCount == 34 && promptSwitch_3  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_3  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_3  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_3  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_3  == 5  {advancePrompt()}
+                        }
+                        if myGlobalPlayerNum == 4 {
+                            if currentCount == 34 && promptSwitch_4  == 1 {advancePrompt()}
+                            if currentCount == 28 && promptSwitch_4  == 2  {advancePrompt()}
+                            if currentCount == 22 && promptSwitch_4  == 3  {advancePrompt()}
+                            if currentCount == 14 && promptSwitch_4  == 4  {advancePrompt()}
+                            if currentCount == 7 && promptSwitch_4  == 5  {advancePrompt()}
+                        }
+                        
+                    }
+                    
+                    
+                }
                 
+             if myGlobalPlayerNum == 1 {
                 currentCount -= 1
-               // sendTime(currentCount: currentCount)
+                // sendTime(currentCount: currentCount)
                 colorService.sendColor("updateClockMSG")
                 clockDisplay.text = String(currentCount)
+                
             }
         }
         
-     }
-    
+    }
     
     
     
@@ -341,6 +414,11 @@ class ColorSwitchViewController: UIViewController {
     
     @IBAction func panel_1_Button(_ sender: UIButton!) {
         
+        print("Button 1")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_1")
@@ -356,6 +434,11 @@ class ColorSwitchViewController: UIViewController {
     }
     
     @IBAction func panel_2_Button(_ sender: UIButton!) {
+        print("Button 2")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_2")
@@ -370,6 +453,11 @@ class ColorSwitchViewController: UIViewController {
         }
     }
     @IBAction func panel_3_Button(_ sender: UIButton!) {
+        print("Button 3")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_3")
@@ -384,6 +472,11 @@ class ColorSwitchViewController: UIViewController {
         }
     }
     @IBAction func panel_4_Button(_ sender: UIButton!) {
+        print("Button 4")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_4")
@@ -399,30 +492,40 @@ class ColorSwitchViewController: UIViewController {
     }
     
     @IBAction func panel_5_Button(_ sender: UIButton!) {
+        print("Button 5")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
-            colorService.sendColor("1_1")
+            colorService.sendColor("1_5")
         case 2:
-            colorService.sendColor("1_2")
+            colorService.sendColor("1_5")
         case 3:
-            colorService.sendColor("1_3")
+            colorService.sendColor("1_5")
         case 4:
-            colorService.sendColor("1_4")
+            colorService.sendColor("1_5")
         default:
             print("No valid GlobalPlayerNum")
         }
     }
     
     @IBAction func panel_6_Button(_ sender: UIButton!) {
+        print("Button 6")
+        print("myGlobalPlayernum: \(myGlobalPlayerNum)")
+        print("promptSwitch_1): \(promptSwitch_1)")
+        print("promptSwitch_2): \(promptSwitch_2)")
+        print("myCurrentAnswer): \(myCurrentAnswer)")
         switch myGlobalPlayerNum {
         case 1:
-            colorService.sendColor("1_1")
+            colorService.sendColor("1_6")
         case 2:
-            colorService.sendColor("1_2")
+            colorService.sendColor("1_6")
         case 3:
-            colorService.sendColor("1_3")
+            colorService.sendColor("1_6")
         case 4:
-            colorService.sendColor("1_4")
+            colorService.sendColor("1_6")
         default:
             print("No valid GlobalPlayerNum")
         }
@@ -552,8 +655,6 @@ class ColorSwitchViewController: UIViewController {
         }
         
     }
-    
-    
     
     
     @IBAction func yellowTapped() {
@@ -741,28 +842,34 @@ class ColorSwitchViewController: UIViewController {
                     
                 case 1:
                     self.taskPanel.text = String("Set Crowd Noise to Insane")
-                    promptSwitch_1 = 1
-                    myCurrentAnswer = "2_3"
+                    promptSwitch_1 = 2
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
+                   // myCurrentAnswer = "2_3"
                 case 2:
                     self.taskPanel.text = String("Hook and Ladder")
-                    promptSwitch_1 = 2
-                    myCurrentAnswer = "2_6"
+                    promptSwitch_1 = 3
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
+                    //myCurrentAnswer = "2_6"
                 case 3:
                     self.taskPanel.text = String("Offensive Guards Lineup")
-                    promptSwitch_1 = 3
-                    myCurrentAnswer = "2_1"
+                    promptSwitch_1 = 4
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_1")
+                    //myCurrentAnswer = "2_1"
                 case 4:
                     self.taskPanel.text = String("Play Action Fake")
-                    promptSwitch_1 = 4
-                    myCurrentAnswer = "2_5"
+                    promptSwitch_1 = 5
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
+                    //myCurrentAnswer = "2_5"
                 case 5:
                     self.taskPanel.text = String("Wide Receiver in Slot Position")
-                    promptSwitch_1 = 5
-                    myCurrentAnswer = "2_2"
+                    promptSwitch_1 = 6
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_2")
+                    //myCurrentAnswer = "2_2"
                 case 6:
                     self.taskPanel.text = String("Run Block to 3 Yards")
-                    promptSwitch_1 = 6
-                    myCurrentAnswer = "2_4"
+                    //promptSwitch_1 = 6
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
+                    //myCurrentAnswer = "2_4"
                 default:
                     self.taskPanel.text = String("Default Called")
                 }
@@ -783,28 +890,34 @@ class ColorSwitchViewController: UIViewController {
                 switch whichPrompt {
                 case 1:
                     self.taskPanel.text = String("Forward Pass")
-                    promptSwitch_1 = 1
-                    myCurrentAnswer = "1_4"
+                    promptSwitch_2 = 2
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
+                    //myCurrentAnswer = "1_4"
                 case 2:
                     self.taskPanel.text = String("Rush 10 Yards")
-                    promptSwitch_1 = 2
-                    myCurrentAnswer = "1_6"
+                    promptSwitch_2 = 3
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
+                    //myCurrentAnswer = "1_6"
                 case 3:
                     self.taskPanel.text = String("Drag Route In")
-                    promptSwitch_1 = 3
-                    myCurrentAnswer = "1_1"
+                    promptSwitch_2 = 4
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
+                    //myCurrentAnswer = "1_1"
                 case 4:
                     self.taskPanel.text = String("Flea Flicker to Running Back")
-                    promptSwitch_1 = 4
-                    myCurrentAnswer = "1_5"
+                    promptSwitch_2 = 5
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
+                    //myCurrentAnswer = "1_5"
                 case 5:
                     self.taskPanel.text = String("Off Tackle to Outside")
-                    promptSwitch_1 = 5
-                    myCurrentAnswer = "1_2"
+                    promptSwitch_2 = 6
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
+                    //myCurrentAnswer = "1_2"
                 case 6:
                     self.taskPanel.text = String("Pass Block Step Back")
-                    promptSwitch_1 = 6
-                    myCurrentAnswer = "1_3"
+                    //promptSwitch_2 = 6
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
+                    //myCurrentAnswer = "1_3"
                 default:
                     self.taskPanel.text = String("Default Called")
                 }
@@ -909,6 +1022,13 @@ class ColorSwitchViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    
+    func sendCurrentAnswer(thePlayer: Int, theAnswer: String){
+    
+        colorService.sendColor("*" + "\(thePlayer)" + " - " + "\(theAnswer)")
+        
     }
     
     
@@ -1100,7 +1220,7 @@ class ColorSwitchViewController: UIViewController {
         self.callText_3.text = "Pass Block Step Back"
         self.callText_4.text = "Forward Pass"
         self.callText_5.text = "Flea Flicker to Running Back"
-        self.callText_6.text = "Test - Rushing Yards to 10"
+        self.callText_6.text = "Rush 10 Yards"
         
         }
     
@@ -1359,6 +1479,80 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "4_6":
                 if self.myCurrentAnswer == "4_6"{
                     self.advancePrompt()
+                }
+                
+                //setting up the right answers dynamically
+                
+            case "*1 - 1_1":
+                print("Received *1 - 1_1")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_1"
+                }
+                
+            case "*1 - 1_2":
+                 print("Received *1 - 1_2")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_2"
+                }
+                
+            case "*1 - 1_3":
+                 print("Received *1 - 1_3")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_3"
+                }
+                
+            case "*1 - 1_4":
+                 print("Received *1 - 1_4")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_4"
+                }
+                
+            case "*1 - 1_5":
+                 print("Received *1 - 1_5")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_5"
+                }
+                
+            case "*1 - 1_6":
+                 print("Received *1 - 1_6")
+                if self.myGlobalPlayerNum == 1 {
+                    self.myCurrentAnswer = "1_6"
+                }
+                
+            case "*2 - 2_1":
+                 print("Received *2 - 2_1")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_1"
+                }
+                
+            case "*2 - 2_2":
+                 print("Received *2 - 2_2")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_2"
+                }
+                
+            case "*2 - 2_3":
+                 print("Received *2 - 2_3")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_3"
+                }
+                
+            case "*2 - 2_4":
+                 print("Received *2 - 2_4")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_4"
+                }
+                
+            case "*2 - 2_5":
+                 print("Received *2 - 2_5")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_5"
+                }
+                
+            case "*2 - 2_6":
+                 print("Received *2 - 2_6")
+                if self.myGlobalPlayerNum == 2 {
+                    self.myCurrentAnswer = "2_6"
                 }
                 
                 
