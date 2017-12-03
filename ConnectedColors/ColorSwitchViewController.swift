@@ -8,6 +8,17 @@ var promptSwitch_1 = 1
 var promptSwitch_2 = 1
 var promptSwitch_3 = 1
 var promptSwitch_4 = 1
+
+var playerOneComplete = false
+var playerTwoComplete = false
+var playerThreeComplete = false
+var playerFourComplete = false
+
+var playerOneScore = 0
+var playerTwoScore = 0
+var playerThreeScore = 0
+var playerFourScore = 0
+
 var progState = 0
 
 var current_1_prompt = "prompt_1_1"
@@ -224,13 +235,6 @@ class ColorSwitchViewController: UIViewController {
         currentCount = 40
         timeValue_1 = 0
         progressAmount = 0
-//        current_1_prompt = "prompt_1_1"
-//        current_2_prompt = "prompt_2_1"
-//        current_3_prompt = "prompt_3_1"
-//        current_4_prompt = "prompt_4_1"
-        
-        
-        
         
         P1_1_startTime = currentCount
         P2_1_startTime = currentCount
@@ -240,8 +244,16 @@ class ColorSwitchViewController: UIViewController {
         promptSwitch_2 = 1
         promptSwitch_3 = 1
         promptSwitch_4 = 1
+        UIView.animate(withDuration: 0.5, animations: {
+            self.progress_1.alpha = 0.0
+            self.progress_2.alpha = 0.0
+            self.progress_3.alpha = 0.0
+            self.progress_4.alpha = 0.0
+            self.progress_5.alpha = 0.0
+            self.progress_6.alpha = 0.0
+            self.progress_7.alpha = 0.0
+        })
         advancePrompt()
-        
         
     }
     
@@ -251,100 +263,21 @@ class ColorSwitchViewController: UIViewController {
         
         timeValue_1 += 1
         
+        if timeValue_1 % 700 == 0 {
             
-            if timeValue_1 % 700 == 0 {
-                
-                if numPlayers == 2 {
-                    
-                    if myGlobalPlayerNum == 1 {
-                        if currentCount == 34 && promptSwitch_1  <= 2 {advancePrompt()}
-                        if currentCount == 28 && promptSwitch_1  <= 3  {advancePrompt()}
-                        if currentCount == 22 && promptSwitch_1  <= 4  {advancePrompt()}
-                        if currentCount == 14 && promptSwitch_1  <= 5  {advancePrompt()}
-                        if currentCount == 7 && promptSwitch_1  <= 6  {advancePrompt()}
-                    }
-                    if myGlobalPlayerNum == 2 {
-                        if currentCount == 34 && promptSwitch_2  <= 2 {advancePrompt()}
-                        if currentCount == 28 && promptSwitch_2  <= 3  {advancePrompt()}
-                        if currentCount == 22 && promptSwitch_2  <= 4  {advancePrompt()}
-                        if currentCount == 14 && promptSwitch_2  <= 5  {advancePrompt()}
-                        if currentCount == 7 && promptSwitch_2  <= 6  {advancePrompt()}
-                    }
-                    
-                    if numPlayers == 3 {
-                        
-                        if myGlobalPlayerNum == 1 {
-                            if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
-                        }
-                        if myGlobalPlayerNum == 2 {
-                            if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
-                        }
-                        if myGlobalPlayerNum == 3 {
-                            if currentCount == 34 && promptSwitch_3  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_3  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_3  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_3  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_3  == 5  {advancePrompt()}
-                        }
-                    
-                    }
-                    
-                    if numPlayers == 4 {
-                        
-                        if myGlobalPlayerNum == 1 {
-                            if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
-                        }
-                        if myGlobalPlayerNum == 2 {
-                            if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
-                        }
-                        if myGlobalPlayerNum == 3 {
-                            if currentCount == 34 && promptSwitch_3  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_3  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_3  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_3  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_3  == 5  {advancePrompt()}
-                        }
-                        if myGlobalPlayerNum == 4 {
-                            if currentCount == 34 && promptSwitch_4  == 1 {advancePrompt()}
-                            if currentCount == 28 && promptSwitch_4  == 2  {advancePrompt()}
-                            if currentCount == 22 && promptSwitch_4  == 3  {advancePrompt()}
-                            if currentCount == 14 && promptSwitch_4  == 4  {advancePrompt()}
-                            if currentCount == 7 && promptSwitch_4  == 5  {advancePrompt()}
-                        }
-                        
-                    }
-                    
-                    
-                }
-                
-             if myGlobalPlayerNum == 1 {
+            
+            if myGlobalPlayerNum == 1 {
                 currentCount -= 1
                 // sendTime(currentCount: currentCount)
                 colorService.sendColor("updateClockMSG")
                 clockDisplay.text = String(currentCount)
                 
             }
+            
         }
-        
     }
     
-    
+
     
     func sendTime(currentCount: Int){
     
@@ -352,22 +285,110 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    
+    
+    
     func updateClock(){
         if gameState == true {
       
     currentCount -= 1
         clockDisplay.text = String(currentCount)
         updateProgBar()
+        checkGameStatus()
             
         }
     }
     
+    func checkGameStatus() {
+        
+        switch numPlayers {
+            
+        case 2:
+            if playerOneScore == 0 {
+                if playerOneComplete {
+                    playerOneScore = currentCount
+                }
+            }
+            if playerTwoScore == 0 {
+                if playerTwoComplete {
+                    playerTwoScore = currentCount
+                }
+            }
+            
+            if playerOneComplete && playerTwoComplete {
+                
+                print("Game Over")
+                
+                
+            }
+            
+        case 3:
+            if playerOneScore == 0 {
+                if playerOneComplete {
+                    playerOneScore = currentCount
+                }
+            }
+            if playerTwoScore == 0 {
+                if playerTwoComplete {
+                    playerTwoScore = currentCount
+                }
+            }
+            if playerThreeScore == 0 {
+                if playerThreeComplete {
+                    playerThreeScore = currentCount
+                }
+            }
+            
+            if playerOneComplete && playerTwoComplete && playerThreeComplete {
+                
+                print("Game Over")
+                
+                
+            }
+            
+        case 4:
+            if playerOneScore == 0 {
+                if playerOneComplete {
+                    playerOneScore = currentCount
+                }
+            }
+            if playerTwoScore == 0 {
+                if playerTwoComplete {
+                    playerTwoScore = currentCount
+                }
+            }
+            if playerThreeScore == 0 {
+                if playerThreeComplete {
+                    playerThreeScore = currentCount
+                }
+            }
+            if playerFourScore == 0 {
+                if playerFourComplete {
+                    playerFourScore = currentCount
+                }
+            }
+            
+            if playerOneComplete && playerTwoComplete && playerThreeComplete && playerFourComplete {
+                
+                
+                print("Game Over")
+                
+            }
+            
+        default:
+            print("Unexpected Number of Players")
+        }
+        
+    }
     
     
     func updateProgBar(){
         
         progState += 1
-        if progState == 8 {progState = 0}
+        if progState == 8 {
+            progState = 0
+            advancePrompt()
+        }
         
         switch progState {
         
@@ -402,6 +423,7 @@ class ColorSwitchViewController: UIViewController {
         case 7:
             UIView.animate(withDuration: 0.5, animations: {
                 self.progress_7.alpha = 1.0})
+            
         default:
             print("Unknown progress bar state reached")
         }
@@ -757,49 +779,43 @@ class ColorSwitchViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, animations: {
             
-        self.sil_down_white.alpha = 1.0
-        self.sil_down_red.alpha = 1.0
-        self.sil_down_blue.alpha = 1.0
-        self.sil_down_silver.alpha = 0.0
+            self.sil_down_white.alpha = 1.0
+            self.sil_down_red.alpha = 1.0
+            self.sil_down_blue.alpha = 1.0
+            self.sil_down_silver.alpha = 0.0
         })
         
-            switch self.numPlayers {
-
-            case 0:
-                self.sil_down_white.alpha = 0.0
-                self.sil_down_red.alpha = 0.0
-                self.sil_down_blue.alpha = 0.0
-                self.sil_down_silver.alpha = 0.0
-            case 1:
-                self.sil_down_white.alpha = 1.0
-                self.sil_down_red.alpha = 0.0
-                self.sil_down_blue.alpha = 0.0
-                self.sil_down_silver.alpha = 0.0
-            case 2:
-                self.sil_down_white.alpha = 1.0
-                self.sil_down_red.alpha = 1.0
-                self.sil_down_blue.alpha = 0.0
-                self.sil_down_silver.alpha = 0.0
-            case 3:
-                self.sil_down_white.alpha = 1.0
-                self.sil_down_red.alpha = 1.0
-                self.sil_down_blue.alpha = 1.0
-                self.sil_down_silver.alpha = 0.0
-            case 4:
-                self.sil_down_white.alpha = 1.0
-                self.sil_down_red.alpha = 1.0
-                self.sil_down_blue.alpha = 1.0
-                self.sil_down_silver.alpha = 1.0
-            default:
-               print("Unknown Number of Players")
-            }
-    
-    
-    //self.sil_up_white.alpha = 0.0
-        //self.sil_up_red.alpha = 0.0
-        //self.sil_up_blue.alpha = 0.0
-        //self.sil_up_silver.alpha = 0.0
-        //self.lockerBall.alpha = 0.0
+        switch self.numPlayers {
+            
+        case 0:
+            self.sil_down_white.alpha = 0.0
+            self.sil_down_red.alpha = 0.0
+            self.sil_down_blue.alpha = 0.0
+            self.sil_down_silver.alpha = 0.0
+        case 1:
+            self.sil_down_white.alpha = 1.0
+            self.sil_down_red.alpha = 0.0
+            self.sil_down_blue.alpha = 0.0
+            self.sil_down_silver.alpha = 0.0
+        case 2:
+            self.sil_down_white.alpha = 1.0
+            self.sil_down_red.alpha = 1.0
+            self.sil_down_blue.alpha = 0.0
+            self.sil_down_silver.alpha = 0.0
+        case 3:
+            self.sil_down_white.alpha = 1.0
+            self.sil_down_red.alpha = 1.0
+            self.sil_down_blue.alpha = 1.0
+            self.sil_down_silver.alpha = 0.0
+        case 4:
+            self.sil_down_white.alpha = 1.0
+            self.sil_down_red.alpha = 1.0
+            self.sil_down_blue.alpha = 1.0
+            self.sil_down_silver.alpha = 1.0
+        default:
+            print("Unknown Number of Players")
+        }
+        
         
         
     }
@@ -989,31 +1005,37 @@ class ColorSwitchViewController: UIViewController {
                     self.taskPanel.text = String("Forward Pass")
                     promptSwitch_2 = 2
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
+                    print("Setting Player One's answer to 1_4")
                     //myCurrentAnswer = "1_4"
                 case 2:
                     self.taskPanel.text = String("Rush 10 Yards")
                     promptSwitch_2 = 3
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
+                    print("Setting Player One's answer to 1_6")
                     //myCurrentAnswer = "1_6"
                 case 3:
                     self.taskPanel.text = String("Drag Route In")
                     promptSwitch_2 = 4
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
+                    print("Setting Player One's answer to 1_1")
                     //myCurrentAnswer = "1_1"
                 case 4:
                     self.taskPanel.text = String("Flea Flicker to Running Back")
                     promptSwitch_2 = 5
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
+                    print("Setting Player One's answer to 1_5")
                     //myCurrentAnswer = "1_5"
                 case 5:
                     self.taskPanel.text = String("Off Tackle to Outside")
                     promptSwitch_2 = 6
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
+                    print("Setting Player One's answer to 1_2")
                     //myCurrentAnswer = "1_2"
                 case 6:
                     self.taskPanel.text = String("Pass Block Step Back")
                     //promptSwitch_2 = 6
                     sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
+                    print("Setting Player One's answer to 1_3")
                     //myCurrentAnswer = "1_3"
                 default:
                     self.taskPanel.text = String("Default Called")
@@ -1370,15 +1392,19 @@ class ColorSwitchViewController: UIViewController {
         self.callText_5.text = "Screen Pass Behind Line"
         self.callText_6.text = "Slam"
 
-        
-        
     }
     
+    
+    func sendCorrectAnswer(thePlayer: Int, theAnswer: String) {
+    
+    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
    
     
+    
+    
     }
         
-
+}
     
 
 
@@ -1474,7 +1500,9 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 print("Got color 1_4.  - Locker view - myCurrentAnswer is:", self.myCurrentAnswer)
                 
                 if self.myCurrentAnswer == "1_4" {
-                    self.advancePrompt()
+                    //self.advancePrompt()
+                  //  sendCorrectAnswer(play)
+                    
                 }
                 
             case "1_5":
