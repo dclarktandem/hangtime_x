@@ -8,6 +8,7 @@ var promptSwitch_1 = 1
 var promptSwitch_2 = 1
 var promptSwitch_3 = 1
 var promptSwitch_4 = 1
+var progState = 0
 
 var current_1_prompt = "prompt_1_1"
 var current_2_prompt = "prompt_2_1"
@@ -69,6 +70,9 @@ var P4_3_startTime = 0
 var P4_4_startTime = 0
 var P4_5_startTime = 0
 var P4_6_startTime = 0
+
+var gameState = false
+
 
 class ColorSwitchViewController: UIViewController {
     
@@ -143,7 +147,14 @@ class ColorSwitchViewController: UIViewController {
         game_4_Button.alpha = 0.0
         game_5_Button.alpha = 0.0
         
-       
+        progress_1.alpha = 0.0
+        progress_2.alpha = 0.0
+        progress_3.alpha = 0.0
+        progress_4.alpha = 0.0
+        progress_5.alpha = 0.0
+        progress_6.alpha = 0.0
+        progress_7.alpha = 0.0
+        
         Timer.scheduledTimer(timeInterval: 0.001,
                              target: self,
                              selector: #selector(self.updateTime),
@@ -213,15 +224,23 @@ class ColorSwitchViewController: UIViewController {
         currentCount = 40
         timeValue_1 = 0
         progressAmount = 0
-        current_1_prompt = "prompt_1_1"
-        current_2_prompt = "prompt_2_1"
-        current_3_prompt = "prompt_3_1"
-        current_4_prompt = "prompt_4_1"
+//        current_1_prompt = "prompt_1_1"
+//        current_2_prompt = "prompt_2_1"
+//        current_3_prompt = "prompt_3_1"
+//        current_4_prompt = "prompt_4_1"
+        
+        
+        
         
         P1_1_startTime = currentCount
         P2_1_startTime = currentCount
         P3_1_startTime = currentCount
         P4_1_startTime = currentCount
+        promptSwitch_1 = 1
+        promptSwitch_2 = 1
+        promptSwitch_3 = 1
+        promptSwitch_4 = 1
+        advancePrompt()
         
         
     }
@@ -238,18 +257,18 @@ class ColorSwitchViewController: UIViewController {
                 if numPlayers == 2 {
                     
                     if myGlobalPlayerNum == 1 {
-                        if currentCount == 34 && promptSwitch_1  == 1 {advancePrompt()}
-                        if currentCount == 28 && promptSwitch_1  == 2  {advancePrompt()}
-                        if currentCount == 22 && promptSwitch_1  == 3  {advancePrompt()}
-                        if currentCount == 14 && promptSwitch_1  == 4  {advancePrompt()}
-                        if currentCount == 7 && promptSwitch_1  == 5  {advancePrompt()}
+                        if currentCount == 34 && promptSwitch_1  <= 2 {advancePrompt()}
+                        if currentCount == 28 && promptSwitch_1  <= 3  {advancePrompt()}
+                        if currentCount == 22 && promptSwitch_1  <= 4  {advancePrompt()}
+                        if currentCount == 14 && promptSwitch_1  <= 5  {advancePrompt()}
+                        if currentCount == 7 && promptSwitch_1  <= 6  {advancePrompt()}
                     }
                     if myGlobalPlayerNum == 2 {
-                        if currentCount == 34 && promptSwitch_2  == 1 {advancePrompt()}
-                        if currentCount == 28 && promptSwitch_2  == 2  {advancePrompt()}
-                        if currentCount == 22 && promptSwitch_2  == 3  {advancePrompt()}
-                        if currentCount == 14 && promptSwitch_2  == 4  {advancePrompt()}
-                        if currentCount == 7 && promptSwitch_2  == 5  {advancePrompt()}
+                        if currentCount == 34 && promptSwitch_2  <= 2 {advancePrompt()}
+                        if currentCount == 28 && promptSwitch_2  <= 3  {advancePrompt()}
+                        if currentCount == 22 && promptSwitch_2  <= 4  {advancePrompt()}
+                        if currentCount == 14 && promptSwitch_2  <= 5  {advancePrompt()}
+                        if currentCount == 7 && promptSwitch_2  <= 6  {advancePrompt()}
                     }
                     
                     if numPlayers == 3 {
@@ -334,9 +353,59 @@ class ColorSwitchViewController: UIViewController {
     }
     
     func updateClock(){
+        if gameState == true {
       
     currentCount -= 1
         clockDisplay.text = String(currentCount)
+        updateProgBar()
+            
+        }
+    }
+    
+    
+    
+    func updateProgBar(){
+        
+        progState += 1
+        if progState == 8 {progState = 0}
+        
+        switch progState {
+        
+        case 0:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_1.alpha = 0.0
+                self.progress_2.alpha = 0.0
+                self.progress_3.alpha = 0.0
+                self.progress_4.alpha = 0.0
+                self.progress_5.alpha = 0.0
+                self.progress_6.alpha = 0.0
+                self.progress_7.alpha = 0.0
+            })
+        case 1:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_1.alpha = 1.0})
+        case 2:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_2.alpha = 1.0})
+        case 3:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_3.alpha = 1.0})
+        case 4:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_4.alpha = 1.0})
+        case 5:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_5.alpha = 1.0})
+        case 6:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_6.alpha = 1.0})
+        case 7:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.progress_7.alpha = 1.0})
+        default:
+            print("Unknown progress bar state reached")
+        }
+        
         
     }
     
@@ -397,6 +466,9 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var clockDisplay: UILabel!
     
 
+    @IBOutlet weak var answerBox: UILabel!
+    
+    @IBOutlet weak var promptBox: UILabel!
     
     @IBOutlet weak var game_1_Button: UIButton!
     @IBOutlet weak var game_2_Button: UIButton!
@@ -404,6 +476,17 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var game_4_Button: UIButton!
     @IBOutlet weak var game_5_Button: UIButton!
     @IBOutlet weak var game_6_Button: UIButton!
+    
+    @IBOutlet weak var progress_1: UIView!
+    @IBOutlet weak var progress_2: UIView!
+    @IBOutlet weak var progress_3: UIView!
+    @IBOutlet weak var progress_4: UIView!
+    @IBOutlet weak var progress_5: UIView!
+    @IBOutlet weak var progress_6: UIView!
+    @IBOutlet weak var progress_7: UIView!
+    
+    
+    
     
     
     @IBAction func resetButton(_ sender: Any) {
@@ -725,9 +808,13 @@ class ColorSwitchViewController: UIViewController {
         self.PlayerNum_Label.text = String(myGlobalPlayerNum)
     }
     
+    
+    
+    
     func advancePrompt(){
         
-        self.playCountDown()
+        
+       // self.playCountDown()
         
         if myGlobalPlayerNum == 1 {
             
@@ -817,6 +904,16 @@ class ColorSwitchViewController: UIViewController {
             default:
                 print("Bob")
             }
+        }
+        
+        answerBox.text = myCurrentAnswer
+        
+        if myGlobalPlayerNum == 1 {
+            promptBox.text = String(promptSwitch_1)
+        }
+        
+        if myGlobalPlayerNum == 2 {
+            promptBox.text = String(promptSwitch_2)
         }
         
         }
@@ -1199,17 +1296,19 @@ class ColorSwitchViewController: UIViewController {
         currentCount = 40
         clockDisplay.alpha = 1.0
         roundCountView.alpha = 1.0
-        playCountDown()
+      //  playCountDown()
         P1_1_startTime = currentCount
         P2_1_startTime = currentCount
         P3_1_startTime = currentCount
         P4_1_startTime = currentCount
         
+        gameState = true
+        
     }
     
     
     func setUpGameScreen_1_1 (){
-       
+        
         setUpGameScreenElements()
         
         //taskPanel.text = "Set Crowd Noise to Insane"
@@ -1221,8 +1320,10 @@ class ColorSwitchViewController: UIViewController {
         self.callText_4.text = "Forward Pass"
         self.callText_5.text = "Flea Flicker to Running Back"
         self.callText_6.text = "Rush 10 Yards"
-        
-        }
+        colorService.sendColor("gameReset")
+        myCurrentAnswer = "1_4"
+        resetGame()
+    }
     
     func setUpGameScreen_2_1 (){
         
@@ -1237,7 +1338,9 @@ class ColorSwitchViewController: UIViewController {
         self.callText_4.text = "Run Block"
         self.callText_5.text = "Play Action Fake"
         self.callText_6.text = "Hook and Ladder Hook"
-        
+        myCurrentAnswer = "3_2"
+        colorService.sendColor("gameReset")
+        resetGame()
     }
     
     func setUpGameScreen_3_1 (){
