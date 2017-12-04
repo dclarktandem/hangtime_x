@@ -1398,8 +1398,8 @@ class ColorSwitchViewController: UIViewController {
     func sendCorrectAnswer(thePlayer: Int, theAnswer: String) {
     
     //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
-   
-    
+      //  colorService.sendColor("*" + "\(thePlayer)" + " - " + "\(theAnswer)")
+     
     
     
     }
