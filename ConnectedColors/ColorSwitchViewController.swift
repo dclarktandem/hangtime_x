@@ -114,6 +114,15 @@ class ColorSwitchViewController: UIViewController {
         clockDisplay.fitFontForSize()
         clockDisplay.padding = UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 5)
         
+        scoreField.layer.borderWidth = 3.0
+        scoreField.layer.borderColor = UIColor(hexString: "#00a334").cgColor
+        scoreField.adjustsFontSizeToFitWidth = true
+        scoreField.fitFontForSize()
+        scoreField.padding = UIEdgeInsets(top: 10, left: 10, bottom: 5, right: 5)
+        
+        
+        
+        
         taskPanel.adjustsFontSizeToFitWidth = true
         taskPanel.fitFontForSize()
         
@@ -213,6 +222,8 @@ class ColorSwitchViewController: UIViewController {
         callText_5.alpha = 0.0
         callText_6.alpha = 0.0
         
+        scorePanelBDrop.alpha = 0.0
+        
         panelBkground_1_1.layer.cornerRadius = 10
         panelBkground_2.layer.cornerRadius = 10
         panelBkground_3.layer.cornerRadius = 10
@@ -244,6 +255,10 @@ class ColorSwitchViewController: UIViewController {
         promptSwitch_2 = 1
         promptSwitch_3 = 1
         promptSwitch_4 = 1
+        
+        playerOneScore = 0
+        playerTwoScore = 0
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.progress_1.alpha = 0.0
             self.progress_2.alpha = 0.0
@@ -296,7 +311,7 @@ class ColorSwitchViewController: UIViewController {
     currentCount -= 1
         clockDisplay.text = String(currentCount)
         updateProgBar()
-       // checkGameStatus()
+        checkGameStatus()
             
         }
     }
@@ -306,6 +321,9 @@ class ColorSwitchViewController: UIViewController {
         switch numPlayers {
             
         case 2:
+            
+            print("playerOneComplete): \(playerOneComplete)")
+            print("playerTwoComplete): \(playerTwoComplete)")
             if playerOneScore == 0 {
                 if playerOneComplete {
                     playerOneScore = currentCount
@@ -320,8 +338,10 @@ class ColorSwitchViewController: UIViewController {
             if playerOneComplete && playerTwoComplete {
                 
                 print("Game Over")
-                
-                
+                self.scoreField.text = String(playerOneScore + playerTwoScore)
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.scorePanelBDrop.alpha = 1.0
+                })
             }
             
         case 3:
@@ -374,14 +394,24 @@ class ColorSwitchViewController: UIViewController {
                 
                 
                 print("Game Over")
+                displayScoreScreen()
+                
                 
             }
             
         default:
-            print("Unexpected Number of Players")
+            print("Unexpected Number of Players in checkGameStatus")
         }
         
     }
+    
+    func displayScoreScreen(){
+        
+        
+        
+        
+    }
+    
     
     func resetProgState(){
         
@@ -479,6 +509,11 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var HangtimeLogo: UIImageView!
+    
+    
+    
+    
     @IBOutlet weak var sil_down_white: UIImageView!
     
     @IBOutlet weak var sil_down_red: UIImageView!
@@ -528,6 +563,13 @@ class ColorSwitchViewController: UIViewController {
     @IBOutlet weak var progress_7: UIView!
     
     
+    @IBOutlet weak var scoreField: UILabel!
+    
+    
+    
+    
+    
+    @IBOutlet weak var scorePanelBDrop: UIView!
     
     
     
@@ -872,8 +914,10 @@ class ColorSwitchViewController: UIViewController {
                 promptSwitch_1 = 6
             case 6:
                 changePrompt (whichPrompt: 6)
+            case 7:
+                changePrompt (whichPrompt: 7)
             default:
-                print("Bob")
+                print("Unexpected Prompt Number in AdvancePrompt")
             }
         }
         
@@ -897,8 +941,10 @@ class ColorSwitchViewController: UIViewController {
                 promptSwitch_2 = 6
             case 6:
                 changePrompt (whichPrompt: 6)
+            case 7:
+                changePrompt (whichPrompt: 7)
             default:
-                print("Bob")
+                print("Unexpected Prompt Number in AdvancePrompt")
             }
         }
         
@@ -917,8 +963,10 @@ class ColorSwitchViewController: UIViewController {
                 changePrompt (whichPrompt: 3)
             case 6:
                 changePrompt (whichPrompt: 3)
+            case 7:
+                changePrompt (whichPrompt: 7)
             default:
-                print("Bob")
+                print("Unexpected Prompt Number in AdvancePrompt")
             }
         }
         
@@ -937,8 +985,10 @@ class ColorSwitchViewController: UIViewController {
                 changePrompt (whichPrompt: 3)
             case 6:
                 changePrompt (whichPrompt: 3)
+            case 7:
+                changePrompt (whichPrompt: 7)
             default:
-                print("Bob")
+                print("Unexpected Prompt Number in AdvancePrompt")
             }
         }
         
@@ -977,7 +1027,7 @@ class ColorSwitchViewController: UIViewController {
                     self.taskPanel.text = String("Set Crowd Noise to Insane")
                     promptSwitch_1 = 2
                     //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
-                   myCurrentAnswer = "2_3"
+                    myCurrentAnswer = "2_3"
                 case 2:
                     self.taskPanel.text = String("Hook and Ladder")
                     promptSwitch_1 = 3
@@ -991,7 +1041,7 @@ class ColorSwitchViewController: UIViewController {
                 case 4:
                     self.taskPanel.text = String("Play Action Fake")
                     promptSwitch_1 = 5
-                   //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
+                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
                     myCurrentAnswer = "2_5"
                 case 5:
                     self.taskPanel.text = String("Wide Receiver in Slot Position")
@@ -1000,9 +1050,14 @@ class ColorSwitchViewController: UIViewController {
                     myCurrentAnswer = "2_2"
                 case 6:
                     self.taskPanel.text = String("Run Block to 3 Yards")
-                    //promptSwitch_1 = 6
+                    promptSwitch_1 = 7
                     //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
                     myCurrentAnswer = "2_4"
+                case 7:
+                    self.taskPanel.text = String("Done!!!")
+                    
+                    playerOneComplete = true
+                    print("Player One Done")
                 default:
                     self.taskPanel.text = String("Default Called")
                 }
@@ -1053,10 +1108,15 @@ class ColorSwitchViewController: UIViewController {
                     myCurrentAnswer = "1_2"
                 case 6:
                     self.taskPanel.text = String("Pass Block Step Back")
-                    //promptSwitch_2 = 6
+                    promptSwitch_2 = 7
                     //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
                     print("Setting Player Two's answer to 1_3")
                     myCurrentAnswer = "1_3"
+                case 7:
+                    self.taskPanel.text = String("Done!!!")
+                    
+                    playerTwoComplete = true
+                    print("Player Two Done")
                 default:
                     self.taskPanel.text = String("Default Called")
                 }

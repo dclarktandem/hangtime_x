@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -78,6 +79,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="JXR-8A-dy7"/>
                                 </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangtime logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIJ-vz-ZZc">
+                                <rect key="frame" x="76" y="139.5" width="222.5" height="159"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locker.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-ez-Y7x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -373,6 +377,44 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEk-8g-Wr3"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyN-i9-SZF">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3F-9T-Msr">
+                                        <rect key="frame" x="87.5" y="199" width="200.5" height="47"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Team Score:">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.63992686074542471" blue="0.10969779139877567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="36" name="Futura-MediumItalic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U21-Ea-REJ" userLabel="Score Field">
+                                        <rect key="frame" x="81" y="266.5" width="213.5" height="135.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="230">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.63992686074542471" blue="0.10969779139877567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="96" name="RidetheFader"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.082114093005657196" green="0.22487303614616394" blue="0.039122432470321655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="U21-Ea-REJ" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="06F-Pj-PIP"/>
+                                    <constraint firstItem="e3F-9T-Msr" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="4:6" id="2hj-97-tJs"/>
+                                    <constraint firstItem="e3F-9T-Msr" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Dqf-3Q-IzX"/>
+                                    <constraint firstItem="U21-Ea-REJ" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" id="FCM-7C-72B"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -388,11 +430,14 @@
                             <constraint firstItem="zmC-tz-QjB" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="5Ou-Ch-Qra"/>
                             <constraint firstItem="JyA-Ry-ZMR" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="5TC-TF-jrw"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="5Y7-N0-dwj"/>
+                            <constraint firstItem="eIJ-vz-ZZc" firstAttribute="centerY" secondItem="2Hd-O3-crI" secondAttribute="centerY" multiplier="21:32" id="6Zo-e5-eb3"/>
                             <constraint firstItem="bRF-Ku-RyG" firstAttribute="centerY" secondItem="Mqf-1t-QW9" secondAttribute="centerY" id="6gP-bN-Lgs"/>
+                            <constraint firstItem="eIJ-vz-ZZc" firstAttribute="width" secondItem="2Hd-O3-crI" secondAttribute="height" multiplier="1:3" id="6jF-qb-g1g"/>
                             <constraint firstAttribute="trailing" secondItem="2Hd-O3-crI" secondAttribute="trailing" id="6vZ-IR-dkk"/>
                             <constraint firstItem="XiD-kP-cVP" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="70F-cN-C9t"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Hm-i5-u3F"/>
                             <constraint firstItem="GhW-od-g8b" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="6:8" id="7Nu-WD-1ya"/>
+                            <constraint firstItem="oyN-i9-SZF" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" id="7jy-rR-s1K"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7tz-Lr-1fJ"/>
                             <constraint firstItem="VYg-tW-SNV" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="8Ds-8m-JWy"/>
                             <constraint firstItem="wlr-j0-xNe" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="8Sq-2w-dY9"/>
@@ -405,9 +450,11 @@
                             <constraint firstItem="dTX-G9-tlJ" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="C5w-zk-MDP"/>
                             <constraint firstItem="VYg-tW-SNV" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="CSW-OO-72H"/>
                             <constraint firstItem="VYg-tW-SNV" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="64:37" id="CgQ-8Q-i8Z"/>
+                            <constraint firstItem="eIJ-vz-ZZc" firstAttribute="centerX" secondItem="2Hd-O3-crI" secondAttribute="centerX" id="D9i-1B-3Vs"/>
                             <constraint firstItem="3bP-h6-9sv" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="Dl8-sg-h3o"/>
                             <constraint firstItem="XiD-kP-cVP" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="47:64" id="Etf-0Y-wcX"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="ExF-Xq-reB"/>
+                            <constraint firstItem="oyN-i9-SZF" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" id="Fc0-ZY-T9q"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GB8-M1-rXb"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="Ht1-0Y-7Jn"/>
                             <constraint firstItem="JyA-Ry-ZMR" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="I34-ei-mFj"/>
@@ -428,6 +475,7 @@
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="1:7" id="QxR-2a-To5"/>
                             <constraint firstItem="zmC-tz-QjB" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="Rij-nL-kUm"/>
                             <constraint firstItem="Ohg-ub-Aau" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:48" id="SPc-Bw-5zP"/>
+                            <constraint firstItem="oyN-i9-SZF" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" id="TP3-lT-oQS"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="UTP-8R-kxk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Hd-O3-crI" secondAttribute="bottom" id="W3x-er-j7u"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" id="WbR-eA-wXW"/>
@@ -474,6 +522,7 @@
                             <constraint firstItem="KA4-Sa-dQc" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="2:7" id="mN5-ZQ-gek"/>
                             <constraint firstItem="bRF-Ku-RyG" firstAttribute="centerX" secondItem="Mqf-1t-QW9" secondAttribute="centerX" id="mOc-74-ZOK"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" id="n2V-DI-9Uj"/>
+                            <constraint firstItem="oyN-i9-SZF" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" id="pHS-VH-McC"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pRP-dJ-olr"/>
                             <constraint firstItem="JyA-Ry-ZMR" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="16:11" id="pZF-MC-8dJ"/>
                             <constraint firstItem="JTs-lm-Jac" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="16:11" id="pdT-BP-x6u"/>
@@ -502,6 +551,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="PKz-4Y-qQI"/>
                     <connections>
+                        <outlet property="HangtimeLogo" destination="eIJ-vz-ZZc" id="DJR-Uc-Q2W"/>
                         <outlet property="PlayerNum_Label" destination="D3s-Rd-8ox" id="Xfv-rr-dvt"/>
                         <outlet property="answerBox" destination="6ba-6p-y7y" id="vVY-Xm-bKt"/>
                         <outlet property="callText_1" destination="swK-0u-Xln" id="6VK-04-gO5"/>
@@ -537,6 +587,8 @@
                         <outlet property="progress_7" destination="MDh-j8-pRL" id="zAM-3T-unX"/>
                         <outlet property="promptBox" destination="569-lR-FcW" id="9EQ-GT-upo"/>
                         <outlet property="roundCountView" destination="GhW-od-g8b" id="OJO-Pd-wzD"/>
+                        <outlet property="scoreField" destination="U21-Ea-REJ" id="nin-kc-DFR"/>
+                        <outlet property="scorePanelBDrop" destination="oyN-i9-SZF" id="dPU-ic-r6B"/>
                         <outlet property="sil_down_blue" destination="Fyl-Zp-JpU" id="8F4-lm-cw4"/>
                         <outlet property="sil_down_red" destination="0pt-Fa-NY1" id="Uc0-sQ-1K2"/>
                         <outlet property="sil_down_silver" destination="vih-Qc-OCP" id="taW-N9-sVM"/>
@@ -574,6 +626,7 @@
     <resources>
         <image name="Turf Screen.png" width="531" height="990"/>
         <image name="football_1.png" width="225" height="225"/>
+        <image name="hangtime logo.png" width="584" height="159"/>
         <image name="hangtime_main.png" width="1242" height="2208"/>
         <image name="locker.jpg" width="600" height="400"/>
         <image name="sil_down_blue.png" width="178" height="240"/>
