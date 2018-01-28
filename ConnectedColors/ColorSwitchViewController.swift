@@ -1234,6 +1234,7 @@ class ColorSwitchViewController: UIViewController {
    
     @IBOutlet weak var football: UIImageView!
     
+    @IBOutlet weak var field_image: UIImageView!
     
     @IBAction func ball_button(_ sender: UIButton) {
         
@@ -1259,6 +1260,27 @@ class ColorSwitchViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, animations: {self.football.transform = CGAffineTransform(rotationAngle: (0.0 * CGFloat(Double.pi)) / 180.0)},
                        completion:{(Bool)  in
+                        self.field_image.alpha = 0.0 //for zero opacity
+                        self.field_image.isHidden = false
+                        
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.field_image.alpha = 1.0})
+//                        UIView.animate(withDuration: 0.5, animations: {
+//                            self.playerDownStackView.alpha = 1.0})
+//                        UIView.animate(withDuration: 0.5, animations: {
+//                            self.lockerBall.alpha = 1.0})
+                    
+                        
+     })
+                        
+          // setUpLockerView()
+    }
+    
+    
+    func jobButtonTapped(){
+        
+        UIView.animate(withDuration: 0.5, animations: {self.football.transform = CGAffineTransform(rotationAngle: (0.0 * CGFloat(Double.pi)) / 180.0)},
+                       completion:{(Bool)  in
                         self.locker_image.alpha = 0.0 //for zero opacity
                         self.locker_image.isHidden = false
                         
@@ -1269,11 +1291,13 @@ class ColorSwitchViewController: UIViewController {
                         UIView.animate(withDuration: 0.5, animations: {
                             self.lockerBall.alpha = 1.0})
                         
-
+//                        UIView.animate(withDuration: 0.5, animations: {
+//                            self.turfScreen.alpha = 1.0})
+//                       // setUpGameScreen_1_1()
                         
-     })
                         
-          // setUpLockerView()
+                        
+        })
     }
     
     func checkPlayerStart() {

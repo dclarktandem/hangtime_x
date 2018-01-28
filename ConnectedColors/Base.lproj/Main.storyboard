@@ -83,6 +83,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangtime logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIJ-vz-ZZc">
                                 <rect key="frame" x="76" y="139.5" width="222.5" height="159"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="patriots_field.png" translatesAutoresizingMaskIntoConstraints="NO" id="82p-25-aSw" userLabel="Field Image">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work as a Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-iI-W9e">
+                                <rect key="frame" x="82.5" y="150" width="209.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-Yv-3JB">
+                                <rect key="frame" x="95.5" y="219" width="183" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kre-3b-2Rg">
+                                <rect key="frame" x="85" y="288.5" width="204" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do your Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-6k-4ta">
+                                <rect key="frame" x="101" y="364" width="172.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Wk-UxE" userLabel="Instruction Ball">
+                                <rect key="frame" x="124.5" y="429" width="125" height="111"/>
+                            </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locker.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-ez-Y7x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -443,9 +473,11 @@
                             <constraint firstItem="wlr-j0-xNe" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="8Sq-2w-dY9"/>
                             <constraint firstItem="oh0-Fs-d8z" firstAttribute="centerX" secondItem="rTw-ez-Y7x" secondAttribute="centerX" id="8ck-wS-eOi"/>
                             <constraint firstItem="rTw-ez-Y7x" firstAttribute="height" secondItem="2Hd-O3-crI" secondAttribute="height" id="8dW-3e-RUq"/>
+                            <constraint firstItem="hiv-6k-4ta" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="24:21" id="AIi-Ow-KMk"/>
                             <constraint firstItem="zmC-tz-QjB" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:79" id="B7A-ws-T6A"/>
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" multiplier="12:7" id="B9e-gv-fX8"/>
                             <constraint firstAttribute="bottom" secondItem="2Hd-O3-crI" secondAttribute="bottom" id="BAZ-T9-JGt"/>
+                            <constraint firstItem="JIh-Wk-UxE" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Bh8-my-avv"/>
                             <constraint firstItem="0ZH-Bd-vAm" firstAttribute="centerX" secondItem="rY4-yL-o9R" secondAttribute="centerX" id="Byi-HU-OtA"/>
                             <constraint firstItem="dTX-G9-tlJ" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="C5w-zk-MDP"/>
                             <constraint firstItem="VYg-tW-SNV" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="CSW-OO-72H"/>
@@ -455,6 +487,7 @@
                             <constraint firstItem="XiD-kP-cVP" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="47:64" id="Etf-0Y-wcX"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="ExF-Xq-reB"/>
                             <constraint firstItem="oyN-i9-SZF" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" id="Fc0-ZY-T9q"/>
+                            <constraint firstItem="dMW-iI-W9e" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="12:24" id="FjB-6N-y42"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GB8-M1-rXb"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="Ht1-0Y-7Jn"/>
                             <constraint firstItem="JyA-Ry-ZMR" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="I34-ei-mFj"/>
@@ -477,7 +510,9 @@
                             <constraint firstItem="Ohg-ub-Aau" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:48" id="SPc-Bw-5zP"/>
                             <constraint firstItem="oyN-i9-SZF" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" id="TP3-lT-oQS"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="UTP-8R-kxk"/>
+                            <constraint firstItem="kre-3b-2Rg" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Vx4-W9-nhf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Hd-O3-crI" secondAttribute="bottom" id="W3x-er-j7u"/>
+                            <constraint firstItem="82p-25-aSw" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="WCL-FK-eeR"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" id="WbR-eA-wXW"/>
                             <constraint firstItem="nED-bY-674" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="Wfn-sx-4Cg"/>
                             <constraint firstItem="XiD-kP-cVP" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="X5y-cY-hd1"/>
@@ -487,10 +522,12 @@
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="XiJ-v8-Y0T"/>
                             <constraint firstItem="skC-vc-KGJ" firstAttribute="centerY" secondItem="VYg-tW-SNV" secondAttribute="centerY" id="Yme-Kt-hJX"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="ZHV-Ou-rch"/>
+                            <constraint firstItem="JIh-Wk-UxE" firstAttribute="height" secondItem="oyN-i9-SZF" secondAttribute="height" multiplier="1:6" id="a63-Pn-VZu"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aJ8-2m-Rkf"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aRy-Um-5nN"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="centerX" secondItem="rY4-yL-o9R" secondAttribute="centerX" id="aXs-V9-vco"/>
                             <constraint firstItem="frZ-RB-BFA" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:63" id="anK-pr-uvK"/>
+                            <constraint firstItem="82p-25-aSw" firstAttribute="height" secondItem="oyN-i9-SZF" secondAttribute="height" id="anl-Aj-W9o"/>
                             <constraint firstItem="skC-vc-KGJ" firstAttribute="width" secondItem="VYg-tW-SNV" secondAttribute="width" id="ao7-J7-eSG"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="b4c-I7-Xry"/>
                             <constraint firstItem="GhW-od-g8b" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="5:64" id="bcS-wj-Lbx"/>
@@ -503,20 +540,24 @@
                             <constraint firstItem="nED-bY-674" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:39" id="eMt-Ll-bU2"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="fXd-51-fiP"/>
                             <constraint firstItem="KA4-Sa-dQc" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" multiplier="20:17" id="fbz-no-AWC"/>
+                            <constraint firstItem="dMW-iI-W9e" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="ffC-MS-noy"/>
                             <constraint firstItem="0ZH-Bd-vAm" firstAttribute="height" secondItem="rY4-yL-o9R" secondAttribute="height" id="g0n-NI-CKu"/>
                             <constraint firstItem="XQ2-GN-yCm" firstAttribute="centerX" secondItem="Klt-MT-vPz" secondAttribute="centerX" id="gJf-tj-99o"/>
+                            <constraint firstItem="JIh-Wk-UxE" firstAttribute="width" secondItem="oyN-i9-SZF" secondAttribute="width" multiplier="1:3" id="gbJ-pX-sB6"/>
                             <constraint firstItem="XQ2-GN-yCm" firstAttribute="height" secondItem="Klt-MT-vPz" secondAttribute="height" id="gyB-Rm-Ou5"/>
                             <constraint firstItem="frZ-RB-BFA" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="hLl-Qw-Sdl"/>
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="hzt-p3-aFp"/>
                             <constraint firstItem="nED-bY-674" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="iUK-cI-g5m"/>
                             <constraint firstItem="KA4-Sa-dQc" firstAttribute="centerX" secondItem="rTw-ez-Y7x" secondAttribute="centerX" id="iYC-Ga-jnE"/>
                             <constraint firstItem="XQ2-GN-yCm" firstAttribute="width" secondItem="Klt-MT-vPz" secondAttribute="width" id="jWa-4K-4gL"/>
+                            <constraint firstItem="JIh-Wk-UxE" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="48:33" id="jeP-Na-yVZ"/>
                             <constraint firstItem="rTw-ez-Y7x" firstAttribute="width" secondItem="2Hd-O3-crI" secondAttribute="width" id="jrA-BF-Rcy"/>
                             <constraint firstItem="rTw-ez-Y7x" firstAttribute="centerY" secondItem="2Hd-O3-crI" secondAttribute="centerY" id="kP6-8C-QCW"/>
                             <constraint firstItem="skC-vc-KGJ" firstAttribute="centerX" secondItem="VYg-tW-SNV" secondAttribute="centerX" id="lU3-xf-B0R"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="centerX" secondItem="rTw-ez-Y7x" secondAttribute="centerX" id="lpk-Gi-f7x"/>
                             <constraint firstItem="GhW-od-g8b" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="0.33" id="ls3-dn-OAN"/>
                             <constraint firstItem="XiD-kP-cVP" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="9:16" id="m1v-xb-Q7L"/>
+                            <constraint firstItem="82p-25-aSw" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" id="m3G-IZ-8Ae"/>
                             <constraint firstItem="BSu-Se-ZER" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="5:64" id="m4p-YB-fZQ"/>
                             <constraint firstItem="frZ-RB-BFA" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="20:59" id="mFv-Xg-wz5"/>
                             <constraint firstItem="KA4-Sa-dQc" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="2:7" id="mN5-ZQ-gek"/>
@@ -528,6 +569,7 @@
                             <constraint firstItem="JTs-lm-Jac" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="16:11" id="pdT-BP-x6u"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="9:16" id="pff-gl-qB9"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="pwy-9t-Tmg"/>
+                            <constraint firstItem="82p-25-aSw" firstAttribute="width" secondItem="oyN-i9-SZF" secondAttribute="width" id="q1O-rB-2AR"/>
                             <constraint firstItem="skC-vc-KGJ" firstAttribute="height" secondItem="VYg-tW-SNV" secondAttribute="height" id="q3d-kJ-rej"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="64:52" id="qBH-an-idK"/>
                             <constraint firstItem="3bP-h6-9sv" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="qBQ-rG-Got"/>
@@ -536,17 +578,21 @@
                             <constraint firstItem="Ohg-ub-Aau" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="5:64" id="rPY-Ag-dc6"/>
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:108" id="sll-KA-oQb"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="su5-hh-QSh"/>
+                            <constraint firstItem="tbv-Yv-3JB" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="tIy-uF-kyI"/>
                             <constraint firstItem="BSu-Se-ZER" firstAttribute="centerY" secondItem="orN-fp-zBS" secondAttribute="centerY" multiplier="0.33" id="tsF-7H-hCb"/>
                             <constraint firstItem="3bP-h6-9sv" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:52" id="u5d-U5-9Yy"/>
+                            <constraint firstItem="tbv-Yv-3JB" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="17:24" id="u9d-iJ-Xbj"/>
                             <constraint firstItem="JTs-lm-Jac" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="uKh-7e-ll6"/>
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="centerX" secondItem="rTw-ez-Y7x" secondAttribute="centerX" id="uez-MH-AgC"/>
                             <constraint firstItem="BSu-Se-ZER" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="1.2" id="vre-C4-boJ"/>
                             <constraint firstItem="rY4-yL-o9R" firstAttribute="centerX" secondItem="2Hd-O3-crI" secondAttribute="centerX" id="wKI-mR-KZl"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="128:69" id="wWP-DJ-Xyr"/>
                             <constraint firstItem="oh0-Fs-d8z" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" multiplier="20:15" id="wiA-3z-Lue"/>
+                            <constraint firstItem="hiv-6k-4ta" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="xYE-Gq-bxR"/>
                             <constraint firstItem="XQ2-GN-yCm" firstAttribute="centerY" secondItem="Klt-MT-vPz" secondAttribute="centerY" id="y6N-l3-A5Z"/>
                             <constraint firstItem="dTX-G9-tlJ" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:24" id="yZw-eg-El0"/>
                             <constraint firstItem="orN-fp-zBS" firstAttribute="width" secondItem="rTw-ez-Y7x" secondAttribute="width" id="zQz-ZY-RIC"/>
+                            <constraint firstItem="kre-3b-2Rg" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="22:24" id="zst-vR-Bjc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="PKz-4Y-qQI"/>
@@ -562,6 +608,7 @@
                         <outlet property="callText_6" destination="MLr-rW-SPa" id="EWB-3W-eh9"/>
                         <outlet property="clockDisplay" destination="Ohg-ub-Aau" id="YvD-XL-W12"/>
                         <outlet property="connectionsLabel" destination="vwt-mK-OVB" id="qhp-oq-0tF"/>
+                        <outlet property="field_image" destination="82p-25-aSw" id="Ss1-Pi-9KZ"/>
                         <outlet property="football" destination="rY4-yL-o9R" id="klS-oA-By6"/>
                         <outlet property="game_1_Button" destination="25D-ip-rfH" id="YAV-Fq-5YF"/>
                         <outlet property="game_2_Button" destination="dJZ-rN-RKB" id="ZMi-aM-MTD"/>
@@ -629,6 +676,7 @@
         <image name="hangtime logo.png" width="584" height="159"/>
         <image name="hangtime_main.png" width="1242" height="2208"/>
         <image name="locker.jpg" width="600" height="400"/>
+        <image name="patriots_field.png" width="764" height="1368"/>
         <image name="sil_down_blue.png" width="178" height="240"/>
         <image name="sil_down_red.png" width="178" height="240"/>
         <image name="sil_down_silver.png" width="178" height="240"/>

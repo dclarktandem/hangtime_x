@@ -36,6 +36,8 @@
 		F5BEA2A31F8ABF2B00DA61F2 /* sil_down_silver.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BEA2A01F8ABF2B00DA61F2 /* sil_down_silver.png */; };
 		F5BEA2A41F8ABF2B00DA61F2 /* sil_down_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BEA2A11F8ABF2B00DA61F2 /* sil_down_blue.png */; };
 		F5BEA2A51F8ABF2B00DA61F2 /* sil_down_red.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BEA2A21F8ABF2B00DA61F2 /* sil_down_red.png */; };
+		F5D5B5D4201E570E0030900A /* field image.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D5B5D3201E570D0030900A /* field image.png */; };
+		F5D5B5D6201E6A9D0030900A /* patriots_field.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D5B5D5201E6A9C0030900A /* patriots_field.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		F5BEA2A01F8ABF2B00DA61F2 /* sil_down_silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_down_silver.png; path = Images/sil_down_silver.png; sourceTree = SOURCE_ROOT; };
 		F5BEA2A11F8ABF2B00DA61F2 /* sil_down_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_down_blue.png; path = Images/sil_down_blue.png; sourceTree = SOURCE_ROOT; };
 		F5BEA2A21F8ABF2B00DA61F2 /* sil_down_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_down_red.png; path = Images/sil_down_red.png; sourceTree = SOURCE_ROOT; };
+		F5D5B5D3201E570D0030900A /* field image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field image.png"; sourceTree = "<group>"; };
+		F5D5B5D5201E6A9C0030900A /* patriots_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patriots_field.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 		F5BEA2921F895C7F00DA61F2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5B5D5201E6A9C0030900A /* patriots_field.png */,
+				F5D5B5D3201E570D0030900A /* field image.png */,
 				F5B91E4F20157889008F614D /* hangtime logo.png */,
 				F57908411FC1280000E697C2 /* round_timer_2.gif */,
 				F525C0331FB744E6009F0C77 /* Turf Screen.png */,
@@ -223,11 +229,13 @@
 			files = (
 				F5BEA2991F89693F00DA61F2 /* air horn (club sample).mp3 in Resources */,
 				F57908471FC1283C00E697C2 /* Ride the Fader.ttf in Resources */,
+				F5D5B5D6201E6A9D0030900A /* patriots_field.png in Resources */,
 				F5BEA29D1F89701400DA61F2 /* locker.jpg in Resources */,
 				F5BE471F1F9D2CE30064A284 /* sil_up_red.png in Resources */,
 				F5BEA2961F89614B00DA61F2 /* football_1.png in Resources */,
 				F525C0341FB744E6009F0C77 /* Turf Screen.png in Resources */,
 				F5BE47201F9D2CE30064A284 /* sil_up_silver.png in Resources */,
+				F5D5B5D4201E570E0030900A /* field image.png in Resources */,
 				BF6F14021E4E58C90018D56E /* LaunchScreen.storyboard in Resources */,
 				F5BEA2A51F8ABF2B00DA61F2 /* sil_down_red.png in Resources */,
 				F5B91E5020157889008F614D /* hangtime logo.png in Resources */,
