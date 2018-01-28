@@ -154,6 +154,13 @@ class ColorSwitchViewController: UIViewController {
         callText_5.alpha = 0.0
         callText_6.alpha = 0.0
         
+        workAsTeam.alpha = 0.0
+        callThePlays.alpha = 0.0
+        makeThePlays.alpha = 0.0
+        doYourJob.alpha = 0.0
+        
+        instructionBall.alpha = 0.0
+        
         panelBkground_1_1.layer.cornerRadius = 10
         panelBkground_2.layer.cornerRadius = 10
         panelBkground_3.layer.cornerRadius = 10
@@ -1230,11 +1237,28 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    @IBAction func instructionButtonTapped(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
+ 
     
-   
+    @IBOutlet weak var instructionBall: UIImageView!
+    
     @IBOutlet weak var football: UIImageView!
     
     @IBOutlet weak var field_image: UIImageView!
+    
+    @IBOutlet weak var workAsTeam: UILabel!
+    
+    @IBOutlet weak var callThePlays: UILabel!
+    
+    @IBOutlet weak var makeThePlays: UILabel!
+    
+    @IBOutlet weak var doYourJob: UILabel!
     
     @IBAction func ball_button(_ sender: UIButton) {
         
@@ -1269,13 +1293,98 @@ class ColorSwitchViewController: UIViewController {
 //                            self.playerDownStackView.alpha = 1.0})
 //                        UIView.animate(withDuration: 0.5, animations: {
 //                            self.lockerBall.alpha = 1.0})
-                    
+                    self.animateInstructions()
                         
      })
                         
           // setUpLockerView()
     }
     
+    func animateInstructions(){
+        
+//        workAsTeam.alpha = 0.0
+//        callThePlays.alpha = 0.0
+//        makeThePlays.alpha = 0.0
+//        doYourJob.alpha = 0.0
+        self.workAsTeam.isHidden = false
+        self.callThePlays.isHidden = false
+        self.makeThePlays.isHidden = false
+        self.doYourJob.isHidden = false
+        self.instructionBall.isHidden = false
+        workAsTeam.alpha = 0.0
+        callThePlays.alpha = 0.0
+        makeThePlays.alpha = 0.0
+        doYourJob.alpha = 0.0
+        instructionBall.alpha = 0.0
+        
+        UIView.animate(
+            withDuration: 2.0,
+            animations: {
+                
+                UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
+                    self.workAsTeam.alpha = 1.0})
+        },
+            completion:{ finished in
+                if(finished){
+                    UIView.animate(
+                        withDuration: 2.0,
+                        
+                        animations: {
+                            UIView.animate(withDuration: 2.0, delay: 1.0, animations: {
+                                self.callThePlays.alpha = 1.0})
+                    },
+                        completion:{ finished in
+                            if(finished){
+                                UIView.animate(
+                                    withDuration: 2.0,
+                                    
+                                    animations: {
+                                        UIView.animate(withDuration: 2.0,delay: 2.0, animations: {
+                                            self.makeThePlays.alpha = 1.0})
+                                },
+                                    completion:{ finished in
+                                        if(finished){
+                                            UIView.animate(
+                                                withDuration: 2.0,
+                                                
+                                                animations: {
+                                                    UIView.animate(withDuration: 2.0,delay: 3.0, animations: {
+                                                        self.doYourJob.alpha = 1.0})
+                                            },
+                                                completion:{ finished in
+                                                    if(finished){
+                                                        UIView.animate(
+                                                            withDuration: 2.0,
+                                                           
+                                                            animations: {
+                                                                UIView.animate(withDuration: 2.0,delay: 3.5, animations: {
+                                                                    self.instructionBall.alpha = 1.0}
+                                                                
+                                                                )
+                                                        },
+                                    
+                                    
+                                    
+                                    completion: { finished in
+                                        //   shakeHead(sender)
+                                }
+                                                        )
+                                                    }
+                                            }
+                                            )
+                                        }
+                                }
+                                )
+                            }
+                    }
+                    )
+                }
+                
+        }
+        )
+        
+        
+    }
     
     func jobButtonTapped(){
         

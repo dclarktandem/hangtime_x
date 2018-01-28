@@ -86,33 +86,42 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="patriots_field.png" translatesAutoresizingMaskIntoConstraints="NO" id="82p-25-aSw" userLabel="Field Image">
                                 <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work as a Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-iI-W9e">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work as a Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-iI-W9e">
                                 <rect key="frame" x="82.5" y="150" width="209.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-Yv-3JB">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-Yv-3JB">
                                 <rect key="frame" x="95.5" y="219" width="183" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kre-3b-2Rg">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make the Plays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kre-3b-2Rg">
                                 <rect key="frame" x="85" y="288.5" width="204" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do your Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-6k-4ta">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do your Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-6k-4ta">
                                 <rect key="frame" x="101" y="364" width="172.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Wk-UxE" userLabel="Instruction Ball">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Wk-UxE" userLabel="Instruction Ball">
                                 <rect key="frame" x="124.5" y="429" width="125" height="111"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4Z-z6-Esa" userLabel="Instruction Button">
+                                <rect key="frame" x="124.5" y="429" width="125" height="111"/>
+                                <connections>
+                                    <action selector="ballTap_released:" destination="BYZ-38-t0r" eventType="touchDown" id="9s8-M9-dX7"/>
+                                    <action selector="ballTapped_heldDown:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="kE9-bP-iAy"/>
+                                    <action selector="instructionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsM-SM-fTK"/>
+                                    <action selector="lockerBall_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HKZ-6x-Qco"/>
+                                </connections>
+                            </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locker.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-ez-Y7x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -508,6 +517,7 @@
                             <constraint firstItem="Mqf-1t-QW9" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="1:7" id="QxR-2a-To5"/>
                             <constraint firstItem="zmC-tz-QjB" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="Rij-nL-kUm"/>
                             <constraint firstItem="Ohg-ub-Aau" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="9:48" id="SPc-Bw-5zP"/>
+                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="width" secondItem="JIh-Wk-UxE" secondAttribute="width" id="Smr-bY-m9d"/>
                             <constraint firstItem="oyN-i9-SZF" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" id="TP3-lT-oQS"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="UTP-8R-kxk"/>
                             <constraint firstItem="kre-3b-2Rg" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Vx4-W9-nhf"/>
@@ -520,6 +530,7 @@
                             <constraint firstItem="oh0-Fs-d8z" firstAttribute="height" secondItem="rTw-ez-Y7x" secondAttribute="height" multiplier="1:7" id="XVr-3w-KZU"/>
                             <constraint firstItem="Klt-MT-vPz" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="11:48" id="XcY-4d-3tM"/>
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="XiJ-v8-Y0T"/>
+                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="centerX" secondItem="JIh-Wk-UxE" secondAttribute="centerX" id="YMM-3u-c0c"/>
                             <constraint firstItem="skC-vc-KGJ" firstAttribute="centerY" secondItem="VYg-tW-SNV" secondAttribute="centerY" id="Yme-Kt-hJX"/>
                             <constraint firstItem="mED-5H-5wM" firstAttribute="width" secondItem="orN-fp-zBS" secondAttribute="width" multiplier="1:9" id="ZHV-Ou-rch"/>
                             <constraint firstItem="JIh-Wk-UxE" firstAttribute="height" secondItem="oyN-i9-SZF" secondAttribute="height" multiplier="1:6" id="a63-Pn-VZu"/>
@@ -536,8 +547,10 @@
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="bzq-zw-QyF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Hd-O3-crI" secondAttribute="trailing" constant="-16" id="ct0-8m-Ywg"/>
                             <constraint firstItem="rTw-ez-Y7x" firstAttribute="centerX" secondItem="2Hd-O3-crI" secondAttribute="centerX" id="ctl-dj-SjK"/>
+                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="height" secondItem="JIh-Wk-UxE" secondAttribute="height" id="d5L-Kv-Uy6"/>
                             <constraint firstItem="oh0-Fs-d8z" firstAttribute="width" secondItem="rTw-ez-Y7x" secondAttribute="width" multiplier="8:10" id="dsE-vg-Dzq"/>
                             <constraint firstItem="nED-bY-674" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:39" id="eMt-Ll-bU2"/>
+                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="centerY" secondItem="JIh-Wk-UxE" secondAttribute="centerY" id="f77-fJ-THz"/>
                             <constraint firstItem="2Hd-O3-crI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="fXd-51-fiP"/>
                             <constraint firstItem="KA4-Sa-dQc" firstAttribute="centerY" secondItem="rTw-ez-Y7x" secondAttribute="centerY" multiplier="20:17" id="fbz-no-AWC"/>
                             <constraint firstItem="dMW-iI-W9e" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="ffC-MS-noy"/>
@@ -606,8 +619,10 @@
                         <outlet property="callText_4" destination="KP6-jD-bnM" id="OUn-IS-zRi"/>
                         <outlet property="callText_5" destination="ZWE-Ah-50H" id="ovN-tT-iuD"/>
                         <outlet property="callText_6" destination="MLr-rW-SPa" id="EWB-3W-eh9"/>
+                        <outlet property="callThePlays" destination="tbv-Yv-3JB" id="8Go-qq-J5X"/>
                         <outlet property="clockDisplay" destination="Ohg-ub-Aau" id="YvD-XL-W12"/>
                         <outlet property="connectionsLabel" destination="vwt-mK-OVB" id="qhp-oq-0tF"/>
+                        <outlet property="doYourJob" destination="hiv-6k-4ta" id="C0O-N4-2aP"/>
                         <outlet property="field_image" destination="82p-25-aSw" id="Ss1-Pi-9KZ"/>
                         <outlet property="football" destination="rY4-yL-o9R" id="klS-oA-By6"/>
                         <outlet property="game_1_Button" destination="25D-ip-rfH" id="YAV-Fq-5YF"/>
@@ -616,8 +631,10 @@
                         <outlet property="game_4_Button" destination="Vae-NU-wmd" id="oo9-sh-FHi"/>
                         <outlet property="game_5_Button" destination="skC-vc-KGJ" id="ZZa-a3-fBf"/>
                         <outlet property="game_6_Button" destination="nb9-5s-95U" id="H2W-Pw-pLL"/>
+                        <outlet property="instructionBall" destination="JIh-Wk-UxE" id="cnU-AO-JsZ"/>
                         <outlet property="lockerBall" destination="Mqf-1t-QW9" id="NLa-44-cLB"/>
                         <outlet property="locker_image" destination="rTw-ez-Y7x" id="FC8-SP-Q7X"/>
+                        <outlet property="makeThePlays" destination="kre-3b-2Rg" id="MDu-lh-udb"/>
                         <outlet property="panelBkground_1_1" destination="XiD-kP-cVP" id="xxT-aP-eGM"/>
                         <outlet property="panelBkground_2" destination="JyA-Ry-ZMR" id="sp8-oA-wh8"/>
                         <outlet property="panelBkground_3" destination="Klt-MT-vPz" id="hz4-qs-pyi"/>
@@ -646,6 +663,7 @@
                         <outlet property="sil_up_white" destination="Psx-EM-50u" id="b0f-xJ-BiE"/>
                         <outlet property="taskPanel" destination="BSu-Se-ZER" id="ybM-Rt-AcK"/>
                         <outlet property="turfScreen" destination="orN-fp-zBS" id="qLL-YL-hfv"/>
+                        <outlet property="workAsTeam" destination="dMW-iI-W9e" id="bab-Cq-zLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
