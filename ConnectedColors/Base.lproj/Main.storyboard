@@ -110,18 +110,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Wk-UxE" userLabel="Instruction Ball">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Wk-UxE" userLabel="Instruction Ball">
                                 <rect key="frame" x="124.5" y="429" width="125" height="111"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4Z-z6-Esa" userLabel="Instruction Button">
-                                <rect key="frame" x="124.5" y="429" width="125" height="111"/>
-                                <connections>
-                                    <action selector="ballTap_released:" destination="BYZ-38-t0r" eventType="touchDown" id="9s8-M9-dX7"/>
-                                    <action selector="ballTapped_heldDown:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="kE9-bP-iAy"/>
-                                    <action selector="instructionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsM-SM-fTK"/>
-                                    <action selector="lockerBall_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HKZ-6x-Qco"/>
-                                </connections>
-                            </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locker.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-ez-Y7x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -174,6 +165,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="football_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-1t-QW9">
                                 <rect key="frame" x="140.5" y="524" width="94" height="95.5"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4Z-z6-Esa" userLabel="Instruction Button">
+                                <rect key="frame" x="124" y="401" width="125" height="166.5"/>
+                                <connections>
+                                    <action selector="instructionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsM-SM-fTK"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZH-Bd-vAm">
                                 <rect key="frame" x="111" y="220" width="151" height="225"/>
                                 <connections>
@@ -433,7 +430,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U21-Ea-REJ" userLabel="Score Field">
-                                        <rect key="frame" x="81" y="266.5" width="213.5" height="135.5"/>
+                                        <rect key="frame" x="81" y="266" width="213.5" height="135.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="230">
                                                 <attributes>
@@ -547,7 +544,7 @@
                             <constraint firstItem="MDh-j8-pRL" firstAttribute="height" secondItem="orN-fp-zBS" secondAttribute="height" multiplier="3:29" id="bzq-zw-QyF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Hd-O3-crI" secondAttribute="trailing" constant="-16" id="ct0-8m-Ywg"/>
                             <constraint firstItem="rTw-ez-Y7x" firstAttribute="centerX" secondItem="2Hd-O3-crI" secondAttribute="centerX" id="ctl-dj-SjK"/>
-                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="height" secondItem="JIh-Wk-UxE" secondAttribute="height" id="d5L-Kv-Uy6"/>
+                            <constraint firstItem="H4Z-z6-Esa" firstAttribute="height" secondItem="JIh-Wk-UxE" secondAttribute="height" multiplier="1.5" id="d5L-Kv-Uy6"/>
                             <constraint firstItem="oh0-Fs-d8z" firstAttribute="width" secondItem="rTw-ez-Y7x" secondAttribute="width" multiplier="8:10" id="dsE-vg-Dzq"/>
                             <constraint firstItem="nED-bY-674" firstAttribute="centerX" secondItem="orN-fp-zBS" secondAttribute="centerX" multiplier="64:39" id="eMt-Ll-bU2"/>
                             <constraint firstItem="H4Z-z6-Esa" firstAttribute="centerY" secondItem="JIh-Wk-UxE" secondAttribute="centerY" id="f77-fJ-THz"/>
@@ -632,6 +629,7 @@
                         <outlet property="game_5_Button" destination="skC-vc-KGJ" id="ZZa-a3-fBf"/>
                         <outlet property="game_6_Button" destination="nb9-5s-95U" id="H2W-Pw-pLL"/>
                         <outlet property="instructionBall" destination="JIh-Wk-UxE" id="cnU-AO-JsZ"/>
+                        <outlet property="instructionButton" destination="H4Z-z6-Esa" id="teG-Nr-M2T"/>
                         <outlet property="lockerBall" destination="Mqf-1t-QW9" id="NLa-44-cLB"/>
                         <outlet property="locker_image" destination="rTw-ez-Y7x" id="FC8-SP-Q7X"/>
                         <outlet property="makeThePlays" destination="kre-3b-2Rg" id="MDu-lh-udb"/>

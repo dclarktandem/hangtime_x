@@ -290,6 +290,7 @@ class ColorSwitchViewController: UIViewController {
             
             if myGlobalPlayerNum == 1 {
                 currentCount -= 1
+                if currentCount < 1 {currentCount = 0}
                 // sendTime(currentCount: currentCount)
                 colorService.sendColor("updateClockMSG")
                 clockDisplay.text = String(currentCount)
@@ -316,6 +317,7 @@ class ColorSwitchViewController: UIViewController {
         if gameState == true {
       
     currentCount -= 1
+            if currentCount < 1 {currentCount = 0}
         clockDisplay.text = String(currentCount)
         updateProgBar()
         checkGameStatus()
@@ -1129,18 +1131,93 @@ class ColorSwitchViewController: UIViewController {
                 }
             }
                 
-                
-                
-            else if numPlayers == 4 {
+            else if numPlayers == 3 {
                 
                 if myGlobalPlayerNum == 1 {
+                    
+                  
+                    switch whichPrompt {
+                    case 2:
+                        self.taskPanel.text = String("Rushing Yards 10")
+                        promptSwitch_1 = 2
+                    case 3:
+                        self.taskPanel.text = String("Upback 2 Yards")
+                        promptSwitch_1 = 3
+                    case 4:
+                        self.taskPanel.text = String("Drag Route In")
+                        promptSwitch_1 = 4
+                    case 5:
+                        self.taskPanel.text = String("Gunner to Tackle")
+                        promptSwitch_1 = 5
+                    case 6:
+                        self.taskPanel.text = String("Protect Pocket")
+                    default:
+                        self.taskPanel.text = String("Default Called")
+                    }
+                }
+            
+                if myGlobalPlayerNum == 2 {
                     
                     switch whichPrompt {
                     case 2:
                         self.taskPanel.text = String("Screen Pass Behind Line")
                         promptSwitch_1 = 2
                     case 3:
-                        self.taskPanel.text = String("Call Audible: Hail Mary")
+                        self.taskPanel.text = String("Hook and Ladder")
+                        promptSwitch_1 = 3
+                    case 4:
+                        self.taskPanel.text = String("Quarterback Sneak")
+                        promptSwitch_1 = 4
+                    case 5:
+                        self.taskPanel.text = String("Pass Block Step Back")
+                        promptSwitch_1 = 5
+                    case 6:
+                        self.taskPanel.text = String("Off Tackle Outside")
+                    default:
+                        self.taskPanel.text = String("Default Called")
+                    }
+                }
+                
+
+                
+                
+                if myGlobalPlayerNum == 3 {
+                    
+                    switch whichPrompt {
+                    case 2:
+                        self.taskPanel.text = String("Flea Flicker")
+                        promptSwitch_1 = 2
+                    case 3:
+                        self.taskPanel.text = String("Slam 6 Yards")
+                        promptSwitch_1 = 3
+                    case 4:
+                        self.taskPanel.text = String("Wide Receiver in Slot Position")
+                        promptSwitch_1 = 4
+                    case 5:
+                        self.taskPanel.text = String("End run 45 Yards")
+                        promptSwitch_1 = 5
+                    case 6:
+                        self.taskPanel.text = String("Water Boy to Empty")
+                    default:
+                        self.taskPanel.text = String("Default Called")
+                    }
+                }
+                
+                
+            }
+                
+            else if numPlayers == 4 {
+                
+                if myGlobalPlayerNum == 1 {
+                    
+                    
+                    
+                    switch whichPrompt {
+                    case 2:
+                        self.taskPanel.text = String("Off Tackle Outside")
+                        promptSwitch_1 = 2
+                    case 3:
+                        self.taskPanel.text = String("Upback 2 Yards")
                         promptSwitch_1 = 3
                     case 4:
                         self.taskPanel.text = String("Spike Ball in End Zone")
@@ -1160,15 +1237,16 @@ class ColorSwitchViewController: UIViewController {
                     
                     
                     
+                    
                     switch whichPrompt {
                     case 2:
                         self.taskPanel.text = String("Slam 6 Yards")
                         promptSwitch_1 = 2
                     case 3:
-                        self.taskPanel.text = String("Upback 2 yards")
+                        self.taskPanel.text = String("Quarterback Audible: Hail Mary")
                         promptSwitch_1 = 3
                     case 4:
-                        self.taskPanel.text = String("Throw Red Challenge Flag")
+                        self.taskPanel.text = String("Hook and Ladder")
                         promptSwitch_1 = 4
                     case 5:
                         self.taskPanel.text = String("Pass Block Step Back")
@@ -1180,7 +1258,7 @@ class ColorSwitchViewController: UIViewController {
                     }
                 }
                 
-                
+              
                 if myGlobalPlayerNum == 3 {
                     
                     switch whichPrompt {
@@ -1188,7 +1266,7 @@ class ColorSwitchViewController: UIViewController {
                         self.taskPanel.text = String("Rushing Yeards 10")
                         promptSwitch_1 = 2
                     case 3:
-                        self.taskPanel.text = String("Hook and Ladder")
+                        self.taskPanel.text = String("Throw Red Challenge Flag")
                         promptSwitch_1 = 3
                     case 4:
                         self.taskPanel.text = String("Drag Route In")
@@ -1197,12 +1275,13 @@ class ColorSwitchViewController: UIViewController {
                         self.taskPanel.text = String("Gunner to Tackle")
                         promptSwitch_1 = 5
                     case 6:
-                        self.taskPanel.text = String("Off Tackle Outside")
+                        self.taskPanel.text = String("Screen Pass Behind Line")
                     default:
                         self.taskPanel.text = String("Default Called")
                     }
                 }
                 
+        
                 
                 if myGlobalPlayerNum == 4 {
                     
@@ -1220,7 +1299,7 @@ class ColorSwitchViewController: UIViewController {
                         self.taskPanel.text = String("Offensive Guards Lineup")
                         promptSwitch_1 = 5
                     case 6:
-                        self.taskPanel.text = String("Punt Return 45 Yards")
+                        self.taskPanel.text = String("End run 45 Yards")
                     default:
                         self.taskPanel.text = String("Default Called")
                     }
@@ -1237,9 +1316,26 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var instructionButton: UIButton!
+    
+    
+    
     @IBAction func instructionButtonTapped(_ sender: Any) {
         
+        print("Instruction Button Tapped")
         
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.locker_image.alpha = 0.0 //for zero opacity
+            self.locker_image.isHidden = false
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.locker_image.alpha = 1.0})
+            UIView.animate(withDuration: 0.5, animations: {
+                self.playerDownStackView.alpha = 1.0})
+            UIView.animate(withDuration: 0.5, animations: {
+                self.lockerBall.alpha = 1.0})
+            })
         
         
         
@@ -1311,6 +1407,7 @@ class ColorSwitchViewController: UIViewController {
         self.makeThePlays.isHidden = false
         self.doYourJob.isHidden = false
         self.instructionBall.isHidden = false
+        self.instructionButton.isHidden = false
         workAsTeam.alpha = 0.0
         callThePlays.alpha = 0.0
         makeThePlays.alpha = 0.0
@@ -1318,46 +1415,46 @@ class ColorSwitchViewController: UIViewController {
         instructionBall.alpha = 0.0
         
         UIView.animate(
-            withDuration: 2.0,
+            withDuration: 0.5,
             animations: {
                 
-                UIView.animate(withDuration: 2.0, delay: 0.0, animations: {
+                UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                     self.workAsTeam.alpha = 1.0})
         },
             completion:{ finished in
                 if(finished){
                     UIView.animate(
-                        withDuration: 2.0,
+                        withDuration: 0.5,
                         
                         animations: {
-                            UIView.animate(withDuration: 2.0, delay: 1.0, animations: {
+                            UIView.animate(withDuration: 0.5, delay: 1.0, animations: {
                                 self.callThePlays.alpha = 1.0})
                     },
                         completion:{ finished in
                             if(finished){
                                 UIView.animate(
-                                    withDuration: 2.0,
+                                    withDuration: 0.5,
                                     
                                     animations: {
-                                        UIView.animate(withDuration: 2.0,delay: 2.0, animations: {
+                                        UIView.animate(withDuration: 0.5,delay: 2.0, animations: {
                                             self.makeThePlays.alpha = 1.0})
                                 },
                                     completion:{ finished in
                                         if(finished){
                                             UIView.animate(
-                                                withDuration: 2.0,
+                                                withDuration: 0.5,
                                                 
                                                 animations: {
-                                                    UIView.animate(withDuration: 2.0,delay: 3.0, animations: {
+                                                    UIView.animate(withDuration: 0.5,delay: 3.0, animations: {
                                                         self.doYourJob.alpha = 1.0})
                                             },
                                                 completion:{ finished in
                                                     if(finished){
                                                         UIView.animate(
-                                                            withDuration: 2.0,
+                                                            withDuration: 0.5,
                                                            
                                                             animations: {
-                                                                UIView.animate(withDuration: 2.0,delay: 3.5, animations: {
+                                                                UIView.animate(withDuration: 0.5,delay: 4.0, animations: {
                                                                     self.instructionBall.alpha = 1.0}
                                                                 
                                                                 )
@@ -1426,14 +1523,14 @@ class ColorSwitchViewController: UIViewController {
             case 1:
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-             setUpGameScreen_1_1()
+             setUpGameScreen_2_Player_1_1()
         
                 
             case 2:
                 
                 UIView.animate(withDuration: 0.5, animations: {
                     self.turfScreen.alpha = 1.0})
-                setUpGameScreen_2_1()
+                setUpGameScreen_2_Player_2_1()
                 
                 
             default:
@@ -1541,8 +1638,35 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
-    
     func setUpGameScreen_1_1 (){
+        
+
+        //Legacy Function, will be deleted
+
+    }
+    
+    func setUpGameScreen_2_1 (){
+        
+        
+        //Legacy Function, will be deleted
+        
+    }
+    
+    func setUpGameScreen_3_1 (){
+        
+        
+        //Legacy Function, will be deleted
+        
+    }
+    
+    func setUpGameScreen_4_1 (){
+        
+  //Legacy Function, will be deleted
+        
+    }
+    
+    
+    func setUpGameScreen_2_Player_1_1 (){
         
         setUpGameScreenElements()
         
@@ -1560,7 +1684,7 @@ class ColorSwitchViewController: UIViewController {
         resetGame()
     }
     
-    func setUpGameScreen_2_1 (){
+    func setUpGameScreen_2_Player_2_1 (){
         
         setUpGameScreenElements()
         
@@ -1570,7 +1694,7 @@ class ColorSwitchViewController: UIViewController {
         self.callText_1.text = "Offensive Gaurds Lineup"
         self.callText_2.text = "Wide Receiver in Slot Position"
         self.callText_3.text = "Set Crowd Noise to Insane"
-        self.callText_4.text = "Run Block"
+        self.callText_4.text = "Run Block to 3 Yards"
         self.callText_5.text = "Play Action Fake"
         self.callText_6.text = "Hook and Ladder Hook"
         myCurrentAnswer = "3_2"
@@ -1578,11 +1702,91 @@ class ColorSwitchViewController: UIViewController {
         resetGame()
     }
     
-    func setUpGameScreen_3_1 (){
+    func setUpGameScreen_3_Player_1_1 (){
+        
+        setUpGameScreenElements()
+        
+        //taskPanel.text = "Set Crowd Noise to Insane"
+        advancePrompt()
+        
+        
+        self.callText_1.text = "Set Crowd Noise to Insane"
+        self.callText_2.text = "Screen Pass Behind Line"
+        self.callText_3.text = "Play Action Fake"
+        self.callText_4.text = "Quarterback Sneak"
+        self.callText_5.text = "End Run 45 Yards"
+        self.callText_6.text = "Protect Pocket"
+        colorService.sendColor("gameReset")
+        myCurrentAnswer = "1_4"
+        resetGame()
+    }
+    
+    func setUpGameScreen_3_Player_2_1 (){
+        
+        setUpGameScreenElements()
+        
+        //taskPanel.text = "Forward Pass 20 Yards"
+        advancePrompt()
+        
+        
+        self.callText_1.text = "Forward Pass 20 Yards"
+        self.callText_2.text = "Slam 6 Yards"
+        self.callText_3.text = "Upback 2 Yards"
+        self.callText_4.text = "Wide Receiver in Slot Position"
+        self.callText_5.text = "Pass Block Step Back"
+        self.callText_6.text = "Water Boy to Empty"
+        myCurrentAnswer = "3_2"
+        colorService.sendColor("gameReset")
+        resetGame()
+    }
+    
+    func setUpGameScreen_3_Player_3_1 (){
         
         setUpGameScreenElements()
         advancePrompt()
 
+        
+        self.callText_1.text = "Flea Flicker"
+        self.callText_2.text = "Rushing Yards 10"
+        self.callText_3.text = "Hook and Ladder"
+        self.callText_4.text = "Drag Route In"
+        self.callText_5.text = "Gunner to Tackle"
+        self.callText_6.text = "Off Tackle Outside"
+        
+    }
+    
+    func setUpGameScreen_4_Player_1_1 (){
+        
+        setUpGameScreenElements()
+        advancePrompt()
+        
+        self.callText_1.text = "Drag Route In"
+        self.callText_2.text = "Off Tackle Outside"
+        self.callText_3.text = "Pass Block Step Back"
+        self.callText_4.text = "Forward Pass"
+        self.callText_5.text = "Flea Flicker to Running Back"
+        self.callText_6.text = "Rush 10 Yards"
+
+    }
+    
+    func setUpGameScreen_4_Player_2_1 (){
+        
+        setUpGameScreenElements()
+        advancePrompt()
+        
+        self.callText_1.text = "Offensive Gaurds Lineup"
+        self.callText_2.text = "Wide Receiver in Slot Position"
+        self.callText_3.text = "Set Crowd Noise to Insane"
+        self.callText_4.text = "Run Block to 3 Yards"
+        self.callText_5.text = "Play Action Fake"
+        self.callText_6.text = "Hook and Ladder Hook"
+        
+    }
+    
+    func setUpGameScreen_4_Player_3_1 (){
+        
+        setUpGameScreenElements()
+        advancePrompt()
         
         self.callText_1.text = "Upback"
         self.callText_2.text = "Water Boy to Empty"
@@ -1593,18 +1797,18 @@ class ColorSwitchViewController: UIViewController {
         
     }
     
-    func setUpGameScreen_4_1 (){
+    func setUpGameScreen_4_Player_4_1 (){
         
         setUpGameScreenElements()
         advancePrompt()
         
-        self.callText_1.text = "Upback"
-        self.callText_2.text = "Water Boy to Empty"
-        self.callText_3.text = "Protect Pocket"
-        self.callText_4.text = "Quarterback Sneak"
-        self.callText_5.text = "Screen Pass Behind Line"
-        self.callText_6.text = "Slam"
-
+        self.callText_1.text = "Throw Red Challenge Flag"
+        self.callText_2.text = "Spike Ball in End Zone"
+        self.callText_3.text = "Quarterback Audible: Hail Mary"
+        self.callText_4.text = "Cheerleaders Make Pyramid"
+        self.callText_5.text = "Gunner to Tackle"
+        self.callText_6.text = "End run 45 Yards"
+        
     }
     
     
