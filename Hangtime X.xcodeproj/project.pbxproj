@@ -15,6 +15,12 @@
 		BF6F14021E4E58C90018D56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F14001E4E58C90018D56E /* LaunchScreen.storyboard */; };
 		BF6F140C1E4E5B660018D56E /* ColorServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F140B1E4E5B660018D56E /* ColorServiceManager.swift */; };
 		F525C0341FB744E6009F0C77 /* Turf Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = F525C0331FB744E6009F0C77 /* Turf Screen.png */; };
+		F56674A320421FF400699C39 /* play1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A220421FF400699C39 /* play1.gif */; };
+		F56674A9204240DD00699C39 /* play2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A4204240DC00699C39 /* play2.gif */; };
+		F56674AA204240DD00699C39 /* play5.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A5204240DD00699C39 /* play5.gif */; };
+		F56674AB204240DD00699C39 /* play6.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A6204240DD00699C39 /* play6.gif */; };
+		F56674AC204240DD00699C39 /* play4.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A7204240DD00699C39 /* play4.gif */; };
+		F56674AD204240DD00699C39 /* play3.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A8204240DD00699C39 /* play3.gif */; };
 		F57908381FC0FDAE00E697C2 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908371FC0FDAE00E697C2 /* LabelExtension.swift */; };
 		F579083A1FC0FE5500E697C2 /* hexColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908391FC0FE5500E697C2 /* hexColorExtension.swift */; };
 		F57908421FC1280000E697C2 /* round_timer_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F57908411FC1280000E697C2 /* round_timer_2.gif */; };
@@ -51,6 +57,12 @@
 		BF6F14031E4E58C90018D56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6F140B1E4E5B660018D56E /* ColorServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorServiceManager.swift; sourceTree = "<group>"; };
 		F525C0331FB744E6009F0C77 /* Turf Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Turf Screen.png"; sourceTree = "<group>"; };
+		F56674A220421FF400699C39 /* play1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play1.gif; sourceTree = "<group>"; };
+		F56674A4204240DC00699C39 /* play2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play2.gif; sourceTree = "<group>"; };
+		F56674A5204240DD00699C39 /* play5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play5.gif; sourceTree = "<group>"; };
+		F56674A6204240DD00699C39 /* play6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play6.gif; sourceTree = "<group>"; };
+		F56674A7204240DD00699C39 /* play4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play4.gif; sourceTree = "<group>"; };
+		F56674A8204240DD00699C39 /* play3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play3.gif; sourceTree = "<group>"; };
 		F57908371FC0FDAE00E697C2 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		F57908391FC0FE5500E697C2 /* hexColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexColorExtension.swift; sourceTree = "<group>"; };
 		F57908411FC1280000E697C2 /* round_timer_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_timer_2.gif; sourceTree = "<group>"; };
@@ -138,6 +150,12 @@
 		F5BEA2921F895C7F00DA61F2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F56674A4204240DC00699C39 /* play2.gif */,
+				F56674A8204240DD00699C39 /* play3.gif */,
+				F56674A7204240DD00699C39 /* play4.gif */,
+				F56674A5204240DD00699C39 /* play5.gif */,
+				F56674A6204240DD00699C39 /* play6.gif */,
+				F56674A220421FF400699C39 /* play1.gif */,
 				F5D5B5D5201E6A9C0030900A /* patriots_field.png */,
 				F5D5B5D3201E570D0030900A /* field image.png */,
 				F5B91E4F20157889008F614D /* hangtime logo.png */,
@@ -233,13 +251,16 @@
 				F5BEA29D1F89701400DA61F2 /* locker.jpg in Resources */,
 				F5BE471F1F9D2CE30064A284 /* sil_up_red.png in Resources */,
 				F5BEA2961F89614B00DA61F2 /* football_1.png in Resources */,
+				F56674AA204240DD00699C39 /* play5.gif in Resources */,
 				F525C0341FB744E6009F0C77 /* Turf Screen.png in Resources */,
 				F5BE47201F9D2CE30064A284 /* sil_up_silver.png in Resources */,
 				F5D5B5D4201E570E0030900A /* field image.png in Resources */,
 				BF6F14021E4E58C90018D56E /* LaunchScreen.storyboard in Resources */,
+				F56674AC204240DD00699C39 /* play4.gif in Resources */,
 				F5BEA2A51F8ABF2B00DA61F2 /* sil_down_red.png in Resources */,
 				F5B91E5020157889008F614D /* hangtime logo.png in Resources */,
 				F5BE471E1F9D2CE30064A284 /* sil_up_white.png in Resources */,
+				F56674A9204240DD00699C39 /* play2.gif in Resources */,
 				F57908461FC1283C00E697C2 /* Round_timer_two.mov in Resources */,
 				F5BEA2941F89613800DA61F2 /* hangtime_main.png in Resources */,
 				F57908421FC1280000E697C2 /* round_timer_2.gif in Resources */,
@@ -247,6 +268,9 @@
 				BF6F13FD1E4E58C90018D56E /* Main.storyboard in Resources */,
 				F5BEA2A31F8ABF2B00DA61F2 /* sil_down_silver.png in Resources */,
 				F5BEA29F1F8ABCB300DA61F2 /* sil_down_white.png in Resources */,
+				F56674AD204240DD00699C39 /* play3.gif in Resources */,
+				F56674A320421FF400699C39 /* play1.gif in Resources */,
+				F56674AB204240DD00699C39 /* play6.gif in Resources */,
 				F5BEA2A41F8ABF2B00DA61F2 /* sil_down_blue.png in Resources */,
 				F5BE471D1F9D2CE30064A284 /* sil_up_blue.png in Resources */,
 				F5BEA29B1F896C8000DA61F2 /* NFL Opening Final.mp3 in Resources */,
