@@ -478,7 +478,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U21-Ea-REJ" userLabel="Score Field">
-                                        <rect key="frame" x="107.5" y="278" width="160.5" height="112"/>
+                                        <rect key="frame" x="81" y="266.5" width="213.5" height="135.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="230">
                                                 <attributes>

@@ -21,6 +21,8 @@
 		F56674AB204240DD00699C39 /* play6.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A6204240DD00699C39 /* play6.gif */; };
 		F56674AC204240DD00699C39 /* play4.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A7204240DD00699C39 /* play4.gif */; };
 		F56674AD204240DD00699C39 /* play3.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A8204240DD00699C39 /* play3.gif */; };
+		F56674AF20433F0B00699C39 /* done-ding-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = F56674AE20433F0B00699C39 /* done-ding-bell.wav */; };
+		F56674B120434B4000699C39 /* double-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F56674B020434B4000699C39 /* double-10.mp3 */; };
 		F57908381FC0FDAE00E697C2 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908371FC0FDAE00E697C2 /* LabelExtension.swift */; };
 		F579083A1FC0FE5500E697C2 /* hexColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908391FC0FE5500E697C2 /* hexColorExtension.swift */; };
 		F57908421FC1280000E697C2 /* round_timer_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F57908411FC1280000E697C2 /* round_timer_2.gif */; };
@@ -63,6 +65,8 @@
 		F56674A6204240DD00699C39 /* play6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play6.gif; sourceTree = "<group>"; };
 		F56674A7204240DD00699C39 /* play4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play4.gif; sourceTree = "<group>"; };
 		F56674A8204240DD00699C39 /* play3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play3.gif; sourceTree = "<group>"; };
+		F56674AE20433F0B00699C39 /* done-ding-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "done-ding-bell.wav"; sourceTree = "<group>"; };
+		F56674B020434B4000699C39 /* double-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "double-10.mp3"; sourceTree = "<group>"; };
 		F57908371FC0FDAE00E697C2 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		F57908391FC0FE5500E697C2 /* hexColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexColorExtension.swift; sourceTree = "<group>"; };
 		F57908411FC1280000E697C2 /* round_timer_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_timer_2.gif; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 		F5BEA2971F8967AB00DA61F2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F56674B020434B4000699C39 /* double-10.mp3 */,
+				F56674AE20433F0B00699C39 /* done-ding-bell.wav */,
 				F5BEA29A1F896C8000DA61F2 /* NFL Opening Final.mp3 */,
 				F5BEA2981F89693F00DA61F2 /* air horn (club sample).mp3 */,
 			);
@@ -250,6 +256,7 @@
 				F5D5B5D6201E6A9D0030900A /* patriots_field.png in Resources */,
 				F5BEA29D1F89701400DA61F2 /* locker.jpg in Resources */,
 				F5BE471F1F9D2CE30064A284 /* sil_up_red.png in Resources */,
+				F56674B120434B4000699C39 /* double-10.mp3 in Resources */,
 				F5BEA2961F89614B00DA61F2 /* football_1.png in Resources */,
 				F56674AA204240DD00699C39 /* play5.gif in Resources */,
 				F525C0341FB744E6009F0C77 /* Turf Screen.png in Resources */,
@@ -272,6 +279,7 @@
 				F56674A320421FF400699C39 /* play1.gif in Resources */,
 				F56674AB204240DD00699C39 /* play6.gif in Resources */,
 				F5BEA2A41F8ABF2B00DA61F2 /* sil_down_blue.png in Resources */,
+				F56674AF20433F0B00699C39 /* done-ding-bell.wav in Resources */,
 				F5BE471D1F9D2CE30064A284 /* sil_up_blue.png in Resources */,
 				F5BEA29B1F896C8000DA61F2 /* NFL Opening Final.mp3 in Resources */,
 			);

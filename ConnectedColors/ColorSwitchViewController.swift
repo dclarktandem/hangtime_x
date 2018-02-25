@@ -89,11 +89,19 @@ var gameState = false
 
 let limeGreen = UIColor(red:0.45, green:0.71, blue:0.40, alpha:1.0)
 
+let hangtimeGreen = UIColor(red:0.00, green:0.43, blue:0.00, alpha:1.0)
+
+let HTDKGreen = UIColor(red:0.00, green:0.23, blue:0.00, alpha:1.0)
+
+let successYellow = UIColor(red:0.99, green:0.97, blue:0.55, alpha:1.0)
+
+
 
 class ColorSwitchViewController: UIViewController {
     
     var openingSoundEffect: AVAudioPlayer!
     var hornSoundEffect: AVAudioPlayer!
+    var bellSoundEffect: AVAudioPlayer!
     var brain = GameModel()
     var myGlobalPlayerNum = Int()
     var numPlayers = 0
@@ -516,6 +524,40 @@ class ColorSwitchViewController: UIViewController {
     
     
     func resetProgState(){
+       
+        let path = Bundle.main.path(forResource: "double-10.mp3", ofType:nil)!
+        let bellUrl = URL(fileURLWithPath: path)
+        do {
+            let sound = try AVAudioPlayer(contentsOf: bellUrl)
+            bellSoundEffect = sound
+            sound.play()
+
+        } catch {
+            // couldn't load file D:
+        }
+        
+
+        UIView.animate(withDuration: 0.2, animations: {
+        self.progress_1.backgroundColor = successYellow
+        self.progress_2.backgroundColor = successYellow
+        self.progress_3.backgroundColor = successYellow
+        self.progress_4.backgroundColor = successYellow
+        self.progress_5.backgroundColor = successYellow
+        self.progress_6.backgroundColor = successYellow
+        self.progress_7.backgroundColor = successYellow
+           })
+        
+        UIView.animate(withDuration: 0.4, animations: {
+        //self.roundCountView.backgroundColor = successYellow
+        self.progress_1.alpha = 1.0
+        self.progress_2.alpha = 1.0
+        self.progress_3.alpha = 1.0
+        self.progress_4.alpha = 1.0
+        self.progress_5.alpha = 1.0
+        self.progress_6.alpha = 1.0
+        self.progress_7.alpha = 1.0
+        })
+        
         
         UIView.animate(withDuration: 0.5, animations: {
             self.progress_1.alpha = 0.0
@@ -526,6 +568,16 @@ class ColorSwitchViewController: UIViewController {
             self.progress_6.alpha = 0.0
             self.progress_7.alpha = 0.0
         })
+        
+        self.progress_1.backgroundColor = hangtimeGreen
+        self.progress_2.backgroundColor = hangtimeGreen
+        self.progress_3.backgroundColor = hangtimeGreen
+        self.progress_4.backgroundColor = hangtimeGreen
+        self.progress_5.backgroundColor = hangtimeGreen
+        self.progress_6.backgroundColor = hangtimeGreen
+        self.progress_7.backgroundColor = hangtimeGreen
+        
+        //self.roundCountView.backgroundColor = HTDKGreen
         
         progState = 0
         
@@ -1463,8 +1515,7 @@ class ColorSwitchViewController: UIViewController {
 
                 if myGlobalPlayerNum == 3 {
                     
-                    print("Potato - got to changePrompt - player 3")
-                    //print("got to three player set up for player 3")
+
                     
                      print(" a check on myGlobalPlayerNum: \(myGlobalPlayerNum)")
                      print("whichPrompt: \(whichPrompt)")
@@ -1505,7 +1556,7 @@ class ColorSwitchViewController: UIViewController {
                     case 7:
                         self.taskPanel.text = String("Job Done!")
                         
-                        playerTwoComplete = true
+                        playerThreeComplete = true
                         print("Player Three Done")
                     default:
                         self.taskPanel.text = String("Default Called")
@@ -1662,7 +1713,7 @@ class ColorSwitchViewController: UIViewController {
                     case 7:
                         self.taskPanel.text = String("Job Done!")
                         
-                        playerTwoComplete = true
+                        playerThreeComplete = true
                         print("Player Three Done")
                     default:
                         self.taskPanel.text = String("Default Called")
@@ -1713,7 +1764,7 @@ class ColorSwitchViewController: UIViewController {
                     case 7:
                         self.taskPanel.text = String("Job Done!")
                         
-                        playerTwoComplete = true
+                        playerFourComplete = true
                         print("Player Four Done")
                     default:
                         self.taskPanel.text = String("Default Called")
@@ -2350,6 +2401,69 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 if self.myGlobalPlayerNum != 1 {
                 self.updateClock()
                 }
+            case "playChime1":
+                if self.myGlobalPlayerNum == 1 {
+                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+                    let hornUrl = URL(fileURLWithPath: path)
+                    
+                    print("Ball Button Tapped")
+                    do {
+                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+                        self.hornSoundEffect = sound
+                        sound.play()
+                        
+                    } catch {
+                        // couldn't load file D:
+                    }
+                }
+            case "playChime2":
+                if self.myGlobalPlayerNum == 2 {
+                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+                    let hornUrl = URL(fileURLWithPath: path)
+                    
+                    print("Ball Button Tapped")
+                    do {
+                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+                        self.hornSoundEffect = sound
+                        sound.play()
+                        
+                        
+                    } catch {
+                        // couldn't load file D:
+                    }
+                }
+            case "playChime3":
+                if self.myGlobalPlayerNum == 3 {
+                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+                    let hornUrl = URL(fileURLWithPath: path)
+                    
+                    print("Ball Button Tapped")
+                    do {
+                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+                        self.hornSoundEffect = sound
+                        sound.play()
+                        
+                        
+                    } catch {
+                        // couldn't load file D:
+                    }
+                }
+            case "playChime4":
+                if self.myGlobalPlayerNum == 4 {
+                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+                    let hornUrl = URL(fileURLWithPath: path)
+                    
+                    print("Ball Button Tapped")
+                    do {
+                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+                        self.hornSoundEffect = sound
+                        sound.play()
+                        
+                        
+                    } catch {
+                        // couldn't load file D:
+                    }
+                }
             case "white":
                 if lockerState == 1 {
                 startOne = true
@@ -2407,6 +2521,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 
             case "1_1":
                 if self.myCurrentAnswer == "1_1"{
+                    self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2414,12 +2529,14 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 
             case "1_2":
                 if self.myCurrentAnswer == "1_2"{
+                    self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "1_3":
                 if self.myCurrentAnswer == "1_3"{
+                    self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2429,6 +2546,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 print("Got color 1_4.  - Locker view - myCurrentAnswer is:", self.myCurrentAnswer)
                 
                 if self.myCurrentAnswer == "1_4" {
+                    self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 
@@ -2438,6 +2556,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "1_5":
                 
                 if self.myCurrentAnswer == "1_5"{
+                    self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2445,6 +2564,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "1_6":
             
                     if self.myCurrentAnswer == "1_6"{
+                        self.colorService.sendColor("playChime1")
                         self.advancePrompt()
                         self.resetProgState()
                     }
@@ -2453,12 +2573,14 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "2_1":
                 
                 if self.myCurrentAnswer == "2_1"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_2":
                 if self.myCurrentAnswer == "2_2"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2467,86 +2589,102 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "2_3":
                 
                 if self.myCurrentAnswer == "2_3"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_4":
                 if self.myCurrentAnswer == "2_4"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_5":
                 if self.myCurrentAnswer == "2_5"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_6":
                 if self.myCurrentAnswer == "2_6"{
+                    self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "3_1":
                 if self.myCurrentAnswer == "3_1"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "3_2":
                 if self.myCurrentAnswer == "3_2"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "3_3":
                 if self.myCurrentAnswer == "3_3"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "3_4":
                 if self.myCurrentAnswer == "3_4"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "3_5":
                 if self.myCurrentAnswer == "3_5"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "3_6":
                 if self.myCurrentAnswer == "3_6"{
+                    self.colorService.sendColor("playChime3")
                     self.advancePrompt()
                 }
                 
             case "4_1":
                 if self.myCurrentAnswer == "4_1"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
             case "4_2":
                 if self.myCurrentAnswer == "4_2"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
             case "4_3":
                 if self.myCurrentAnswer == "4_3"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
             case "4_4":
                 if self.myCurrentAnswer == "4_4"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
                 
             case "4_5":
                 if self.myCurrentAnswer == "4_5"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
             case "4_6":
                 if self.myCurrentAnswer == "4_6"{
+                    self.colorService.sendColor("playChime4")
                     self.advancePrompt()
                 }
                 
@@ -2632,9 +2770,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
         }
                 
                 
-                
-                
-                //L - What are all the colors for?
+        
             }
         }
 
