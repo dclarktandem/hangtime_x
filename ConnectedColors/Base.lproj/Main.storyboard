@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fyf-yz-sIU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fyf-yz-sIU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -398,33 +398,33 @@
                                 <color key="textColor" red="0.97641217069999997" green="0.67573252839999998" blue="0.0065444859159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mED-5H-5wM" userLabel="Progress 1">
-                                <rect key="frame" x="327" y="78.5" width="41.5" height="69"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mED-5H-5wM" userLabel="Progress 1">
+                                <rect key="frame" x="328" y="78.5" width="40" height="69"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.42745098039215684" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nED-bY-674" userLabel="Progress 2">
-                                <rect key="frame" x="287" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nED-bY-674" userLabel="Progress 2">
+                                <rect key="frame" x="288" y="78.5" width="40" height="69"/>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.6470588235294118" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlr-j0-xNe" userLabel="Progress 3">
-                                <rect key="frame" x="246" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlr-j0-xNe" userLabel="Progress 3">
+                                <rect key="frame" x="249" y="78.5" width="39" height="69"/>
+                                <color key="backgroundColor" red="0.70980392156862748" green="0.83921568627450982" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-h6-9sv" userLabel="Progress 4">
-                                <rect key="frame" x="210" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bP-h6-9sv" userLabel="Progress 4">
+                                <rect key="frame" x="210" y="78.5" width="40" height="69"/>
+                                <color key="backgroundColor" red="0.53725490196078429" green="0.66274509803921566" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frZ-RB-BFA" userLabel="Progress 5">
-                                <rect key="frame" x="169.5" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frZ-RB-BFA" userLabel="Progress 5">
+                                <rect key="frame" x="169.5" y="78.5" width="40" height="69"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.76470588235294112" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-tz-QjB" userLabel="Progress 6">
-                                <rect key="frame" x="131" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-tz-QjB" userLabel="Progress 6">
+                                <rect key="frame" x="130" y="78.5" width="40" height="69"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.51764705882352946" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-j8-pRL" userLabel="Progress 7">
-                                <rect key="frame" x="90.5" y="78.5" width="41.5" height="69"/>
-                                <color key="backgroundColor" red="0.0039215686269999999" green="0.42745098040000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-j8-pRL" userLabel="Progress 7">
+                                <rect key="frame" x="90" y="78.5" width="40" height="69"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.26666666666666666" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhW-od-g8b" customClass="UIImageView">
                                 <rect key="frame" x="84.5" y="84" width="281" height="52"/>
@@ -465,9 +465,9 @@
                                 <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3F-9T-Msr">
-                                        <rect key="frame" x="87.5" y="199" width="200.5" height="47"/>
+                                        <rect key="frame" x="47.5" y="143.5" width="280.5" height="47"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Team Score:">
+                                            <fragment content="Pass Completion!">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.63992686074542471" blue="0.10969779139877567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="36" name="Futura-MediumItalic"/>
@@ -477,7 +477,36 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U21-Ea-REJ" userLabel="Score Field">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Km-ua-YKp">
+                                        <rect key="frame" x="113.5" y="199" width="146.5" height="47"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="23 Yards">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.63992686074542471" blue="0.10969779139877567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="36" name="Futura-MediumItalic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHN-Vm-4Pz">
+                                        <rect key="frame" x="111" y="309.5" width="152" height="47"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="1st Down">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.63992686074542471" blue="0.10969779139877567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="36" name="Futura-MediumItalic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wishbone Fake 24 Dive.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-tG-rUw">
+                                        <rect key="frame" x="19" y="429.5" width="337.5" height="167"/>
+                                    </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U21-Ea-REJ" userLabel="Score Field">
                                         <rect key="frame" x="81" y="266.5" width="213.5" height="135.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="230">
@@ -494,9 +523,17 @@
                                 <color key="backgroundColor" red="0.082114093005657196" green="0.22487303614616394" blue="0.039122432470321655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="U21-Ea-REJ" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="06F-Pj-PIP"/>
-                                    <constraint firstItem="e3F-9T-Msr" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="4:6" id="2hj-97-tJs"/>
+                                    <constraint firstItem="e3F-9T-Msr" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="4:8" id="2hj-97-tJs"/>
+                                    <constraint firstItem="9Km-ua-YKp" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="41k-EB-R2z"/>
                                     <constraint firstItem="e3F-9T-Msr" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Dqf-3Q-IzX"/>
                                     <constraint firstItem="U21-Ea-REJ" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" id="FCM-7C-72B"/>
+                                    <constraint firstItem="RHN-Vm-4Pz" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="Hx3-sP-rNr"/>
+                                    <constraint firstItem="RHN-Vm-4Pz" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" id="PCp-vt-dF3"/>
+                                    <constraint firstItem="9Km-ua-YKp" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="4:6" id="Rcs-P7-7mL"/>
+                                    <constraint firstItem="Ate-tG-rUw" firstAttribute="width" secondItem="oyN-i9-SZF" secondAttribute="width" multiplier="9:10" id="SuJ-hZ-YtZ"/>
+                                    <constraint firstItem="Ate-tG-rUw" firstAttribute="centerX" secondItem="oyN-i9-SZF" secondAttribute="centerX" id="gEa-gv-vQh"/>
+                                    <constraint firstItem="Ate-tG-rUw" firstAttribute="centerY" secondItem="oyN-i9-SZF" secondAttribute="centerY" multiplier="20:13" id="hXD-i7-PY5"/>
+                                    <constraint firstItem="Ate-tG-rUw" firstAttribute="height" secondItem="oyN-i9-SZF" secondAttribute="height" multiplier="5:20" id="tes-mj-bsJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -743,6 +780,7 @@
     </scenes>
     <resources>
         <image name="Turf Screen.png" width="531" height="990"/>
+        <image name="Wishbone Fake 24 Dive.png" width="1060" height="504"/>
         <image name="football_1.png" width="225" height="225"/>
         <image name="hangtime logo.png" width="584" height="159"/>
         <image name="hangtime_main.png" width="1242" height="2208"/>

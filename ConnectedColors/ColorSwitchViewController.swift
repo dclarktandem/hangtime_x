@@ -102,6 +102,7 @@ class ColorSwitchViewController: UIViewController {
     var openingSoundEffect: AVAudioPlayer!
     var hornSoundEffect: AVAudioPlayer!
     var bellSoundEffect: AVAudioPlayer!
+    var whistleSoundEffect: AVAudioPlayer!
     var brain = GameModel()
     var myGlobalPlayerNum = Int()
     var numPlayers = 0
@@ -110,6 +111,7 @@ class ColorSwitchViewController: UIViewController {
     var timeValue_1 = 0
     var progressAmount = 0
     var myCurrentAnswer = "start"
+    var myLocalAnswer = "begin"
 
     @IBOutlet weak var connectionsLabel: UILabel! // Displays connections
 
@@ -194,6 +196,9 @@ class ColorSwitchViewController: UIViewController {
         progress_5.alpha = 0.0
         progress_6.alpha = 0.0
         progress_7.alpha = 0.0
+        
+
+        
         
         Timer.scheduledTimer(timeInterval: 0.001,
                              target: self,
@@ -422,7 +427,7 @@ class ColorSwitchViewController: UIViewController {
         clockDisplay.text = String(currentCount)
         updateProgBar()
         checkGameStatus()
-            
+              print("called checkGameStatus")
         }
     }
     
@@ -432,8 +437,8 @@ class ColorSwitchViewController: UIViewController {
             
         case 2:
             
-            print("playerOneComplete): \(playerOneComplete)")
-            print("playerTwoComplete): \(playerTwoComplete)")
+            print("playerOneComplete : \(playerOneComplete)")
+            print("playerTwoComplete : \(playerTwoComplete)")
             if playerOneScore == 0 {
                 if playerOneComplete {
                     playerOneScore = currentCount
@@ -474,7 +479,7 @@ class ColorSwitchViewController: UIViewController {
             if playerOneComplete && playerTwoComplete && playerThreeComplete {
                 
                 print("Game Over")
-                
+                displayScoreScreen()
                 
             }
             
@@ -517,9 +522,12 @@ class ColorSwitchViewController: UIViewController {
     
     func displayScoreScreen(){
         
-        
-        
-        
+        print("Game Over")
+        self.scoreField.text = String(playerOneScore + playerTwoScore)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.scorePanelBDrop.alpha = 1.0
+
+        })
     }
     
     
@@ -537,25 +545,25 @@ class ColorSwitchViewController: UIViewController {
         }
         
 
-        UIView.animate(withDuration: 0.2, animations: {
-        self.progress_1.backgroundColor = successYellow
-        self.progress_2.backgroundColor = successYellow
-        self.progress_3.backgroundColor = successYellow
-        self.progress_4.backgroundColor = successYellow
-        self.progress_5.backgroundColor = successYellow
-        self.progress_6.backgroundColor = successYellow
-        self.progress_7.backgroundColor = successYellow
-           })
+//        UIView.animate(withDuration: 0.2, animations: {
+////       / self.progress_1.backgroundColor = successYellow
+////        self.progress_2.backgroundColor = successYellow
+////        self.progress_3.backgroundColor = successYellow
+////        self.progress_4.backgroundColor = successYellow
+////        self.progress_5.backgroundColor = successYellow
+////        self.progress_6.backgroundColor = successYellow
+////        self.progress_7.backgroundColor = successYellow
+//           })
         
         UIView.animate(withDuration: 0.4, animations: {
         //self.roundCountView.backgroundColor = successYellow
-        self.progress_1.alpha = 1.0
-        self.progress_2.alpha = 1.0
-        self.progress_3.alpha = 1.0
-        self.progress_4.alpha = 1.0
-        self.progress_5.alpha = 1.0
-        self.progress_6.alpha = 1.0
-        self.progress_7.alpha = 1.0
+        self.progress_1.alpha = 0.5
+        self.progress_2.alpha = 0.5
+        self.progress_3.alpha = 0.5
+        self.progress_4.alpha = 0.5
+        self.progress_5.alpha = 0.5
+        self.progress_6.alpha = 0.5
+        self.progress_7.alpha = 0.5
         })
         
         
@@ -569,13 +577,13 @@ class ColorSwitchViewController: UIViewController {
             self.progress_7.alpha = 0.0
         })
         
-        self.progress_1.backgroundColor = hangtimeGreen
-        self.progress_2.backgroundColor = hangtimeGreen
-        self.progress_3.backgroundColor = hangtimeGreen
-        self.progress_4.backgroundColor = hangtimeGreen
-        self.progress_5.backgroundColor = hangtimeGreen
-        self.progress_6.backgroundColor = hangtimeGreen
-        self.progress_7.backgroundColor = hangtimeGreen
+//        self.progress_1.backgroundColor = hangtimeGreen
+//        self.progress_2.backgroundColor = hangtimeGreen
+//        self.progress_3.backgroundColor = hangtimeGreen
+//        self.progress_4.backgroundColor = hangtimeGreen
+//        self.progress_5.backgroundColor = hangtimeGreen
+//        self.progress_6.backgroundColor = hangtimeGreen
+//        self.progress_7.backgroundColor = hangtimeGreen
         
         //self.roundCountView.backgroundColor = HTDKGreen
         
@@ -608,25 +616,25 @@ class ColorSwitchViewController: UIViewController {
             })
         case 1:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_1.alpha = 1.0})
+                self.progress_1.alpha = 0.5})
         case 2:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_2.alpha = 1.0})
+                self.progress_2.alpha = 0.5})
         case 3:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_3.alpha = 1.0})
+                self.progress_3.alpha = 0.5})
         case 4:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_4.alpha = 1.0})
+                self.progress_4.alpha = 0.5})
         case 5:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_5.alpha = 1.0})
+                self.progress_5.alpha = 0.5})
         case 6:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_6.alpha = 1.0})
+                self.progress_6.alpha = 0.5})
         case 7:
             UIView.animate(withDuration: 0.5, animations: {
-                self.progress_7.alpha = 1.0})
+                self.progress_7.alpha = 0.5})
             
         default:
             print("Unknown progress bar state reached")
@@ -759,12 +767,32 @@ class ColorSwitchViewController: UIViewController {
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_1")
+            if myLocalAnswer == "1_1" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 2:
             colorService.sendColor("2_1")
+            if myLocalAnswer == "2_1" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 3:
             colorService.sendColor("3_1")
+            if myLocalAnswer == "3_1" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 4:
             colorService.sendColor("4_1")
+            if myLocalAnswer == "4_1" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         default:
             print("No valid GlobalPlayerNum")
         }
@@ -786,12 +814,32 @@ class ColorSwitchViewController: UIViewController {
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_2")
+            if myLocalAnswer == "1_2" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 2:
             colorService.sendColor("2_2")
+            if myLocalAnswer == "2_2" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 3:
             colorService.sendColor("3_2")
+            if myLocalAnswer == "3_2" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 4:
             colorService.sendColor("4_2")
+            if myLocalAnswer == "4_2" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         default:
             print("No valid GlobalPlayerNum")
         }
@@ -811,12 +859,32 @@ class ColorSwitchViewController: UIViewController {
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_3")
+            if myLocalAnswer == "1_3" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 2:
             colorService.sendColor("2_3")
+            if myLocalAnswer == "2_3" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 3:
             colorService.sendColor("3_3")
+            if myLocalAnswer == "3_3" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 4:
             colorService.sendColor("4_3")
+            if myLocalAnswer == "4_3" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         default:
             print("No valid GlobalPlayerNum")
         }
@@ -836,12 +904,32 @@ class ColorSwitchViewController: UIViewController {
         switch myGlobalPlayerNum {
         case 1:
             colorService.sendColor("1_4")
+            if myLocalAnswer == "1_4" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 2:
             colorService.sendColor("2_4")
+            if myLocalAnswer == "2_4" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 3:
             colorService.sendColor("3_4")
+            if myLocalAnswer == "3_4" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         case 4:
             colorService.sendColor("4_4")
+            if myLocalAnswer == "4_4" {
+                playSuccessSound()
+            } else {
+                playWhistleSound()
+            }
         default:
             print("No valid GlobalPlayerNum")
         }
@@ -1318,38 +1406,40 @@ class ColorSwitchViewController: UIViewController {
                 case 1:
                     self.taskPanel.text = String("Set Crowd Noise to Insane")
                     promptSwitch_1 = 2
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
                     myCurrentAnswer = "2_3"
                 case 2:
                     self.taskPanel.text = String("Hook and Ladder")
                     promptSwitch_1 = 3
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
                     myCurrentAnswer = "2_6"
                 case 3:
                     self.taskPanel.text = String("Offensive Guards Lineup")
                     promptSwitch_1 = 4
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_1")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_1")
                     myCurrentAnswer = "2_1"
                 case 4:
                     self.taskPanel.text = String("Play Action Fake")
                     promptSwitch_1 = 5
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
                     myCurrentAnswer = "2_5"
                 case 5:
                     self.taskPanel.text = String("Wide Receiver in Slot Position")
                     promptSwitch_1 = 6
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_2")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_2")
                     myCurrentAnswer = "2_2"
                 case 6:
                     self.taskPanel.text = String("Run Block to 3 Yards")
                     promptSwitch_1 = 7
-                    //sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
                     myCurrentAnswer = "2_4"
                 case 7:
-                    self.taskPanel.text = String("Done!!!")
-                    
                     playerOneComplete = true
+                    colorService.sendColor("playerOneDone")
                     print("Player One Done")
+                    self.taskPanel.text = String("Job Done!")
+                    print("playerOneComplete : \(playerOneComplete)")
+                    checkGameStatus()
                 default:
                     self.taskPanel.text = String("Default Called")
                 }
@@ -1358,416 +1448,425 @@ class ColorSwitchViewController: UIViewController {
             
             if myGlobalPlayerNum == 2 {
                 
-    
+                
                 switch whichPrompt {
                 case 1:
                     self.taskPanel.text = String("Forward Pass 20 yards")
                     promptSwitch_2 = 2
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
-            
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
+                    
                     myCurrentAnswer = "1_4"
                 case 2:
                     self.taskPanel.text = String("Rush 10 Yards")
                     promptSwitch_2 = 3
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
-                
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
+                    
                     myCurrentAnswer = "1_6"
                 case 3:
                     self.taskPanel.text = String("Drag Route In")
                     promptSwitch_2 = 4
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
-               
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
+                    
                     myCurrentAnswer = "1_1"
                 case 4:
                     self.taskPanel.text = String("Flea Flicker to Running Back")
                     promptSwitch_2 = 5
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
-              
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
+                    
                     myCurrentAnswer = "1_5"
                 case 5:
                     self.taskPanel.text = String("Off Tackle to Outside")
                     promptSwitch_2 = 6
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-               
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
+                    
                     myCurrentAnswer = "1_2"
                 case 6:
                     self.taskPanel.text = String("Pass Block Step Back")
                     promptSwitch_2 = 7
-                    //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
-     
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
+                    
                     myCurrentAnswer = "1_3"
                 case 7:
-                    self.taskPanel.text = String("Done!!!")
+                    self.taskPanel.text = String("Job Done!")
                     
                     playerTwoComplete = true
+                    colorService.sendColor("playerTwoDone")
                     print("Player Two Done")
                 default:
                     self.taskPanel.text = String("Default Called")
                 }
             }
-                
+            
         } else if numPlayers == 3 {
-                
-                print("got to changePrompt for 3 players")
-                
-                if myGlobalPlayerNum == 1 {
-                    
-                    print("got to three player set up for player 1")
-                    
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Forward Pass 20 yards")
-                        promptSwitch_1 = 2
-                      
-               
-                        myCurrentAnswer = "2_1"
-                    case 2:
-                        self.taskPanel.text = String("Rush 10 Yards")
-                        promptSwitch_1 = 3
-                       
-                   
-                        myCurrentAnswer = "3_2"
-                    case 3:
-                        self.taskPanel.text = String("Upback 2 Yards")
-                        promptSwitch_1 = 4
-                     
-             
-                        myCurrentAnswer = "2_3"
-                    case 4:
-                        self.taskPanel.text = String("Drag Route In")
-                        promptSwitch_1 = 5
-                 
-                    
-                        myCurrentAnswer = "3_4"
-                    case 5:
-                        self.taskPanel.text = String("Gunner to Tackle")
-                        promptSwitch_1 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-              
-                        myCurrentAnswer = "3_5"
-                    case 6:
-                        self.taskPanel.text = String("Protect Pocket")
-                        promptSwitch_1 = 7
-                   
-                    
-                        myCurrentAnswer = "1_6"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerTwoComplete = true
-                        print("Player Two Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
-                }
             
-                if myGlobalPlayerNum == 2 {
-
-                    print("got to three player set up for player 2")
-                    
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Set Crowd Noise to Insane")
-                        promptSwitch_2 = 2
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
-                 
-                        myCurrentAnswer = "1_1"
-                    case 2:
-                        self.taskPanel.text = String("Screen Pass Behind Line")
-                        promptSwitch_2 = 3
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-                 
-                        myCurrentAnswer = "1_2"
-                    case 3:
-                        self.taskPanel.text = String("Hook and Ladder")
-                        promptSwitch_2 = 4
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "3_3")
-                  
-                        myCurrentAnswer = "3_3"
-                    case 4:
-                        self.taskPanel.text = String("Quarterback Sneak")
-                        promptSwitch_2 = 5
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
-               
-                        myCurrentAnswer = "1_4"
-                    case 5:
-                        self.taskPanel.text = String("Pass Block Step Back")
-                        promptSwitch_2 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "2_5")
-              
-                        myCurrentAnswer = "2_5"
-                    case 6:
-                        self.taskPanel.text = String("Off Tackle Outside")
-                        promptSwitch_2 = 7
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "3_6")
+            print("got to changePrompt for 3 players")
             
-                        myCurrentAnswer = "3_6"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerTwoComplete = true
-                        print("Player Two Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
-                }
+            if myGlobalPlayerNum == 1 {
                 
-
-                if myGlobalPlayerNum == 3 {
-                    
-
-                    
-                     print(" a check on myGlobalPlayerNum: \(myGlobalPlayerNum)")
-                     print("whichPrompt: \(whichPrompt)")
-                    
-                    switch whichPrompt {
-                    case 1:
-                        print("got to case 1 for whichPrompt in changePrompt - player 3")
-                        
-                        self.taskPanel.text = String("Flea Flicker")
-                        promptSwitch_3 = 2
-              
-                        myCurrentAnswer = "3_1"
-                    case 2:
-                        self.taskPanel.text = String("Slam 6 Yards")
-                        promptSwitch_3 = 3
+                print("got to three player set up for player 1")
                 
-                        myCurrentAnswer = "2_2"
-                    case 3:
-                        self.taskPanel.text = String("Play Action Fake")
-                        promptSwitch_3 = 4
-
-                        myCurrentAnswer = "1_3"
-                    case 4:
-                        self.taskPanel.text = String("Wide Receiver in Slot Position")
-                        promptSwitch_3 = 5
-
-                        myCurrentAnswer = "2_4"
-                    case 5:
-                        self.taskPanel.text = String("End Run 45 Yards")
-                        promptSwitch_3 = 6
-
-                        myCurrentAnswer = "1_5"
-                    case 6:
-                        self.taskPanel.text = String("Water Boy to Empty")
-                        promptSwitch_3 = 7
-
-                        myCurrentAnswer = "2_6"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerThreeComplete = true
-                        print("Player Three Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Forward Pass 20 yards")
+                    promptSwitch_1 = 2
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_1")
+                    
+                    myCurrentAnswer = "2_1"
+                case 2:
+                    self.taskPanel.text = String("Rush 10 Yards")
+                    promptSwitch_1 = 3
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_2")
+                    
+                    myCurrentAnswer = "3_2"
+                case 3:
+                    self.taskPanel.text = String("Upback 2 Yards")
+                    promptSwitch_1 = 4
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
+                    
+                    myCurrentAnswer = "2_3"
+                case 4:
+                    self.taskPanel.text = String("Drag Route In")
+                    promptSwitch_1 = 5
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_4")
+                    
+                    myCurrentAnswer = "3_4"
+                case 5:
+                    self.taskPanel.text = String("Gunner to Tackle")
+                    promptSwitch_1 = 6
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_5")
+                    
+                    myCurrentAnswer = "3_5"
+                case 6:
+                    self.taskPanel.text = String("Protect Pocket")
+                    promptSwitch_1 = 7
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
+                    
+                    myCurrentAnswer = "1_6"
+                    
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
+                    
+                    playerOneComplete = true
+                    colorService.sendColor("playerOneDone")
+                    print("Player One Done")
+                    
+                default:
+                    self.taskPanel.text = String("Default Called")
                 }
-  
             }
-                
-            else if numPlayers == 4 {
-                
-                if myGlobalPlayerNum == 1 {
-                    
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Set Crowd Noise to Insane")
-                        promptSwitch_1 = 2
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
-          
-                        myCurrentAnswer = "1_4"
-                    case 2:
-                        self.taskPanel.text = String("Off Tackle Outside")
-                        promptSwitch_1 = 3
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
-               
-                        myCurrentAnswer = "1_6"
-                    case 3:
-                        self.taskPanel.text = String("Upback 2 Yards")
-                        promptSwitch_1 = 4
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
             
-                        myCurrentAnswer = "1_1"
-                    case 4:
-                        self.taskPanel.text = String("Spike Ball in End Zone")
-                        promptSwitch_1 = 5
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
-          
-                        myCurrentAnswer = "1_5"
-                    case 5:
-                        self.taskPanel.text = String("Run Block to 3 Yards")
-                        promptSwitch_1 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-          
-                        myCurrentAnswer = "1_2"
-                    case 6:
-                        self.taskPanel.text = String("Protect Pocket")
-                        promptSwitch_1 = 7
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
-               
-                        myCurrentAnswer = "1_3"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerTwoComplete = true
-                        print("Player One Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
+            if myGlobalPlayerNum == 2 {
+                
+                print("got to three player set up for player 2")
+                
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Set Crowd Noise to Insane")
+                    promptSwitch_2 = 2
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
+                    
+                    myCurrentAnswer = "1_1"
+                case 2:
+                    self.taskPanel.text = String("Screen Pass Behind Line")
+                    promptSwitch_2 = 3
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
+                    
+                    myCurrentAnswer = "1_2"
+                case 3:
+                    self.taskPanel.text = String("Hook and Ladder")
+                    promptSwitch_2 = 4
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_3")
+                    
+                    myCurrentAnswer = "3_3"
+                case 4:
+                    self.taskPanel.text = String("Quarterback Sneak")
+                    promptSwitch_2 = 5
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
+                    
+                    myCurrentAnswer = "1_4"
+                case 5:
+                    self.taskPanel.text = String("Pass Block Step Back")
+                    promptSwitch_2 = 6
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
+                    
+                    myCurrentAnswer = "2_5"
+                case 6:
+                    self.taskPanel.text = String("Off Tackle Outside")
+                    promptSwitch_2 = 7
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_6")
+                    
+                    myCurrentAnswer = "3_6"
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
+                    
+                    playerTwoComplete = true
+                    colorService.sendColor("playerTwoDone")
+                    print("Player Two Done")
+                default:
+                    self.taskPanel.text = String("Default Called")
                 }
+            }
+            
+            
+            if myGlobalPlayerNum == 3 {
                 
                 
-                if myGlobalPlayerNum == 2 {
-                    
                 
+                print(" a check on myGlobalPlayerNum: \(myGlobalPlayerNum)")
+                print("whichPrompt: \(whichPrompt)")
+                
+                switch whichPrompt {
+                case 1:
+                    print("got to case 1 for whichPrompt in changePrompt - player 3")
                     
+                    self.taskPanel.text = String("Flea Flicker")
+                    promptSwitch_3 = 2
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_1")
+                    myCurrentAnswer = "3_1"
+                case 2:
+                    self.taskPanel.text = String("Slam 6 Yards")
+                    promptSwitch_3 = 3
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_2")
+                    myCurrentAnswer = "2_2"
+                case 3:
+                    self.taskPanel.text = String("Play Action Fake")
+                    promptSwitch_3 = 4
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
+                    myCurrentAnswer = "1_3"
+                case 4:
+                    self.taskPanel.text = String("Wide Receiver in Slot Position")
+                    promptSwitch_3 = 5
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
+                    myCurrentAnswer = "2_4"
+                case 5:
+                    self.taskPanel.text = String("End Run 45 Yards")
+                    promptSwitch_3 = 6
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
+                    myCurrentAnswer = "1_5"
+                case 6:
+                    self.taskPanel.text = String("Water Boy to Empty")
+                    promptSwitch_3 = 7
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
+                    myCurrentAnswer = "2_6"
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
                     
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Forward Pass 20 Yards")
-                        promptSwitch_2 = 2
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
-           
-                        myCurrentAnswer = "1_4"
-                    case 2:
-                        self.taskPanel.text = String("Slam 6 Yards")
-                        promptSwitch_2 = 3
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
-  
-                        myCurrentAnswer = "1_6"
-                    case 3:
-                        self.taskPanel.text = String("Quarterback Audible: Hail Mary")
-                        promptSwitch_2 = 4
-               
-        
-                        myCurrentAnswer = "1_1"
-                    case 4:
-                        self.taskPanel.text = String("Hook and Ladder")
-                        promptSwitch_2 = 5
-              
-                        print("Setting Player Two's answer to 1_5")
-                        myCurrentAnswer = "1_5"
-                    case 5:
-                        self.taskPanel.text = String("Pass Block Step Back")
-                        promptSwitch_2 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-         
-                        myCurrentAnswer = "1_2"
-                    case 6:
-                        self.taskPanel.text = String("Water Boy to Empty")
-                        promptSwitch_2 = 7
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
-    
-                        myCurrentAnswer = "1_3"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerTwoComplete = true
-                        print("Player Two Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
+                    playerThreeComplete = true
+                    colorService.sendColor("playerThreeDone")
+                    print("Player Three Done")
+                default:
+                    self.taskPanel.text = String("Default Called")
                 }
+            }
+            
+        }
+            
+        else if numPlayers == 4 {
+            
+            if myGlobalPlayerNum == 1 {
                 
-              
-                if myGlobalPlayerNum == 3 {
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Set Crowd Noise to Insane")
+                    promptSwitch_1 = 2
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_3")
                     
+                    myCurrentAnswer = "2_3"
+                case 2:
+                    self.taskPanel.text = String("Off Tackle Outside")
+                    promptSwitch_1 = 3
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
                     
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Cheerleaders Make Pyramid")
-                        promptSwitch_3 = 2
- 
-                        print("Setting Player Two's answer to 1_4")
-                        myCurrentAnswer = "1_4"
-                    case 2:
-                        self.taskPanel.text = String("Rushing Yards 10")
-                        promptSwitch_3 = 3
-  
-                        print("Setting Player Two's answer to 1_6")
-                        myCurrentAnswer = "1_6"
-                    case 3:
-                        self.taskPanel.text = String("Throw Red Challenge Flag")
-                        promptSwitch_3 = 4
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
-
-                        myCurrentAnswer = "1_1"
-                    case 4:
-                        self.taskPanel.text = String("Drag Route In")
-                        promptSwitch_3 = 5
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
-
-                        myCurrentAnswer = "1_5"
-                    case 5:
-                        self.taskPanel.text = String("Gunner to Tackle")
-                        promptSwitch_3 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-
-                        myCurrentAnswer = "1_2"
-                    case 6:
-                        self.taskPanel.text = String("Screen Pass Behind Line")
-                        promptSwitch_3 = 7
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
-
-                        myCurrentAnswer = "1_3"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerThreeComplete = true
-                        print("Player Three Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
-                    }
+                    myCurrentAnswer = "1_2"
+                case 3:
+                    self.taskPanel.text = String("Upback 2 Yards")
+                    promptSwitch_1 = 4
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_1")
+                    
+                    myCurrentAnswer = "3_1"
+                case 4:
+                    self.taskPanel.text = String("Spike Ball in End Zone")
+                    promptSwitch_1 = 5
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_2")
+                    
+                    myCurrentAnswer = "4_2"
+                case 5:
+                    self.taskPanel.text = String("Run Block to 3 Yards")
+                    promptSwitch_1 = 6
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_4")
+                    
+                    myCurrentAnswer = "2_4"
+                case 6:
+                    self.taskPanel.text = String("Protect Pocket")
+                    promptSwitch_1 = 7
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_3")
+                    
+                    myCurrentAnswer = "3_3"
+                case 7:
+                    playerOneComplete = true
+                    print("Player One Done")
+                    colorService.sendColor("playerOneDone")
+                    self.taskPanel.text = String("Job Done!")
+                    
+                default:
+                    self.taskPanel.text = String("Default Called")
                 }
+            }
+            
+            
+            if myGlobalPlayerNum == 2 {
                 
-        
                 
-                if myGlobalPlayerNum == 4 {
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Forward Pass 20 Yards")
+                    promptSwitch_2 = 2
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
                     
-                    switch whichPrompt {
-                    case 1:
-                        self.taskPanel.text = String("Play Action Fake")
-                        promptSwitch_4 = 2
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_4")
-
-                        myCurrentAnswer = "1_4"
-                    case 2:
-                        self.taskPanel.text = String("Wide Receiver in Slot Position")
-                        promptSwitch_4 = 3
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_6")
-
-                        myCurrentAnswer = "1_6"
-                    case 3:
-                        self.taskPanel.text = String("Flea Flicker")
-                        promptSwitch_4 = 4
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
-
-                        myCurrentAnswer = "1_1"
-                    case 4:
-                        self.taskPanel.text = String("Quarterback Sneak")
-                        promptSwitch_4 = 5
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
-
-                        myCurrentAnswer = "1_5"
-                    case 5:
-                        self.taskPanel.text = String("Offensive Guards Lineup")
-                        promptSwitch_4 = 6
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_2")
-
-                        myCurrentAnswer = "1_2"
-                    case 6:
-                        self.taskPanel.text = String("End Run 45 Yards")
-                        promptSwitch_4 = 7
-                        //sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
-
-                        myCurrentAnswer = "1_3"
-                    case 7:
-                        self.taskPanel.text = String("Job Done!")
-                        
-                        playerFourComplete = true
-                        print("Player Four Done")
-                    default:
-                        self.taskPanel.text = String("Default Called")
+                    myCurrentAnswer = "1_4"
+                case 2:
+                    self.taskPanel.text = String("Slam 6 Yards")
+                    promptSwitch_2 = 3
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_6")
+                    
+                    myCurrentAnswer = "1_6"
+                case 3:
+                    self.taskPanel.text = String("Quarterback Audible: Hail Mary")
+                    promptSwitch_2 = 4
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_3")
+                    
+                    myCurrentAnswer = "1_1"
+                case 4:
+                    self.taskPanel.text = String("Hook and Ladder")
+                    promptSwitch_2 = 5
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_6")
+                    
+                    myCurrentAnswer = "2_6"
+                case 5:
+                    self.taskPanel.text = String("Pass Block Step Back")
+                    promptSwitch_2 = 6
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_3")
+                    
+                    myCurrentAnswer = "1_3"
+                case 6:
+                    self.taskPanel.text = String("Water Boy to Empty")
+                    promptSwitch_2 = 7
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_2")
+                    
+                    myCurrentAnswer = "3_2"
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
+                    
+                    playerTwoComplete = true
+                    colorService.sendColor("playerTwoDone")
+                    print("Player Two Done")
+                default:
+                    self.taskPanel.text = String("Default Called")
+                }
+            }
+            
+            
+            if myGlobalPlayerNum == 3 {
+                
+                
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Cheerleaders Make Pyramid")
+                    promptSwitch_3 = 2
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_4")
+                    
+                    myCurrentAnswer = "4_4"
+                case 2:
+                    self.taskPanel.text = String("Rushing Yards 10")
+                    promptSwitch_3 = 3
+                    
+                    
+                    myCurrentAnswer = "1_6"
+                case 3:
+                    self.taskPanel.text = String("Throw Red Challenge Flag")
+                    promptSwitch_3 = 4
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_1")
+                    
+                    myCurrentAnswer = "4_1"
+                case 4:
+                    self.taskPanel.text = String("Drag Route In")
+                    promptSwitch_3 = 5
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_1")
+                    
+                    myCurrentAnswer = "1_1"
+                case 5:
+                    self.taskPanel.text = String("Gunner to Tackle")
+                    promptSwitch_3 = 6
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_5")
+                    
+                    myCurrentAnswer = "4_5"
+                case 6:
+                    self.taskPanel.text = String("Screen Pass Behind Line")
+                    promptSwitch_3 = 7
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_5")
+                    
+                    myCurrentAnswer = "3_5"
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
+                    
+                    playerThreeComplete = true
+                    colorService.sendColor("playerThreeDone")
+                    print("Player Three Done")
+                default:
+                    self.taskPanel.text = String("Default Called")
+                }
+            }
+            
+            
+            
+            if myGlobalPlayerNum == 4 {
+                
+                switch whichPrompt {
+                case 1:
+                    self.taskPanel.text = String("Play Action Fake")
+                    promptSwitch_4 = 2
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_5")
+                    
+                    myCurrentAnswer = "2_5"
+                case 2:
+                    self.taskPanel.text = String("Wide Receiver in Slot Position")
+                    promptSwitch_4 = 3
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_2")
+                    
+                    
+                    myCurrentAnswer = "2_2"
+                case 3:
+                    self.taskPanel.text = String("Flea Flicker")
+                    promptSwitch_4 = 4
+                    sendCurrentAnswer(thePlayer: 1, theAnswer: "1_5")
+                    
+                    myCurrentAnswer = "1_5"
+                case 4:
+                    self.taskPanel.text = String("Quarterback Sneak")
+                    promptSwitch_4 = 5
+                    sendCurrentAnswer(thePlayer: 3, theAnswer: "3_4")
+                    
+                    myCurrentAnswer = "3_4"
+                case 5:
+                    self.taskPanel.text = String("Offensive Guards Lineup")
+                    promptSwitch_4 = 6
+                    sendCurrentAnswer(thePlayer: 2, theAnswer: "2_1")
+                    
+                    myCurrentAnswer = "2_1"
+                case 6:
+                    self.taskPanel.text = String("End Run 45 Yards")
+                    promptSwitch_4 = 7
+                    sendCurrentAnswer(thePlayer: 4, theAnswer: "4_6")
+                    
+                    myCurrentAnswer = "4_6"
+                case 7:
+                    self.taskPanel.text = String("Job Done!")
+                    
+                    playerFourComplete = true
+                    colorService.sendColor("playerFourDone")
+                    print("Player Four Done")
+                default:
+                    self.taskPanel.text = String("Default Called")
                     
                 }
             }
@@ -1778,6 +1877,61 @@ class ColorSwitchViewController: UIViewController {
     func sendCurrentAnswer(thePlayer: Int, theAnswer: String){
     
         colorService.sendColor("*" + "\(thePlayer)" + " - " + "\(theAnswer)")
+        
+    }
+    
+    func playHornSound(){
+        
+        let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+        let hornUrl = URL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOf: hornUrl)
+            hornSoundEffect = sound
+            sound.play()
+            
+            
+        } catch {
+            // couldn't load file D:
+        }
+        
+        
+    }
+    
+    func playSuccessSound(){
+        
+        let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+        let hornUrl = URL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOf: hornUrl)
+            hornSoundEffect = sound
+            sound.play()
+            
+            
+        } catch {
+            // couldn't load file D:
+        }
+        
+        
+    }
+    
+    
+    func playWhistleSound(){
+        
+        let path = Bundle.main.path(forResource: "ref-whistle.mp3", ofType:nil)!
+        let whistleUrl = URL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOf: whistleUrl)
+            whistleSoundEffect = sound
+            sound.play()
+            
+            
+        } catch {
+            // couldn't load file D:
+        }
+        
         
     }
     
@@ -1825,19 +1979,22 @@ class ColorSwitchViewController: UIViewController {
     
     @IBAction func ball_button(_ sender: UIButton) {
         
-        let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
-        let hornUrl = URL(fileURLWithPath: path)
+//        let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+//        let hornUrl = URL(fileURLWithPath: path)
+//
+//        print("Ball Button Tapped")
+//        do {
+//            let sound = try AVAudioPlayer(contentsOf: hornUrl)
+//            hornSoundEffect = sound
+//            sound.play()
+//
+//
+//        } catch {
+//            // couldn't load file D:
+//        }
         
-        print("Ball Button Tapped")
-        do {
-            let sound = try AVAudioPlayer(contentsOf: hornUrl)
-            hornSoundEffect = sound
-            sound.play()
-            
-            
-        } catch {
-            // couldn't load file D:
-        }
+        playHornSound()
+        
         
         self.ball_button_control.isEnabled = false
         
@@ -2403,66 +2560,70 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 }
             case "playChime1":
                 if self.myGlobalPlayerNum == 1 {
-                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
-                    let hornUrl = URL(fileURLWithPath: path)
-                    
-                    print("Ball Button Tapped")
-                    do {
-                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
-                        self.hornSoundEffect = sound
-                        sound.play()
-                        
-                    } catch {
-                        // couldn't load file D:
-                    }
+//                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+//                    let hornUrl = URL(fileURLWithPath: path)
+//
+//                    print("Ball Button Tapped")
+//                    do {
+//                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+//                        self.hornSoundEffect = sound
+//                        sound.play()
+//
+//                    } catch {
+//                        // couldn't load file D:
+//                    }
+                    self.playHornSound()
                 }
             case "playChime2":
                 if self.myGlobalPlayerNum == 2 {
-                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
-                    let hornUrl = URL(fileURLWithPath: path)
-                    
-                    print("Ball Button Tapped")
-                    do {
-                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
-                        self.hornSoundEffect = sound
-                        sound.play()
-                        
-                        
-                    } catch {
-                        // couldn't load file D:
-                    }
+//                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+//                    let hornUrl = URL(fileURLWithPath: path)
+//
+//                    print("Ball Button Tapped")
+//                    do {
+//                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+//                        self.hornSoundEffect = sound
+//                        sound.play()
+//
+//
+//                    } catch {
+//                        // couldn't load file D:
+//                    }
+                    self.playHornSound()
                 }
             case "playChime3":
                 if self.myGlobalPlayerNum == 3 {
-                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
-                    let hornUrl = URL(fileURLWithPath: path)
-                    
-                    print("Ball Button Tapped")
-                    do {
-                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
-                        self.hornSoundEffect = sound
-                        sound.play()
-                        
-                        
-                    } catch {
-                        // couldn't load file D:
-                    }
+//                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+//                    let hornUrl = URL(fileURLWithPath: path)
+//
+//                    print("Ball Button Tapped")
+//                    do {
+//                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+//                        self.hornSoundEffect = sound
+//                        sound.play()
+//
+//
+//                    } catch {
+//                        // couldn't load file D:
+//                    }
+                    self.playHornSound()
                 }
             case "playChime4":
                 if self.myGlobalPlayerNum == 4 {
-                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
-                    let hornUrl = URL(fileURLWithPath: path)
-                    
-                    print("Ball Button Tapped")
-                    do {
-                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
-                        self.hornSoundEffect = sound
-                        sound.play()
-                        
-                        
-                    } catch {
-                        // couldn't load file D:
-                    }
+//                    let path = Bundle.main.path(forResource: "air horn (club sample).mp3", ofType:nil)!
+//                    let hornUrl = URL(fileURLWithPath: path)
+//
+//                    print("Ball Button Tapped")
+//                    do {
+//                        let sound = try AVAudioPlayer(contentsOf: hornUrl)
+//                        self.hornSoundEffect = sound
+//                        sound.play()
+//
+//
+//                    } catch {
+//                        // couldn't load file D:
+//                    }
+                    self.playHornSound()
                 }
             case "white":
                 if lockerState == 1 {
@@ -2512,6 +2673,20 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 self.sil_down_silver.alpha = 1.0
                 self.sil_up_silver.alpha = 0.0
 
+            //This block tracks players as they finish their round
+                
+            case "playerOneDone":
+                playerOneComplete = true
+                
+            case "playerTwoDone":
+                playerTwoComplete = true
+                
+            case "playerThreeDone":
+                playerThreeComplete = true
+                
+            case "playerFourDone":
+                playerFourComplete = true
+                
                 
                 //This block checks valid answers during the game
                 
@@ -2521,7 +2696,8 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 
             case "1_1":
                 if self.myCurrentAnswer == "1_1"{
-                    self.colorService.sendColor("playChime1")
+                    
+                    //self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2529,14 +2705,14 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 
             case "1_2":
                 if self.myCurrentAnswer == "1_2"{
-                    self.colorService.sendColor("playChime1")
+                   // self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "1_3":
                 if self.myCurrentAnswer == "1_3"{
-                    self.colorService.sendColor("playChime1")
+                    //self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2546,7 +2722,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
                 print("Got color 1_4.  - Locker view - myCurrentAnswer is:", self.myCurrentAnswer)
                 
                 if self.myCurrentAnswer == "1_4" {
-                    self.colorService.sendColor("playChime1")
+                    //self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 
@@ -2556,7 +2732,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "1_5":
                 
                 if self.myCurrentAnswer == "1_5"{
-                    self.colorService.sendColor("playChime1")
+                    //self.colorService.sendColor("playChime1")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2564,7 +2740,7 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "1_6":
             
                     if self.myCurrentAnswer == "1_6"{
-                        self.colorService.sendColor("playChime1")
+                     //   self.colorService.sendColor("playChime1")
                         self.advancePrompt()
                         self.resetProgState()
                     }
@@ -2573,14 +2749,14 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "2_1":
                 
                 if self.myCurrentAnswer == "2_1"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_2":
                 if self.myCurrentAnswer == "2_2"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
@@ -2589,103 +2765,115 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "2_3":
                 
                 if self.myCurrentAnswer == "2_3"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_4":
                 if self.myCurrentAnswer == "2_4"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_5":
                 if self.myCurrentAnswer == "2_5"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "2_6":
                 if self.myCurrentAnswer == "2_6"{
-                    self.colorService.sendColor("playChime2")
+                    //self.colorService.sendColor("playChime2")
                     self.advancePrompt()
                     self.resetProgState()
                 }
                 
             case "3_1":
                 if self.myCurrentAnswer == "3_1"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "3_2":
                 if self.myCurrentAnswer == "3_2"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "3_3":
                 if self.myCurrentAnswer == "3_3"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "3_4":
                 if self.myCurrentAnswer == "3_4"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "3_5":
                 if self.myCurrentAnswer == "3_5"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "3_6":
                 if self.myCurrentAnswer == "3_6"{
-                    self.colorService.sendColor("playChime3")
+                    //self.colorService.sendColor("playChime3")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "4_1":
                 if self.myCurrentAnswer == "4_1"{
-                    self.colorService.sendColor("playChime4")
+                    ////self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "4_2":
                 if self.myCurrentAnswer == "4_2"{
-                    self.colorService.sendColor("playChime4")
+                    ////self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "4_3":
                 if self.myCurrentAnswer == "4_3"{
-                    self.colorService.sendColor("playChime4")
+                    ////self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "4_4":
                 if self.myCurrentAnswer == "4_4"{
-                    self.colorService.sendColor("playChime4")
+                    //self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
                 
             case "4_5":
                 if self.myCurrentAnswer == "4_5"{
-                    self.colorService.sendColor("playChime4")
+                    //self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
             case "4_6":
                 if self.myCurrentAnswer == "4_6"{
-                    self.colorService.sendColor("playChime4")
+                    //self.colorService.sendColor("playChime4")
                     self.advancePrompt()
+                    self.resetProgState()
                 }
                 
                 //setting up the right answers dynamically
@@ -2693,75 +2881,146 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
             case "*1 - 1_1":
                 print("Received *1 - 1_1")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_1"
+                    self.myLocalAnswer = "1_1"
                 }
                 
             case "*1 - 1_2":
                  print("Received *1 - 1_2")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_2"
+                    self.myLocalAnswer = "1_2"
                 }
                 
             case "*1 - 1_3":
                  print("Received *1 - 1_3")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_3"
+                    self.myLocalAnswer = "1_3"
                 }
                 
             case "*1 - 1_4":
                  print("Received *1 - 1_4")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_4"
+                    self.myLocalAnswer = "1_4"
                 }
                 
             case "*1 - 1_5":
                  print("Received *1 - 1_5")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_5"
+                    self.myLocalAnswer = "1_5"
                 }
                 
             case "*1 - 1_6":
                  print("Received *1 - 1_6")
                 if self.myGlobalPlayerNum == 1 {
-                    self.myCurrentAnswer = "1_6"
+                    self.myLocalAnswer = "1_6"
                 }
                 
             case "*2 - 2_1":
                  print("Received *2 - 2_1")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_1"
+                    self.myLocalAnswer = "2_1"
                 }
                 
             case "*2 - 2_2":
                  print("Received *2 - 2_2")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_2"
+                    self.myLocalAnswer = "2_2"
                 }
                 
             case "*2 - 2_3":
                  print("Received *2 - 2_3")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_3"
+                    self.myLocalAnswer = "2_3"
                 }
                 
             case "*2 - 2_4":
                  print("Received *2 - 2_4")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_4"
+                    self.myLocalAnswer = "2_4"
                 }
                 
             case "*2 - 2_5":
                  print("Received *2 - 2_5")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_5"
+                    self.myLocalAnswer = "2_5"
                 }
                 
             case "*2 - 2_6":
                  print("Received *2 - 2_6")
                 if self.myGlobalPlayerNum == 2 {
-                    self.myCurrentAnswer = "2_6"
+                    self.myLocalAnswer = "2_6"
                 }
                 
+            case "*3 - 3_1":
+                print("Received *3 - 3_1")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_1"
+                }
+                
+            case "*3 - 3_2":
+                print("Received *3 - 3_2")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_2"
+                }
+                
+            case "*3 - 3_3":
+                print("Received *3 - 3_3")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_3"
+                }
+                
+            case "*3 - 3_4":
+                print("Received *3 - 3_4")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_4"
+                }
+                
+            case "*3 - 3_5":
+                print("Received *3 - 3_5")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_5"
+                }
+                
+            case "*3 - 3_6":
+                print("Received *3 - 3_6")
+                if self.myGlobalPlayerNum == 3 {
+                    self.myLocalAnswer = "3_6"
+                }
+                
+            case "*4 - 4_1":
+                print("Received *4 - 4_1")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_1"
+                }
+                
+            case "*4 - 4_2":
+                print("Received *4 - 4_2")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_2"
+                }
+                
+            case "*4 - 4_3":
+                print("Received *4 - 4_3")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_3"
+                }
+                
+            case "*4 - 4_4":
+                print("Received *4 - 4_4")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_4"
+                }
+                
+            case "*4 - 4_5":
+                print("Received *4 - 4_5")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_5"
+                }
+                
+            case "*4 - 4_6":
+                print("Received *4 - 4_6")
+                if self.myGlobalPlayerNum == 4 {
+                    self.myLocalAnswer = "4_6"
+                }
                 
             default:
                 NSLog("%@", "LVC - Unknown color value received: \(colorString)")

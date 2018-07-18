@@ -21,8 +21,9 @@
 		F56674AB204240DD00699C39 /* play6.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A6204240DD00699C39 /* play6.gif */; };
 		F56674AC204240DD00699C39 /* play4.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A7204240DD00699C39 /* play4.gif */; };
 		F56674AD204240DD00699C39 /* play3.gif in Resources */ = {isa = PBXBuildFile; fileRef = F56674A8204240DD00699C39 /* play3.gif */; };
-		F56674AF20433F0B00699C39 /* done-ding-bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = F56674AE20433F0B00699C39 /* done-ding-bell.wav */; };
 		F56674B120434B4000699C39 /* double-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F56674B020434B4000699C39 /* double-10.mp3 */; };
+		F56674B32043AA1100699C39 /* ref-whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F56674B22043AA1100699C39 /* ref-whistle.mp3 */; };
+		F5783F6520FF0D35004EF1F6 /* Wishbone Fake 24 Dive.png in Resources */ = {isa = PBXBuildFile; fileRef = F5783F6420FF0D35004EF1F6 /* Wishbone Fake 24 Dive.png */; };
 		F57908381FC0FDAE00E697C2 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908371FC0FDAE00E697C2 /* LabelExtension.swift */; };
 		F579083A1FC0FE5500E697C2 /* hexColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908391FC0FE5500E697C2 /* hexColorExtension.swift */; };
 		F57908421FC1280000E697C2 /* round_timer_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F57908411FC1280000E697C2 /* round_timer_2.gif */; };
@@ -30,6 +31,8 @@
 		F57908471FC1283C00E697C2 /* Ride the Fader.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F57908451FC1283C00E697C2 /* Ride the Fader.ttf */; };
 		F57908491FC135AE00E697C2 /* UILabel Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57908481FC135AE00E697C2 /* UILabel Extension.swift */; };
 		F579084B1FC13ED700E697C2 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579084A1FC13ED700E697C2 /* Swift+Gif.swift */; };
+		F598DA312083BF600062110F /* redstripes.png in Resources */ = {isa = PBXBuildFile; fileRef = F598DA302083BF600062110F /* redstripes.png */; };
+		F598DA332083C2DD0062110F /* redstripes_24.png in Resources */ = {isa = PBXBuildFile; fileRef = F598DA322083C2DD0062110F /* redstripes_24.png */; };
 		F5B91E5020157889008F614D /* hangtime logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B91E4F20157889008F614D /* hangtime logo.png */; };
 		F5BE471D1F9D2CE30064A284 /* sil_up_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BE47191F9D2CE30064A284 /* sil_up_blue.png */; };
 		F5BE471E1F9D2CE30064A284 /* sil_up_white.png in Resources */ = {isa = PBXBuildFile; fileRef = F5BE471A1F9D2CE30064A284 /* sil_up_white.png */; };
@@ -65,8 +68,9 @@
 		F56674A6204240DD00699C39 /* play6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play6.gif; sourceTree = "<group>"; };
 		F56674A7204240DD00699C39 /* play4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play4.gif; sourceTree = "<group>"; };
 		F56674A8204240DD00699C39 /* play3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play3.gif; sourceTree = "<group>"; };
-		F56674AE20433F0B00699C39 /* done-ding-bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "done-ding-bell.wav"; sourceTree = "<group>"; };
 		F56674B020434B4000699C39 /* double-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "double-10.mp3"; sourceTree = "<group>"; };
+		F56674B22043AA1100699C39 /* ref-whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ref-whistle.mp3"; sourceTree = "<group>"; };
+		F5783F6420FF0D35004EF1F6 /* Wishbone Fake 24 Dive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wishbone Fake 24 Dive.png"; path = "../../../Hangtime 0.7/Hangtime visual support files/Wishbone Fake 24 Dive.png"; sourceTree = "<group>"; };
 		F57908371FC0FDAE00E697C2 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		F57908391FC0FE5500E697C2 /* hexColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexColorExtension.swift; sourceTree = "<group>"; };
 		F57908411FC1280000E697C2 /* round_timer_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_timer_2.gif; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		F57908451FC1283C00E697C2 /* Ride the Fader.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ride the Fader.ttf"; path = "Resources/Ride the Fader.ttf"; sourceTree = SOURCE_ROOT; };
 		F57908481FC135AE00E697C2 /* UILabel Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel Extension.swift"; sourceTree = "<group>"; };
 		F579084A1FC13ED700E697C2 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
+		F598DA302083BF600062110F /* redstripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstripes.png; sourceTree = "<group>"; };
+		F598DA322083C2DD0062110F /* redstripes_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redstripes_24.png; sourceTree = "<group>"; };
 		F5B91E4F20157889008F614D /* hangtime logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hangtime logo.png"; path = "../../../Hangtime 0.7/Hangtime visual support files/hangtime logo.png"; sourceTree = "<group>"; };
 		F5BE47191F9D2CE30064A284 /* sil_up_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_up_blue.png; path = Images/sil_up_blue.png; sourceTree = SOURCE_ROOT; };
 		F5BE471A1F9D2CE30064A284 /* sil_up_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sil_up_white.png; path = Images/sil_up_white.png; sourceTree = SOURCE_ROOT; };
@@ -154,6 +160,9 @@
 		F5BEA2921F895C7F00DA61F2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F5783F6420FF0D35004EF1F6 /* Wishbone Fake 24 Dive.png */,
+				F598DA322083C2DD0062110F /* redstripes_24.png */,
+				F598DA302083BF600062110F /* redstripes.png */,
 				F56674A4204240DC00699C39 /* play2.gif */,
 				F56674A8204240DD00699C39 /* play3.gif */,
 				F56674A7204240DD00699C39 /* play4.gif */,
@@ -183,8 +192,8 @@
 		F5BEA2971F8967AB00DA61F2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F56674B22043AA1100699C39 /* ref-whistle.mp3 */,
 				F56674B020434B4000699C39 /* double-10.mp3 */,
-				F56674AE20433F0B00699C39 /* done-ding-bell.wav */,
 				F5BEA29A1F896C8000DA61F2 /* NFL Opening Final.mp3 */,
 				F5BEA2981F89693F00DA61F2 /* air horn (club sample).mp3 */,
 			);
@@ -257,12 +266,16 @@
 				F5BEA29D1F89701400DA61F2 /* locker.jpg in Resources */,
 				F5BE471F1F9D2CE30064A284 /* sil_up_red.png in Resources */,
 				F56674B120434B4000699C39 /* double-10.mp3 in Resources */,
+				F5783F6520FF0D35004EF1F6 /* Wishbone Fake 24 Dive.png in Resources */,
+				F598DA312083BF600062110F /* redstripes.png in Resources */,
+				F598DA332083C2DD0062110F /* redstripes_24.png in Resources */,
 				F5BEA2961F89614B00DA61F2 /* football_1.png in Resources */,
 				F56674AA204240DD00699C39 /* play5.gif in Resources */,
 				F525C0341FB744E6009F0C77 /* Turf Screen.png in Resources */,
 				F5BE47201F9D2CE30064A284 /* sil_up_silver.png in Resources */,
 				F5D5B5D4201E570E0030900A /* field image.png in Resources */,
 				BF6F14021E4E58C90018D56E /* LaunchScreen.storyboard in Resources */,
+				F56674B32043AA1100699C39 /* ref-whistle.mp3 in Resources */,
 				F56674AC204240DD00699C39 /* play4.gif in Resources */,
 				F5BEA2A51F8ABF2B00DA61F2 /* sil_down_red.png in Resources */,
 				F5B91E5020157889008F614D /* hangtime logo.png in Resources */,
@@ -279,7 +292,6 @@
 				F56674A320421FF400699C39 /* play1.gif in Resources */,
 				F56674AB204240DD00699C39 /* play6.gif in Resources */,
 				F5BEA2A41F8ABF2B00DA61F2 /* sil_down_blue.png in Resources */,
-				F56674AF20433F0B00699C39 /* done-ding-bell.wav in Resources */,
 				F5BE471D1F9D2CE30064A284 /* sil_up_blue.png in Resources */,
 				F5BEA29B1F896C8000DA61F2 /* NFL Opening Final.mp3 in Resources */,
 			);
